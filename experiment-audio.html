@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<title>P300 Experiment</title>
+    <script src="jspsych/jspsych.js"></script>
+    <script src="jspsych/plugins/jspsych-text.js"></script>
+    <script src="jspsych/plugins/jspsych-survey-text.js"></script>
+    <link href="jspsych/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+    <script src="jspsych/plugins/jspsych-single-stim.js"></script>
+    <script src="jspsych/plugins/jspsych-single-audio.js"></script>
+	</head>
+	<body></body>
+  <script>
+
+    var timeline = [];
+
+    var welcome = {
+      type: "text",
+      text: "Welcome to the experiment. Press any key to begin."
+    };
+    timeline.push(welcome);
+
+    var instructions = {
+      type: "text",
+      text: "<p>In this experiment, you will hear either a high frequency tone or a low frequency tone" +
+      " through your headset.</p><p>Your task is to count how many times you hear the high pitched tone," +
+      "<p>Press any key to begin",
+    timing_post_trial: 200
+    };
+    timeline.push(instructions);
+
+
+
+    var test_stimuli = [
+      { stimulus: "1000.wav", data: {test_part: 'test'}},
+      { stimulus: "2000.wav", data: {test_part: 'test'}}
+    ];
+
+    var fixation = {
+      type: 'single-stim',
+      stimulus: "Fixation.png",
+      timing_response: 133,
+      data: {test_part: 'fixation'}
+    }
+
+    var test = {
+      type: "single-audio",
+      stimulus: jsPsych.timelineVariable('stimulus'),
+      data: jsPsych.timelineVariable('data'),
+      trial_ends_after_audio: true,
+      choices: jsPsych.NO_KEYS,
+      prompt: '<img src="Fixation.png"></img>',
+      on_finish: function(data){
+        data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
+      }
+    }
+
+    var test_procedure = {
+      timeline: [fixation, test],
+      timeline_variables: test_stimuli,
+      randomize_order: true,
+      repetitions: 5
+    };
+
+    timeline.push(test_procedure);
+
+
+    var survey_trial = {
+      type: 'survey-text',
+      questions: ["How many red circles were there?"],
+      rows: [1],
+      columns: [1]
+    };
+
+    timeline.push(survey_trial);
+
+    var debrief_block = {
+      type: "text",
+      text: function() {
+
+      var trials = jsPsych.data.get().filter({test_part: 'test'});
+
+      return"<p>Press any key to complete the experiment. Thank you!</p>";
+      }
+    }
+
+    timeline.push(debrief_block);
+
+    jsPsych.init({
+      timeline: timeline,
+      preload_audio: ['1000.wav', '2000.wav'],
+      on_finish: function() {
+      }
+    });
+  </script>
+</html>
