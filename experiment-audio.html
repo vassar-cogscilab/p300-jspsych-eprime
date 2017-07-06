@@ -78,7 +78,8 @@
       type: "text",
       text: function() {
 
-      var trials = jsPsych.data.get().filter({test_part: 'test'});
+      var common_trials = jsPsych.data.get().filter({oddball_type: 'common'}).count();
+      var rare_trials = jsPsych.data.get().filter({oddball_type: 'rare'}).count();
 
       return"<p>Press any key to complete the experiment. Thank you!</p>";
       }
