@@ -14,7 +14,7 @@
 
     // experiment parameters
     var n_trial_per_block = 40;
-    var type_order = ['audio', 'visual', 'audio'];
+    var type_order = ['audio', 'visual', 'audio', 'visual'];
 
     var timeline = [];
 
@@ -159,13 +159,15 @@
           var common_trials = jsPsych.data.get().filter({oddball_type: 'common', block: which_block}).count();
           var rare_trials = jsPsych.data.get().filter({oddball_type: 'rare', block: which_block}).count();
 
-          return "<p>There were "+common_trials+" blue circles.</p><p>There were "+rare_trials+" red circles.</p>Press any key to complete the experiment. Thank you!</p>";
+          return "<p>There were "+common_trials+" blue circles.</p><p>There were "+rare_trials+" red circles.</p>This portion of the test is now complete. Please proceed to the next part by pressing any key.</p>";
           }
         }
 
         timeline.push(debrief_block);
       }
     }
+
+    "<p>This portion of the test is complete. Please remain seated as the experimenter rearranges the technology for the proceeding part of the experiment.</p>""
 
     jsPsych.init({
       timeline: timeline,
