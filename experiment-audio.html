@@ -25,20 +25,20 @@
       text: "<p>In this experiment, you will hear either a high frequency tone or a low frequency tone" +
       " through your headset.</p><p>Your task is to count how many times you hear the high pitched tone," +
       "<p>Press any key to begin",
-    timing_post_trial: 200
+    timing_post_trial: 2000
     };
     timeline.push(instructions);
 
 
 
     var test_stimuli = [
-      { stimulus: "audio/1000.wav", data: {test_part: 'test'}},
-      { stimulus: "audio/2000.wav", data: {test_part: 'test'}}
+      { stimulus: "audio/1000.wav", data: {test_part: 'test', oddball_type: 'common', block: 1}},
+      { stimulus: "audio/2000.wav", data: {test_part: 'test', oddball_type: 'rare', block: 1}}
     ];
 
     var fixation = {
       type: 'single-stim',
-      stimulus: "img/Fixation.png",
+      stimulus: "img/Fixation.jpg",
       timing_response: 133,
       data: {test_part: 'fixation'}
     }
@@ -49,7 +49,7 @@
       data: jsPsych.timelineVariable('data'),
       trial_ends_after_audio: true,
       choices: jsPsych.NO_KEYS,
-      prompt: '<img src="img/Fixation.png"></img>',
+      prompt: '<img src="img/Fixation.jpg"></img>',
       on_finish: function(data){
         data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
       }
@@ -67,7 +67,7 @@
 
     var survey_trial = {
       type: 'survey-text',
-      questions: ["How many red circles were there?"],
+      questions: ["How many times did you hear the high pitched tone?"],
       rows: [1],
       columns: [1]
     };
