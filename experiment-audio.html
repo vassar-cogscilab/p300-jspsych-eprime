@@ -32,13 +32,13 @@
 
 
     var test_stimuli = [
-      { stimulus: "1000.wav", data: {test_part: 'test'}},
-      { stimulus: "2000.wav", data: {test_part: 'test'}}
+      { stimulus: "audio/1000.wav", data: {test_part: 'test'}},
+      { stimulus: "audio/2000.wav", data: {test_part: 'test'}}
     ];
 
     var fixation = {
       type: 'single-stim',
-      stimulus: "Fixation.png",
+      stimulus: "img/Fixation.png",
       timing_response: 133,
       data: {test_part: 'fixation'}
     }
@@ -49,7 +49,7 @@
       data: jsPsych.timelineVariable('data'),
       trial_ends_after_audio: true,
       choices: jsPsych.NO_KEYS,
-      prompt: '<img src="Fixation.png"></img>',
+      prompt: '<img src="img/Fixation.png"></img>',
       on_finish: function(data){
         data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
       }
@@ -88,7 +88,7 @@
 
     jsPsych.init({
       timeline: timeline,
-      preload_audio: ['1000.wav', '2000.wav'],
+      preload_audio: ['audio/1000.wav', 'audio/2000.wav'],
       on_finish: function() {
       }
     });
