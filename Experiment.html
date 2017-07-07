@@ -43,27 +43,17 @@
           { stimulus: "audio/2000.wav", data: {test_part: 'test', oddball_type: 'rare', block: i}}
         ];
 
-        var fixation = {
-          type: 'single-stim',
-          stimulus: "img/Fixation.jpg",
-          timing_response: 133,
-          data: {test_part: 'fixation'}
-        }
-
         var test = {
           type: "single-audio",
           stimulus: jsPsych.timelineVariable('stimulus'),
           data: jsPsych.timelineVariable('data'),
           trial_ends_after_audio: true,
           choices: jsPsych.NO_KEYS,
-          prompt: '<img src="img/Fixation.jpg"></img>',
-          on_finish: function(data){
-            data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
-          }
+          prompt: '<img src="img/Fixation.jpg"></img>'
         }
 
         var test_procedure = {
-          timeline: [fixation, test],
+          timeline: [test],
           timeline_variables: test_stimuli,
           randomize_order: true,
           sample: {type:"with-replacement",size: n_trial_per_block,weights:[8,2]}
@@ -126,10 +116,7 @@
           type: "single-stim",
           stimulus: jsPsych.timelineVariable( 'stimulus'),
           data: jsPsych.timelineVariable('data'),
-          timing_response: 83,
-          on_finish: function(data){
-            data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
-          }
+          timing_response: 83
         }
 
         var test_procedure = {
@@ -166,13 +153,14 @@
         timeline.push(debrief_block);
       }
     }
-          var instructions = {
-            type: "text",
-            text: "<p>Please remain seated as the experimenter rearranges the technology for the proceeding part of the experiment." +
-              " Thank you.</p><p>",
-            timing_post_trial: 2000
-          };
-          timeline.push(instructions);
+    var instruction_change = {
+      type: "text",
+      text: "<p>Please remain seated as the experimenter rearranges the technology for the proceeding part of the experiment." +
+        " Thank you.</p><p>",
+      timing_post_trial: 2000
+      }
+
+    timeline.push(instruction_change);
 
     jsPsych.init({
       timeline: timeline,
