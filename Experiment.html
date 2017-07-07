@@ -166,14 +166,20 @@
         timeline.push(debrief_block);
       }
     }
-
-    "<p>This portion of the test is complete. Please remain seated as the experimenter rearranges the technology for the proceeding part of the experiment.</p>"
+          var instructions = {
+            type: "text",
+            text: "<p>Please remain seated as the experimenter rearranges the technology for the proceeding part of the experiment." +
+              " Thank you.</p><p>",
+            timing_post_trial: 2000
+          };
+          timeline.push(instructions);
 
     jsPsych.init({
       timeline: timeline,
       preload_images: ['img/Blue.jpg','img/Red.jpg','img/Fixation.jpg'],
       preload_audio: ['audio/1000.wav', 'audio/2000.wav'],
       on_finish: function() {
+        jsPsych.data.get().localSave('csv', 'experiment-data.csv');
       }
     });
   </script>
