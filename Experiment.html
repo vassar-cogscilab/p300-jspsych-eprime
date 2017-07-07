@@ -39,8 +39,8 @@
         timeline.push(instructions);
 
         var test_stimuli = [
-          { stimulus: "audio/1000.wav", data: {test_part: 'test', oddball_type: 'common', block: i}},
-          { stimulus: "audio/2000.wav", data: {test_part: 'test', oddball_type: 'rare', block: i}}
+          { stimulus: "audio/2000.wav", data: {test_part: 'test', oddball_type: 'common', block: i}},
+          { stimulus: "audio/1000.wav", data: {test_part: 'test', oddball_type: 'rare', block: i}}
         ];
 
         var test = {
@@ -165,7 +165,7 @@
     jsPsych.init({
       timeline: timeline,
       preload_images: ['img/Blue.jpg','img/Red.jpg','img/Fixation.jpg'],
-      preload_audio: ['audio/1000.wav', 'audio/2000.wav'],
+      preload_audio: ['audio/2000.wav', 'audio/1000.wav'],
       on_finish: function() {
         jsPsych.data.get().localSave('csv', 'experiment-data.csv');
       }
