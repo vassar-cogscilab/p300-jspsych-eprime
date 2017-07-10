@@ -72,8 +72,6 @@
             var common_trials = jsPsych.data.get().filter({oddball_type: 'common', block: which_block}).count();
             var rare_trials = jsPsych.data.get().filter({oddball_type: 'rare', block: which_block}).count();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
             return "<p>There was/were "+rare_trials+" high frequency tone/tones.<p>Press any key to complete this part of the experiment and continue to the next</p>";
 =======
             return "<p>There were "+rare_trials+" high frequency tones.<p>Press any key to complete this part of the experiment and continue to the next</p>";
