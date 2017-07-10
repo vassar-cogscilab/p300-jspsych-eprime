@@ -73,7 +73,11 @@
             var rare_trials = jsPsych.data.get().filter({oddball_type: 'rare', block: which_block}).count();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             return "<p>There was/were "+rare_trials+" high frequency tone/tones.<p>Press any key to complete this part of the experiment and continue to the next</p>";
+=======
+            return "<p>There were "+rare_trials+" high frequency tones.<p>Press any key to complete this part of the experiment and continue to the next</p>";
+>>>>>>> f3735b4935121ec49014130ce11b93b77a4b106d
 =======
             return "<p>There were "+rare_trials+" high frequency tones.<p>Press any key to complete this part of the experiment and continue to the next</p>";
 >>>>>>> f3735b4935121ec49014130ce11b93b77a4b106d
@@ -129,7 +133,11 @@
         var survey_trial = {
           type: 'survey-text',
 <<<<<<< HEAD
+<<<<<<< HEAD
           questions: ["How many red circles was/were there?"],
+=======
+          questions: ["How many red circles were there? Input your answer and click next to continue to the next part of the experiment."],
+>>>>>>> f3735b4935121ec49014130ce11b93b77a4b106d
 =======
           questions: ["How many red circles were there? Input your answer and click next to continue to the next part of the experiment."],
 >>>>>>> f3735b4935121ec49014130ce11b93b77a4b106d
@@ -148,7 +156,11 @@
           var rare_trials = jsPsych.data.get().filter({oddball_type: 'rare', block: which_block}).count();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
           return "<p>There was/were "+rare_trials+" red circle/circles.</p>This portion of the test is now complete. Please proceed to the next part by pressing any key.</p>";
+=======
+          return "<p>There were "+rare_trials+" red circles.</p><p>Press any key to complete this part of the experiment and continue to the next.</p>";
+>>>>>>> f3735b4935121ec49014130ce11b93b77a4b106d
 =======
           return "<p>There were "+rare_trials+" red circles.</p><p>Press any key to complete this part of the experiment and continue to the next.</p>";
 >>>>>>> f3735b4935121ec49014130ce11b93b77a4b106d
