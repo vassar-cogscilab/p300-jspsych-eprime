@@ -31,9 +31,9 @@
 
         var instructions = {
           type: "text",
-          text: "<p>In this experiment, you will hear either a high frequency tone or a low frequency tone" +
-          " through your headset.</p><p>Your task is to count how many times you hear the high pitched tone," +
-          "<p>Press any key to begin",
+          text: "<p>Welcome to the experiment! There will be both high frequency and low frequency tones played through your headset. " +
+          " For this part of the experiment you will be tasked with counting</p><p> the correct number of high frequency tones you hear," +
+          "<p>The test will begin immediately after you press any key.",
         timing_post_trial: 2000
         };
         timeline.push(instructions);
@@ -93,7 +93,7 @@
           type: "text",
           text: "<p>In this experiment, either a red or blue circle with a black plus sign in the center will appear" +
             " on the screen.</p><p>Your task is to count how many of the circles are the color red.</p>" +
-            "<p>Press any key to begin</p>" +
+            "<p>Press any key to continue and immediately start the test.</p>" +
             "<div style='float: left;'><img src='img/Blue.jpg'></img></div>" +
             "<div style='float: right;'><img src='img/Red.jpg'></img></div>",
           timing_post_trial: 2000
@@ -131,7 +131,7 @@
 
         var survey_trial = {
           type: 'survey-text',
-          questions: ["How many circles were red?"],
+          questions: ["How many red circles were there?"],
           rows: [1],
           columns: [1],
           data: {block: i}
