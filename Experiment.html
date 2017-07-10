@@ -18,13 +18,6 @@
 
     var timeline = [];
 
-    var welcome = {
-      type: "text",
-      text: "Welcome to the experiment. Press any key to begin."
-    };
-    timeline.push(welcome);
-
-
     for(var i=0; i<type_order.length; i++){
 
       if(type_order[i] == 'audio'){
@@ -64,7 +57,7 @@
 
         var survey_trial = {
           type: 'survey-text',
-          questions: ["How many times did you hear the high pitched tone?"],
+          questions: ["How many times did you hear the high pitched tone? Input your answer and click next to continue to the next part of the experiment."],
           rows: [1],
           columns: [1],
           data: {block: i}
@@ -79,7 +72,7 @@
             var common_trials = jsPsych.data.get().filter({oddball_type: 'common', block: which_block}).count();
             var rare_trials = jsPsych.data.get().filter({oddball_type: 'rare', block: which_block}).count();
 
-            return "<p>There were "+common_trials+" low frequency tones.</p><p>There were "+rare_trials+" high frequency tones.<p>Press any key to complete this part of the experiment and continue to the next</p>";
+            return "<p>There were "+rare_trials+" high frequency tones.<p>Press any key to complete this part of the experiment and continue to the next</p>";
           }
         }
 
@@ -131,7 +124,7 @@
 
         var survey_trial = {
           type: 'survey-text',
-          questions: ["How many red circles were there?"],
+          questions: ["How many red circles were there? Input your answer and click next to continue to the next part of the experiment."],
           rows: [1],
           columns: [1],
           data: {block: i}
@@ -146,7 +139,7 @@
           var common_trials = jsPsych.data.get().filter({oddball_type: 'common', block: which_block}).count();
           var rare_trials = jsPsych.data.get().filter({oddball_type: 'rare', block: which_block}).count();
 
-          return "<p>There were "+common_trials+" blue circles.</p><p>There were "+rare_trials+" red circles.</p>This portion of the test is now complete. Please proceed to the next part by pressing any key.</p>";
+          return "<p>There were "+rare_trials+" red circles.</p><p>Press any key to complete this part of the experiment and continue to the next.</p>";
           }
         }
 
