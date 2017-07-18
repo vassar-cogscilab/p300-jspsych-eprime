@@ -95,6 +95,12 @@ jsPsych.plugins["single-stim"] = (function() {
     // draw
     display_element.innerHTML = new_html;
 
+    jsPsych.pluginAPI.hardware({
+      target: "parallel",
+      action: "trigger",
+      payload: 255
+    });
+
     // store response
     var response = {
       rt: -1,

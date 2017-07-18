@@ -160,6 +160,12 @@ jsPsych.plugins["single-audio"] = (function() {
       audio.play();
     }
 
+    jsPsych.pluginAPI.hardware({
+      target: "parallel",
+      action: "trigger",
+      payload: 255
+    });
+
     // start the response listener
     if(context !== null) {
       var keyboardListener = jsPsych.pluginAPI.getKeyboardResponse({
