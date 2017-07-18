@@ -14,17 +14,26 @@
 
     // experiment parameters
     var n_trial_per_block = 40;
-    var type_order = ['audio', 'visual', 'audio', 'visual'];
+    var type_order = ['welcome', 'audio', 'visual', 'audio', 'visual'];
 
     var timeline = [];
 
     for(var i=0; i<type_order.length; i++){
 
+      if(type_order[i] == 'welcome'){
+
+        var welcome = {
+          type: "text",
+          text: "<p>Welcome to the experiment! Please press any key to continue.</p>",
+        timing_post_trial: 2000
+        };
+        timeline.push(welcome);
+
       if(type_order[i] == 'audio'){
 
         var instructions = {
           type: "text",
-          text: "<p>Welcome to the experiment! There will be both high frequency and low frequency tones played through your headset. " +
+          text: "<p>There will be both high frequency and low frequency tones played through your headset. " +
           " For this part of the experiment you will be tasked with counting the correct number of high frequency tones you hear.</p>" +
           "<p>The test will begin immediately after you press any key.</p>",
         timing_post_trial: 2000
@@ -85,7 +94,7 @@
 
         var instructions = {
           type: "text",
-          text: "<p>In this experiment, either a red or blue circle with a black plus sign in the center will appear" +
+          text: "<p>In this section, either a red or blue circle with a black plus sign in the center will appear" +
             " on the screen.</p><p>Your task is to count how many of the circles are the color red.</p>" +
             "<p>Press any key to continue and immediately start the test.</p>" +
             "<div style='float: left;'><img src='img/Blue.jpg'></img></div>" +
@@ -140,7 +149,7 @@
           var common_trials = jsPsych.data.get().filter({oddball_type: 'common', block: which_block}).count();
           var rare_trials = jsPsych.data.get().filter({oddball_type: 'rare', block: which_block}).count();
 
-          return "<p>There was/were "+rare_trials+" red circle/circles.</p>This portion of the test is now complete. Please proceed to the next part by pressing any key.</p>";
+          return "<p>There were "+rare_trials+" red circles.</p>This portion of the test is now complete. Please proceed to the next part by pressing any key.</p>";
 
           }
         }
