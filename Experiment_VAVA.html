@@ -13,33 +13,30 @@
   <script>
 
     // experiment parameters
-
     var n_trial_per_block = 550;
-    var type_order = ['welcome','visual', 'audio', 'visual', 'audio'];
+    var type_order = ['visual', 'audio', 'visual', 'audio'];
 
     var timeline = [];
 
+    var welcome = {
+      type: "text",
+      text: "<p>Welcome to the experiment! Please press any key to continue.</p>",
+      timing_post_trial: 2000
+    };
+    timeline.push(welcome);
+
     for(var i=0; i<type_order.length; i++){
-
-      if(type_order[i] == 'welcome'){
-
-        var welcome = {
-          type: "text",
-          text: "<p>Welcome to the experiment! Please press any key to continue.</p>",
-        timing_post_trial: 2000
-        };
-        timeline.push(welcome);
 
       if(type_order[i] == 'audio'){
 
         var instructions = {
           type: "text",
           text: "<p>There will be both high frequency and low frequency tones played through your headset. " +
-          " For this part of the experiment you will be tasked with counting the correct number of high frequency tones you hear.</p>" +
-          "<p>The test will begin immediately after you press any key.</p>",
-        timing_post_trial: 2000
+            " For this part of the experiment you will be tasked with counting the correct number of high frequency tones you hear.</p>" +
+            "<p>The test will begin immediately after you press any key.</p>",
+          timing_post_trial: 2000
         };
-      }
+
         timeline.push(instructions);
 
         var test_stimuli = [
@@ -147,12 +144,11 @@
         var debrief_block = {
           type: "text",
           text: function() {
-          var which_block = jsPsych.data.get().last(1).values()[0].block;
-          var common_trials = jsPsych.data.get().filter({oddball_type: 'common', block: which_block}).count();
-          var rare_trials = jsPsych.data.get().filter({oddball_type: 'rare', block: which_block}).count();
+            var which_block = jsPsych.data.get().last(1).values()[0].block;
+            var common_trials = jsPsych.data.get().filter({oddball_type: 'common', block: which_block}).count();
+            var rare_trials = jsPsych.data.get().filter({oddball_type: 'rare', block: which_block}).count();
 
-          return "<p>There were "+rare_trials+" red circles.</p>This portion of the test is now complete. Please proceed to the next part by pressing any key.</p>";
-
+            return "<p>There were "+rare_trials+" red circles.</p>This portion of the test is now complete. Please proceed to the next part by pressing any key.</p>";
           }
         }
 
@@ -164,7 +160,7 @@
       text: "<p>Please remain seated as the experimenter rearranges the technology for the proceeding part of the experiment." +
         " Thank you.</p><p>",
       timing_post_trial: 2000
-      }
+    }
 
     timeline.push(instruction_change);
 
