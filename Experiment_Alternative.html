@@ -85,7 +85,7 @@
 
         var instructions = {
           type: "text",
-          text: "<p>In this experiment, either a red or blue circle with a black plus sign in the center will appear" +
+          text: "<p>In this section, either a red or blue circle with a black plus sign in the center will appear" +
             " on the screen.</p><p>Your task is to count how many of the circles are the color red.</p>" +
             "<p>Press any key to continue and immediately start the test.</p>" +
             "<div style='float: left;'><img src='img/Blue.jpg'></img></div>" +
@@ -140,7 +140,7 @@
           var common_trials = jsPsych.data.get().filter({oddball_type: 'common', block: which_block}).count();
           var rare_trials = jsPsych.data.get().filter({oddball_type: 'rare', block: which_block}).count();
 
-          return "<p>There was/were "+rare_trials+" red circle/circles.</p>This portion of the test is now complete. Please proceed to the next part by pressing any key.</p>";
+          return "<p>There were "+rare_trials+" red circles.</p>This portion of the test is now complete. Please proceed to the next part by pressing any key.</p>";
 
           }
         }
