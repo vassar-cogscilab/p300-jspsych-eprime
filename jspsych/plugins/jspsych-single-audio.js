@@ -160,11 +160,13 @@ jsPsych.plugins["single-audio"] = (function() {
       audio.play();
     }
 
-    jsPsych.pluginAPI.hardware({
-      target: "parallel",
-      action: "trigger",
-      payload: 255
-    });
+    if(typeof trial.payload !== 'undefined'){
+      jsPsych.pluginAPI.hardware({
+        target: "parallel",
+        action: "trigger",
+        payload: trial.payload
+      });
+    }
 
     // start the response listener
     if(context !== null) {

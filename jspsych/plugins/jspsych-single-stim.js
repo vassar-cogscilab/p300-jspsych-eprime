@@ -95,11 +95,13 @@ jsPsych.plugins["single-stim"] = (function() {
     // draw
     display_element.innerHTML = new_html;
 
-    jsPsych.pluginAPI.hardware({
-      target: "parallel",
-      action: "trigger",
-      payload: 255
-    });
+    if(typeof trial.payload !== 'undefined'){
+      jsPsych.pluginAPI.hardware({
+        target: "parallel",
+        action: "trigger",
+        payload: trial.payload
+      });
+    }
 
     // store response
     var response = {
