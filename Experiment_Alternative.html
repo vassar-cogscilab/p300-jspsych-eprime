@@ -5,29 +5,18 @@
     <script src="jspsych/jspsych.js"></script>
     <script src="jspsych/plugins/jspsych-text.js"></script>
     <script src="jspsych/plugins/jspsych-survey-text.js"></script>
+    <link href="jspsych/css/jspsych.css" rel="stylesheet" type="text/css"></link>
     <script src="jspsych/plugins/jspsych-single-stim.js"></script>
     <script src="jspsych/plugins/jspsych-single-audio.js"></script>
-    <link href="jspsych/css/jspsych.css" rel="stylesheet" type="text/css"></link>
 	</head>
 	<body></body>
   <script>
 
     // experiment parameters
-    var n_trial_per_block = 550;
-    var type_order = ['audio', 'visual', 'audio', 'visual'];
-    var payload_audio_rare = 2;
-    var payload_audio_common = 4;
-    var payload_visual_rare = 8;
-    var payload_visual_common = 16;
+    var n_trial_per_block = 40;
+    var type_order = ['visual', 'audio', 'visual', 'audio'];
 
     var timeline = [];
-
-    var welcome = {
-      type: "text",
-      text: "<p>Welcome to the experiment! Please press any key to continue.</p>",
-      timing_post_trial: 2000
-    };
-    timeline.push(welcome);
 
     for(var i=0; i<type_order.length; i++){
 
@@ -35,17 +24,16 @@
 
         var instructions = {
           type: "text",
-          text: "<p>There will be both high frequency and low frequency tones played through the logitech speakers. " +
-            " For this part of the experiment, count the number of high frequency tones you hear. Remember to keep your eyes focused on the black plus sign in the center of the screen.</p>" +
-            "<p>The test will begin immediately after you press any key.</p>",
-          timing_post_trial: 2000
+          text: "<p>Welcome to the experiment! There will be both high frequency and low frequency tones played through your headset. " +
+          " For this part of the experiment you will be tasked with counting the correct number of high frequency tones you hear.</p>" +
+          "<p>The test will begin immediately after you press any key.</p>",
+        timing_post_trial: 2000
         };
-
         timeline.push(instructions);
 
         var test_stimuli = [
-          { stimulus: "audio/2000.wav", payload: payload_audio_common, data: {test_part: 'test', oddball_type: 'common', block: i}},
-          { stimulus: "audio/1000.wav", payload: payload_audio_rare, data: {test_part: 'test', oddball_type: 'rare', block: i}}
+          { stimulus: "audio/2000.wav", data: {test_part: 'test', oddball_type: 'common', block: i}},
+          { stimulus: "audio/1000.wav", data: {test_part: 'test', oddball_type: 'rare', block: i}}
         ];
 
         var test = {
@@ -54,7 +42,6 @@
           data: jsPsych.timelineVariable('data'),
           trial_ends_after_audio: true,
           choices: jsPsych.NO_KEYS,
-          payload: jsPsych.timelineVariable('payload'),
           prompt: '<img src="img/Fixation.jpg"></img>'
         }
 
@@ -85,7 +72,7 @@
             var common_trials = jsPsych.data.get().filter({oddball_type: 'common', block: which_block}).count();
             var rare_trials = jsPsych.data.get().filter({oddball_type: 'rare', block: which_block}).count();
 
-            return "<p>There were "+rare_trials+" high frequency tones.</p><p>Press any key to complete this part of the experiment and continue to the next.</p>";
+            return "<p>There were "+rare_trials+" high frequency tones.<p>Press any key to complete this part of the experiment and continue to the next</p>";
 
           }
         }
@@ -99,7 +86,7 @@
         var instructions = {
           type: "text",
           text: "<p>In this section, either a red or blue circle with a black plus sign in the center will appear" +
-            " on the screen.</p><p>Your task is to count how many of the circles are the color red. Remember to keep your eyes focused on the black plus sign in the center of the screen.</p>" +
+            " on the screen.</p><p>Your task is to count how many of the circles are the color red.</p>" +
             "<p>Press any key to continue and immediately start the test.</p>" +
             "<div style='float: left;'><img src='img/Blue.jpg'></img></div>" +
             "<div style='float: right;'><img src='img/Red.jpg'></img></div>",
@@ -108,8 +95,8 @@
         timeline.push(instructions);
 
         var test_stimuli = [
-          { stimulus: "img/Blue.jpg", payload: payload_visual_common, data: {test_part: 'test', oddball_type: 'common', block: i}},
-          { stimulus: "img/Red.jpg", payload: payload_visual_rare, data: {test_part: 'test', oddball_type: 'rare', block: i}}
+          { stimulus: "img/Blue.jpg", data: {test_part: 'test', oddball_type: 'common', block: i}},
+          { stimulus: "img/Red.jpg", data: {test_part: 'test', oddball_type: 'rare', block: i}}
         ];
 
         var fixation = {
@@ -123,8 +110,7 @@
           type: "single-stim",
           stimulus: jsPsych.timelineVariable( 'stimulus'),
           data: jsPsych.timelineVariable('data'),
-          timing_response: 83,
-          payload: jsPsych.timelineVariable('payload')
+          timing_response: 83
         }
 
         var test_procedure = {
@@ -150,11 +136,12 @@
         var debrief_block = {
           type: "text",
           text: function() {
-            var which_block = jsPsych.data.get().last(1).values()[0].block;
-            var common_trials = jsPsych.data.get().filter({oddball_type: 'common', block: which_block}).count();
-            var rare_trials = jsPsych.data.get().filter({oddball_type: 'rare', block: which_block}).count();
+          var which_block = jsPsych.data.get().last(1).values()[0].block;
+          var common_trials = jsPsych.data.get().filter({oddball_type: 'common', block: which_block}).count();
+          var rare_trials = jsPsych.data.get().filter({oddball_type: 'rare', block: which_block}).count();
 
-            return "<p>There were "+rare_trials+" red circles.</p><p>Press any key to complete this part of the experiment and continue to the next.</p>";
+          return "<p>There were "+rare_trials+" red circles.</p>This portion of the test is now complete. Please proceed to the next part by pressing any key.</p>";
+
           }
         }
 
@@ -163,9 +150,10 @@
     }
     var instruction_change = {
       type: "text",
-      text: "<p>Please remain seated and alert the instructor you have finished the experiment, the experimenter will be in shortly thereafer, thank you.</p>",
+      text: "<p>Please remain seated as the experimenter rearranges the technology for the proceeding part of the experiment." +
+        " Thank you.</p><p>",
       timing_post_trial: 2000
-    }
+      }
 
     timeline.push(instruction_change);
 
