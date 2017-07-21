@@ -53,8 +53,8 @@
 
         var instructions = {
           type: "text",
-          text: "<p>There will be both high frequency and low frequency tones played through the logitech speakers. " +
-            " For this part of the experiment, count the number of high frequency tones you hear. Remember to keep your eyes focused on the black plus sign in the center of the screen.</p>" +
+          text: "<p>There will be both high pitched and low pitched tones played through the logitech speakers. " +
+            " For this part of the experiment, count the number of high pitched tones you hear. Remember to keep your eyes focused on the black plus sign in the center of the screen.</p>" +
             "<p>The test will begin immediately after you press any key.</p>",
           timing_post_trial: 2000
         };
@@ -106,7 +106,7 @@
             var common_trials = jsPsych.data.get().filter({oddball_type: 'common', block: which_block}).count();
             var rare_trials = jsPsych.data.get().filter({oddball_type: 'rare', block: which_block}).count();
 
-            return "<p>There were "+rare_trials+" high frequency tones.</p><p>Press any key to complete this part of the experiment and continue to the next.</p>";
+            return "<p>There were "+rare_trials+" high pitched tones.</p><p>Press any key to complete this part of the experiment and continue to the next.</p>";
 
           }
         }
