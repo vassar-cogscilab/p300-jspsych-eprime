@@ -7,13 +7,15 @@
     <script src="jspsych/plugins/jspsych-survey-text.js"></script>
     <script src="jspsych/plugins/jspsych-single-stim.js"></script>
     <script src="jspsych/plugins/jspsych-single-audio.js"></script>
+    <script src="jspsych/plugins/jspsych-call-function.js"></script>
     <link href="jspsych/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+    <style id="mouse-style"></style>
 	</head>
 	<body></body>
   <script>
 
     // experiment parameters
-    var n_trial_per_block = 550;
+    var n_trial_per_block = 10;
     var type_order = ['audio', 'visual', 'audio', 'visual'];
     var payload_audio_rare = 2;
     var payload_audio_common = 4;
@@ -21,6 +23,22 @@
     var payload_visual_common = 16;
 
     var timeline = [];
+
+    var hide_mouse = {
+      type: 'call-function',
+      func: function(){
+        document.querySelector('#mouse-style').innerHTML = '* { cursor: none;}';
+      }
+    }
+
+    var show_mouse = {
+      type: 'call-function',
+      func: function(){
+        document.querySelector('#mouse-style').innerHTML = '';
+      }
+    }
+
+    timeline.push(hide_mouse);
 
     var welcome = {
       type: "text",
@@ -67,6 +85,7 @@
 
         timeline.push(test_procedure);
 
+        timeline.push(show_mouse);
 
         var survey_trial = {
           type: 'survey-text',
@@ -78,10 +97,12 @@
 
         timeline.push(survey_trial);
 
+        timeline.push(hide_mouse);
+
         var debrief_block = {
           type: "text",
           text: function() {
-            var which_block = jsPsych.data.get().last(1).values()[0].block;
+            var which_block = jsPsych.data.get().last(2).values()[0].block;
             var common_trials = jsPsych.data.get().filter({oddball_type: 'common', block: which_block}).count();
             var rare_trials = jsPsych.data.get().filter({oddball_type: 'rare', block: which_block}).count();
 
@@ -136,6 +157,7 @@
 
         timeline.push(test_procedure);
 
+        timeline.push(show_mouse);
 
         var survey_trial = {
           type: 'survey-text',
@@ -147,10 +169,12 @@
 
         timeline.push(survey_trial);
 
+        timeline.push(hide_mouse);
+
         var debrief_block = {
           type: "text",
           text: function() {
-            var which_block = jsPsych.data.get().last(1).values()[0].block;
+            var which_block = jsPsych.data.get().last(2).values()[0].block;
             var common_trials = jsPsych.data.get().filter({oddball_type: 'common', block: which_block}).count();
             var rare_trials = jsPsych.data.get().filter({oddball_type: 'rare', block: which_block}).count();
 
@@ -163,7 +187,7 @@
     }
     var instruction_change = {
       type: "text",
-      text: "<p>Please remain seated and alert the instructor you have finished the experiment, the experimenter will be in shortly thereafer, thank you.</p>",
+      text: "<p>Please remain seated and alert the experimenter you have finished the experiment. The experimenter will be in shortly thereafer. Thank you!</p>",
       timing_post_trial: 2000
     }
 
