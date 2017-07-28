@@ -1,0 +1,1788 @@
+p3je-02-js_20170725_112556_fil_seg_bcr_ave__fin.mff
+
+Filtering : 0.1 Hz Highpass
+Time Stamp :
+Start Time: Fri, July, 28, 2017, 11:41:16 AM
+End Time: Fri, July, 28, 2017, 11:41:32 AM
+Time To Completion 00:00:15.832
+
+Settings: 
+Tool Version: 5.4
+Filter Setting: 0.1 Hz Highpass
+Filter Type: IIR
+Passband Gain: -0.01 dB
+Stopband Gain: -40 dB
+Rolloff: 2 Hz
+Compensated Phase Delay: FOHP
+
+
+Filtering : 30 Hz Lowpass
+Time Stamp :
+Start Time: Fri, July, 28, 2017, 11:41:16 AM
+End Time: Fri, July, 28, 2017, 11:41:32 AM
+Time To Completion 00:00:15.832
+
+Settings: 
+Tool Version: 5.4
+Filter Setting: 30 Hz Lowpass
+Filter Type: FIR
+Passband Gain: -0.01 dB
+Stopband Gain: -40 dB
+Rolloff: 2 Hz
+Compensated Phase Delay: 886 samples
+
+
+Segmentation : jspsych-eprime segmentation
+Time Stamp :
+Start Time: Fri, July, 28, 2017, 11:41:32 AM
+End Time: Fri, July, 28, 2017, 11:41:45 AM
+Time To Completion 00:00:13.427
+
+Settings: 
+Tool Version: 5.4
+  1: Rules for category "Visual Common"
+    Milliseconds Before: 200
+    Milliseconds After: 800
+    Milliseconds Offset: 0
+    Event 1:
+        Code is "DI16" or
+        (Code is "stim" and
+        Cell is "vis_common")
+  2: Rules for category "Visual Rare"
+    Milliseconds Before: 200
+    Milliseconds After: 800
+    Milliseconds Offset: 0
+    Event 1:
+        Code is "DIN8" or
+        (Code is "stim" and
+        Cell is "vis_rare")
+  3: Rules for category "Audio Common"
+    Milliseconds Before: 200
+    Milliseconds After: 800
+    Milliseconds Offset: 0
+    Event 1:
+        Code is "DIN4" or
+        (Code is "stim" and
+        Cell is "aud_common")
+  4: Rules for category "Audio Rare"
+    Milliseconds Before: 200
+    Milliseconds After: 800
+    Milliseconds Offset: 0
+    Event 1:
+        Code is "DIN2" or
+        (Code is "stim" and
+        Cell is "aud_rare")
+
+Results:
+Segmented to 4 categories and 2199 segments
+    1  : "Visual Common" has 886 segments
+    2  : "Visual Rare" has 214 segments
+    3  : "Audio Common" has 863 segments
+    4  : "Audio Rare" has 236 segments
+
+
+Artifact Detection : Artifact Detection
+Time Stamp :
+Start Time: Fri, July, 28, 2017, 11:41:50 AM
+End Time: Fri, July, 28, 2017, 11:42:04 AM
+Time To Completion 00:00:13.303
+
+Settings: 
+Tool Version: 5.4
+Create log file
+Mark channel bad in recording if bad for greater than 20 percent.
+    Mark segment bad if it contains more than 10 bad channels.
+    Mark segment bad if it contains eye blinks.
+    Mark segment bad if it contains eye movement.
+Overwrite prior threshold records.
+Bad Channel Threshold
+Max - Min > 200.00
+Entire segment.
+Perform a moving average of 80 ms
+
+Eye Blink Threshold
+Max - Min > 140.00
+Window size: 640 ms
+Perform a moving average of 80 ms
+Exclude inferior eye channels?
+    Left: No
+    Right: No
+
+Eye Movement Threshold
+Max - Min > 55.00
+Window size: 640 ms
+Perform a moving average of 80 ms
+
+
+Results:
+Log File: p3je-02-js_20170725_112556_fil_seg.log
+Results from: Bad Channel Threshold
+    Number of Channels Marked Bad: 7903
+    Number of Bad Channel Records: 7903
+Results from: Eye Blink Threshold
+    Number of Eye Blink Records: 2234
+Results from: Eye Movement Threshold
+    Number of Eye Movement Records: 31
+Channels marked bad in entire recording.
+56, 65, 108
+Segments Marked Bad: 603
+Segments marked bad for eye blinks: 26.42% (581/2199)
+Segments marked bad for eye movements: 0.45% (10/2199)
+Segments marked bad for number of bad channels: 0.55% (12/2199)
+
+
+Bad Channel Replacement Tool : Bad Channel Replacement Copy
+Time Stamp :
+Start Time: Fri, July, 28, 2017, 11:42:04 AM
+End Time: Fri, July, 28, 2017, 11:45:46 AM
+Time To Completion 00:03:42.075
+
+Settings: 
+Tool Version: 5.4
+
+Results:
+Category : 1 Segment : 1 56 , 65 , 90 , 107 , 108 , 119
+Category : 1 Segment : 2 56 , 65 , 90 , 107 , 108 , 119
+Category : 1 Segment : 3 56 , 65 , 107 , 108 , 119
+Category : 1 Segment : 4 56 , 65 , 107 , 108 , 119
+Category : 1 Segment : 5 56 , 65 , 108 , 119
+Category : 1 Segment : 6 56 , 65 , 108 , 119
+Category : 1 Segment : 7 56 , 65 , 108 , 119
+Category : 1 Segment : 13 56 , 108 , 65
+Category : 1 Segment : 14 56 , 65 , 108
+Category : 1 Segment : 15 56 , 108 , 65
+Category : 1 Segment : 16 108 , 56 , 65
+Category : 1 Segment : 17 108 , 56 , 65
+Category : 1 Segment : 18 108 , 56 , 65
+Category : 1 Segment : 19 56 , 65 , 108
+Category : 1 Segment : 20 56 , 65 , 108
+Category : 1 Segment : 21 56 , 65 , 108
+Category : 1 Segment : 22 65 , 108 , 56
+Category : 1 Segment : 23 65 , 108 , 56
+Category : 1 Segment : 24 56 , 65 , 108
+Category : 1 Segment : 25 56 , 65 , 108
+Category : 1 Segment : 26 56 , 65 , 108
+Category : 1 Segment : 27 56 , 65 , 108
+Category : 1 Segment : 28 108 , 56 , 65
+Category : 1 Segment : 29 108 , 56 , 65
+Category : 1 Segment : 30 56 , 108 , 65
+Category : 1 Segment : 31 56 , 108 , 65
+Category : 1 Segment : 32 56 , 65 , 108
+Category : 1 Segment : 33 56 , 65 , 108
+Category : 1 Segment : 39 65 , 108 , 56
+Category : 1 Segment : 40 65 , 108 , 56
+Category : 1 Segment : 41 108 , 56 , 65
+Category : 1 Segment : 42 56 , 108 , 65
+Category : 1 Segment : 43 56 , 65 , 108
+Category : 1 Segment : 44 56 , 65 , 108
+Category : 1 Segment : 45 56 , 65 , 107 , 108
+Category : 1 Segment : 46 56 , 65 , 107 , 108
+Category : 1 Segment : 47 56 , 65 , 107 , 108
+Category : 1 Segment : 48 56 , 65 , 107 , 108
+Category : 1 Segment : 49 56 , 65 , 107 , 108
+Category : 1 Segment : 50 56 , 65 , 107 , 108
+Category : 1 Segment : 51 65 , 108 , 56
+Category : 1 Segment : 52 108 , 56 , 65
+Category : 1 Segment : 53 108 , 56 , 65
+Category : 1 Segment : 54 65 , 108 , 56
+Category : 1 Segment : 55 65 , 108 , 56
+Category : 1 Segment : 56 65 , 108 , 56
+Category : 1 Segment : 57 65 , 56 , 108
+Category : 1 Segment : 58 108 , 56 , 65
+Category : 1 Segment : 59 108 , 56 , 65
+Category : 1 Segment : 60 108 , 56 , 65
+Category : 1 Segment : 61 108 , 56 , 65
+Category : 1 Segment : 62 56 , 65 , 108
+Category : 1 Segment : 63 56 , 65 , 108
+Category : 1 Segment : 64 108 , 56 , 65
+Category : 1 Segment : 65 65 , 108 , 56
+Category : 1 Segment : 66 65 , 108 , 56
+Category : 1 Segment : 67 65 , 108 , 56
+Category : 1 Segment : 68 65 , 108 , 56
+Category : 1 Segment : 69 65 , 108 , 56
+Category : 1 Segment : 70 65 , 108 , 120 , 56
+Category : 1 Segment : 71 65 , 108 , 120 , 56
+Category : 1 Segment : 72 65 , 108 , 120 , 56
+Category : 1 Segment : 73 65 , 108 , 56
+Category : 1 Segment : 74 65 , 108 , 56
+Category : 1 Segment : 79 108 , 56 , 65
+Category : 1 Segment : 80 108 , 56 , 65
+Category : 1 Segment : 81 56 , 65 , 108
+Category : 1 Segment : 82 108 , 56 , 65
+Category : 1 Segment : 83 108 , 56 , 65
+Category : 1 Segment : 84 108 , 56 , 65
+Category : 1 Segment : 85 108 , 56 , 65
+Category : 1 Segment : 86 108 , 56 , 65
+Category : 1 Segment : 87 108 , 56 , 65
+Category : 1 Segment : 88 108 , 56 , 65
+Category : 1 Segment : 89 108 , 56 , 65
+Category : 1 Segment : 90 108 , 56 , 65
+Category : 1 Segment : 91 56 , 65 , 108
+Category : 1 Segment : 92 65 , 108 , 56
+Category : 1 Segment : 93 65 , 108 , 56
+Category : 1 Segment : 94 65 , 108 , 56
+Category : 1 Segment : 95 108 , 56 , 65
+Category : 1 Segment : 96 108 , 56 , 65
+Category : 1 Segment : 97 65 , 108 , 56
+Category : 1 Segment : 98 65 , 108 , 56
+Category : 1 Segment : 99 108 , 56 , 65
+Category : 1 Segment : 100 65 , 108 , 56
+Category : 1 Segment : 101 65 , 108 , 56
+Category : 1 Segment : 102 65 , 108 , 56
+Category : 1 Segment : 103 108 , 56 , 65
+Category : 1 Segment : 107 108 , 56 , 65
+Category : 1 Segment : 108 65 , 108 , 56
+Category : 1 Segment : 109 56 , 65 , 108
+Category : 1 Segment : 110 56 , 108 , 65
+Category : 1 Segment : 111 108 , 56 , 65
+Category : 1 Segment : 112 108 , 56 , 65
+Category : 1 Segment : 113 108 , 56 , 65
+Category : 1 Segment : 114 108 , 56 , 65
+Category : 1 Segment : 115 108 , 56 , 65
+Category : 1 Segment : 116 56 , 65 , 108
+Category : 1 Segment : 117 56 , 65 , 108
+Category : 1 Segment : 118 56 , 65 , 108
+Category : 1 Segment : 119 108 , 56 , 65
+Category : 1 Segment : 120 56 , 65 , 108
+Category : 1 Segment : 121 56 , 108 , 65
+Category : 1 Segment : 122 56 , 65 , 108
+Category : 1 Segment : 123 108 , 56 , 65
+Category : 1 Segment : 124 108 , 56 , 65
+Category : 1 Segment : 125 108 , 56 , 65
+Category : 1 Segment : 126 65 , 56 , 108
+Category : 1 Segment : 127 65 , 56 , 108
+Category : 1 Segment : 128 108 , 56 , 65
+Category : 1 Segment : 129 65 , 108 , 56
+Category : 1 Segment : 130 65 , 108 , 56
+Category : 1 Segment : 131 56 , 65 , 108
+Category : 1 Segment : 132 65 , 108 , 56
+Category : 1 Segment : 133 65 , 108 , 56
+Category : 1 Segment : 134 108 , 56 , 65
+Category : 1 Segment : 135 56 , 65 , 108
+Category : 1 Segment : 136 56 , 65 , 108
+Category : 1 Segment : 137 108 , 56 , 65
+Category : 1 Segment : 138 108 , 56 , 65
+Category : 1 Segment : 139 56 , 108 , 65
+Category : 1 Segment : 140 56 , 108 , 65
+Category : 1 Segment : 141 108 , 56 , 65
+Category : 1 Segment : 142 108 , 56 , 65
+Category : 1 Segment : 143 56 , 65 , 108
+Category : 1 Segment : 144 56 , 65 , 108
+Category : 1 Segment : 148 108 , 56 , 65
+Category : 1 Segment : 149 108 , 56 , 65
+Category : 1 Segment : 150 108 , 56 , 65
+Category : 1 Segment : 151 108 , 56 , 65
+Category : 1 Segment : 152 108 , 56 , 65
+Category : 1 Segment : 153 108 , 56 , 65
+Category : 1 Segment : 154 108 , 56 , 65
+Category : 1 Segment : 155 65 , 108 , 56
+Category : 1 Segment : 156 65 , 108 , 56
+Category : 1 Segment : 157 65 , 108 , 56
+Category : 1 Segment : 158 65 , 108 , 56
+Category : 1 Segment : 163 56 , 65 , 108
+Category : 1 Segment : 164 56 , 65 , 108
+Category : 1 Segment : 165 56 , 65 , 108
+Category : 1 Segment : 166 65 , 56 , 108
+Category : 1 Segment : 167 65 , 108 , 56
+Category : 1 Segment : 168 65 , 108 , 56
+Category : 1 Segment : 169 65 , 108 , 56
+Category : 1 Segment : 170 65 , 56 , 108
+Category : 1 Segment : 171 65 , 56 , 108
+Category : 1 Segment : 172 56 , 65 , 108
+Category : 1 Segment : 177 108 , 56 , 65
+Category : 1 Segment : 178 108 , 56 , 65
+Category : 1 Segment : 179 108 , 56 , 65
+Category : 1 Segment : 180 108 , 56 , 65
+Category : 1 Segment : 181 108 , 56 , 65
+Category : 1 Segment : 182 108 , 56 , 65
+Category : 1 Segment : 183 108 , 56 , 65
+Category : 1 Segment : 184 108 , 56 , 65
+Category : 1 Segment : 185 108 , 56 , 65
+Category : 1 Segment : 190 108 , 56 , 65
+Category : 1 Segment : 191 108 , 56 , 65
+Category : 1 Segment : 192 108 , 56 , 65
+Category : 1 Segment : 193 108 , 56 , 65
+Category : 1 Segment : 194 108 , 56 , 65
+Category : 1 Segment : 195 108 , 56 , 65
+Category : 1 Segment : 196 108 , 56 , 65
+Category : 1 Segment : 197 65 , 108 , 56
+Category : 1 Segment : 198 65 , 108 , 56
+Category : 1 Segment : 199 65 , 56 , 108
+Category : 1 Segment : 200 65 , 56 , 108
+Category : 1 Segment : 201 108 , 56 , 65
+Category : 1 Segment : 202 108 , 56 , 65
+Category : 1 Segment : 203 108 , 56 , 65
+Category : 1 Segment : 204 56 , 65 , 108
+Category : 1 Segment : 205 56 , 65 , 108
+Category : 1 Segment : 206 56 , 65 , 108
+Category : 1 Segment : 207 56 , 65 , 108
+Category : 1 Segment : 208 108 , 56 , 65
+Category : 1 Segment : 213 56 , 65 , 108
+Category : 1 Segment : 214 56 , 108 , 65
+Category : 1 Segment : 215 56 , 108 , 65
+Category : 1 Segment : 216 108 , 56 , 65
+Category : 1 Segment : 217 108 , 56 , 65
+Category : 1 Segment : 218 108 , 56 , 65
+Category : 1 Segment : 219 108 , 56 , 65
+Category : 1 Segment : 220 108 , 56 , 65
+Category : 1 Segment : 221 108 , 56 , 65
+Category : 1 Segment : 222 108 , 56 , 65
+Category : 1 Segment : 223 108 , 56 , 65
+Category : 1 Segment : 224 65 , 56 , 108
+Category : 1 Segment : 225 65 , 56 , 108
+Category : 1 Segment : 226 108 , 56 , 65
+Category : 1 Segment : 227 56 , 108 , 65
+Category : 1 Segment : 228 65 , 56 , 108
+Category : 1 Segment : 237 65 , 108 , 56
+Category : 1 Segment : 238 65 , 56 , 108
+Category : 1 Segment : 239 65 , 56 , 108
+Category : 1 Segment : 240 65 , 56 , 108
+Category : 1 Segment : 241 65 , 56 , 108
+Category : 1 Segment : 242 65 , 56 , 108
+Category : 1 Segment : 243 56 , 65 , 108
+Category : 1 Segment : 244 65 , 108 , 56
+Category : 1 Segment : 245 56 , 65 , 108
+Category : 1 Segment : 246 56 , 65 , 108
+Category : 1 Segment : 247 56 , 65 , 108
+Category : 1 Segment : 249 65 , 108 , 56
+Category : 1 Segment : 250 65 , 108 , 56
+Category : 1 Segment : 251 65 , 56 , 108
+Category : 1 Segment : 252 65 , 108 , 56
+Category : 1 Segment : 253 65 , 108 , 56
+Category : 1 Segment : 258 56 , 108 , 65
+Category : 1 Segment : 259 56 , 108 , 65
+Category : 1 Segment : 260 108 , 56 , 65
+Category : 1 Segment : 261 65 , 108 , 56
+Category : 1 Segment : 262 65 , 108 , 56
+Category : 1 Segment : 263 65 , 108 , 56
+Category : 1 Segment : 264 65 , 108 , 56
+Category : 1 Segment : 265 108 , 56 , 65
+Category : 1 Segment : 266 108 , 56 , 65
+Category : 1 Segment : 270 108 , 56 , 65
+Category : 1 Segment : 271 108 , 56 , 65
+Category : 1 Segment : 272 108 , 56 , 65
+Category : 1 Segment : 273 108 , 56 , 65
+Category : 1 Segment : 274 108 , 113 , 56 , 65
+Category : 1 Segment : 275 108 , 113 , 56 , 65
+Category : 1 Segment : 276 108 , 113 , 56 , 65
+Category : 1 Segment : 277 65 , 113 , 56 , 108
+Category : 1 Segment : 278 65 , 113 , 56 , 108
+Category : 1 Segment : 279 113 , 56 , 65 , 108
+Category : 1 Segment : 280 65 , 113 , 56 , 108
+Category : 1 Segment : 281 65 , 113 , 56 , 108
+Category : 1 Segment : 282 65 , 113 , 56 , 108
+Category : 1 Segment : 287 65 , 108 , 113 , 56
+Category : 1 Segment : 288 108 , 56 , 65
+Category : 1 Segment : 289 108 , 56 , 65
+Category : 1 Segment : 290 108 , 56 , 65
+Category : 1 Segment : 291 56 , 65 , 108
+Category : 1 Segment : 292 108 , 56 , 65
+Category : 1 Segment : 293 108 , 56 , 65
+Category : 1 Segment : 294 56 , 108 , 65
+Category : 1 Segment : 295 56 , 108 , 65
+Category : 1 Segment : 296 56 , 65 , 108
+Category : 1 Segment : 297 56 , 65 , 108
+Category : 1 Segment : 298 56 , 65 , 108
+Category : 1 Segment : 299 56 , 65 , 108
+Category : 1 Segment : 300 56 , 65 , 108
+Category : 1 Segment : 305 108 , 56 , 65
+Category : 1 Segment : 306 56 , 108 , 65
+Category : 1 Segment : 307 56 , 108 , 65
+Category : 1 Segment : 308 108 , 56 , 65
+Category : 1 Segment : 309 56 , 65 , 108
+Category : 1 Segment : 310 56 , 65 , 108
+Category : 1 Segment : 311 56 , 65 , 108
+Category : 1 Segment : 312 65 , 108 , 56
+Category : 1 Segment : 313 56 , 65 , 108
+Category : 1 Segment : 314 56 , 65 , 108
+Category : 1 Segment : 315 56 , 108 , 65
+Category : 1 Segment : 316 65 , 108 , 56
+Category : 1 Segment : 317 56 , 65 , 108
+Category : 1 Segment : 318 56 , 65 , 108
+Category : 1 Segment : 319 65 , 56 , 108
+Category : 1 Segment : 320 65 , 56 , 108
+Category : 1 Segment : 321 65 , 56 , 108
+Category : 1 Segment : 322 65 , 108 , 56
+Category : 1 Segment : 323 65 , 108 , 56
+Category : 1 Segment : 324 65 , 56 , 108
+Category : 1 Segment : 325 65 , 56 , 108
+Category : 1 Segment : 326 65 , 56 , 108
+Category : 1 Segment : 327 65 , 108 , 56
+Category : 1 Segment : 328 65 , 56 , 108
+Category : 1 Segment : 329 65 , 56 , 108
+Category : 1 Segment : 330 56 , 65 , 108
+Category : 1 Segment : 335 108 , 56 , 65
+Category : 1 Segment : 336 108 , 56 , 65
+Category : 1 Segment : 337 108 , 56 , 65
+Category : 1 Segment : 338 108 , 56 , 65
+Category : 1 Segment : 339 108 , 56 , 65
+Category : 1 Segment : 340 108 , 56 , 65
+Category : 1 Segment : 341 56 , 108 , 65
+Category : 1 Segment : 342 56 , 108 , 65
+Category : 1 Segment : 343 56 , 108 , 65
+Category : 1 Segment : 344 56 , 65 , 108
+Category : 1 Segment : 345 65 , 108 , 56
+Category : 1 Segment : 346 65 , 108 , 56
+Category : 1 Segment : 347 56 , 65 , 108
+Category : 1 Segment : 348 56 , 65 , 108
+Category : 1 Segment : 355 56 , 65 , 108
+Category : 1 Segment : 366 108 , 56 , 65
+Category : 1 Segment : 367 108 , 56 , 65
+Category : 1 Segment : 368 108 , 56 , 65
+Category : 1 Segment : 369 56 , 108 , 65
+Category : 1 Segment : 370 108 , 56 , 65
+Category : 1 Segment : 371 108 , 56 , 65
+Category : 1 Segment : 372 56 , 65 , 108
+Category : 1 Segment : 373 56 , 65 , 108
+Category : 1 Segment : 374 56 , 65 , 108
+Category : 1 Segment : 375 108 , 56 , 65
+Category : 1 Segment : 376 56 , 108 , 65
+Category : 1 Segment : 377 56 , 108 , 65
+Category : 1 Segment : 378 56 , 108 , 65
+Category : 1 Segment : 379 108 , 56 , 65
+Category : 1 Segment : 380 108 , 56 , 65
+Category : 1 Segment : 381 56 , 65 , 108
+Category : 1 Segment : 382 65 , 108 , 56
+Category : 1 Segment : 383 65 , 108 , 56
+Category : 1 Segment : 384 65 , 108 , 56
+Category : 1 Segment : 393 65 , 108 , 56
+Category : 1 Segment : 394 65 , 56 , 108
+Category : 1 Segment : 395 108 , 56 , 65
+Category : 1 Segment : 396 108 , 56 , 65
+Category : 1 Segment : 397 108 , 56 , 65
+Category : 1 Segment : 398 56 , 108 , 65
+Category : 1 Segment : 399 56 , 65 , 108
+Category : 1 Segment : 400 56 , 65 , 108
+Category : 1 Segment : 401 56 , 65 , 108
+Category : 1 Segment : 402 56 , 65 , 108
+Category : 1 Segment : 403 56 , 65 , 108
+Category : 1 Segment : 404 56 , 65 , 108
+Category : 1 Segment : 405 56 , 65 , 108
+Category : 1 Segment : 406 56 , 65 , 108
+Category : 1 Segment : 407 56 , 65 , 108
+Category : 1 Segment : 408 56 , 65 , 108
+Category : 1 Segment : 409 108 , 56 , 65
+Category : 1 Segment : 410 108 , 56 , 65
+Category : 1 Segment : 411 108 , 56 , 65
+Category : 1 Segment : 412 65 , 108 , 56
+Category : 1 Segment : 413 65 , 108 , 56
+Category : 1 Segment : 419 108 , 56 , 65
+Category : 1 Segment : 420 65 , 108 , 56
+Category : 1 Segment : 421 65 , 108 , 56
+Category : 1 Segment : 422 65 , 56 , 108
+Category : 1 Segment : 423 65 , 108 , 56
+Category : 1 Segment : 424 65 , 108 , 56
+Category : 1 Segment : 425 65 , 56 , 108
+Category : 1 Segment : 426 65 , 108 , 56
+Category : 1 Segment : 427 65 , 108 , 56
+Category : 1 Segment : 428 65 , 108 , 56
+Category : 1 Segment : 429 65 , 108 , 56
+Category : 1 Segment : 430 65 , 56 , 108
+Category : 1 Segment : 431 65 , 108 , 56
+Category : 1 Segment : 432 65 , 56 , 108
+Category : 1 Segment : 433 65 , 108 , 56
+Category : 1 Segment : 434 65 , 56 , 108
+Category : 1 Segment : 440 65 , 56 , 108
+Category : 1 Segment : 441 65 , 56 , 108
+Category : 1 Segment : 442 65 , 56 , 108
+Category : 1 Segment : 443 65 , 56 , 108
+Category : 1 Segment : 444 65 , 56 , 108
+Category : 1 Segment : 445 65 , 56 , 108
+Category : 1 Segment : 446 65 , 108 , 56
+Category : 1 Segment : 447 65 , 108 , 56
+Category : 1 Segment : 465 9 , 56 , 65 , 107 , 108 , 119
+Category : 1 Segment : 466 56 , 65 , 108 , 119
+Category : 1 Segment : 467 56 , 108 , 65
+Category : 1 Segment : 468 56 , 108 , 65
+Category : 1 Segment : 469 56 , 108 , 65
+Category : 1 Segment : 470 56 , 108 , 65
+Category : 1 Segment : 471 56 , 108 , 113 , 65
+Category : 1 Segment : 472 56 , 108 , 65
+Category : 1 Segment : 473 56 , 108 , 65
+Category : 1 Segment : 474 9 , 56 , 108 , 65
+Category : 1 Segment : 475 9 , 56 , 108 , 65
+Category : 1 Segment : 476 9 , 56 , 108 , 65
+Category : 1 Segment : 477 9 , 56 , 108 , 65
+Category : 1 Segment : 478 9 , 56 , 108 , 65
+Category : 1 Segment : 479 9 , 56 , 108 , 65
+Category : 1 Segment : 480 9 , 56 , 108 , 65
+Category : 1 Segment : 481 9 , 56 , 108 , 65
+Category : 1 Segment : 482 9 , 56 , 65 , 108
+Category : 1 Segment : 483 9 , 56 , 65 , 108
+Category : 1 Segment : 484 56 , 65 , 108
+Category : 1 Segment : 485 56 , 65 , 108
+Category : 1 Segment : 486 56 , 65 , 108
+Category : 1 Segment : 487 56 , 65 , 108
+Category : 1 Segment : 488 56 , 65 , 108
+Category : 1 Segment : 489 56 , 65 , 108
+Category : 1 Segment : 490 108 , 56 , 65
+Category : 1 Segment : 491 108 , 56 , 65
+Category : 1 Segment : 492 108 , 56 , 65
+Category : 1 Segment : 493 56 , 108 , 65
+Category : 1 Segment : 494 56 , 108 , 65
+Category : 1 Segment : 495 56 , 108 , 65
+Category : 1 Segment : 496 56 , 65 , 108
+Category : 1 Segment : 497 56 , 108 , 65
+Category : 1 Segment : 498 56 , 108 , 65
+Category : 1 Segment : 504 65 , 108 , 56
+Category : 1 Segment : 505 65 , 108 , 56
+Category : 1 Segment : 506 65 , 108 , 56
+Category : 1 Segment : 507 65 , 108 , 56
+Category : 1 Segment : 508 48 , 56 , 108 , 65
+Category : 1 Segment : 509 48 , 56 , 108 , 119 , 65
+Category : 1 Segment : 510 48 , 56 , 108 , 119 , 65
+Category : 1 Segment : 511 56 , 108 , 119 , 65
+Category : 1 Segment : 512 108 , 119 , 56 , 65
+Category : 1 Segment : 513 108 , 119 , 56 , 65
+Category : 1 Segment : 514 108 , 56 , 65
+Category : 1 Segment : 515 56 , 108 , 65
+Category : 1 Segment : 516 108 , 56 , 65
+Category : 1 Segment : 517 108 , 56 , 65
+Category : 1 Segment : 523 56 , 108 , 65
+Category : 1 Segment : 524 56 , 108 , 119 , 65
+Category : 1 Segment : 525 56 , 108 , 119 , 65
+Category : 1 Segment : 526 56 , 119 , 65 , 108
+Category : 1 Segment : 527 56 , 65 , 108
+Category : 1 Segment : 528 56 , 65 , 108
+Category : 1 Segment : 529 56 , 65 , 108
+Category : 1 Segment : 530 56 , 65 , 108
+Category : 1 Segment : 531 56 , 65 , 108
+Category : 1 Segment : 532 56 , 65 , 108
+Category : 1 Segment : 533 56 , 65 , 108
+Category : 1 Segment : 534 56 , 65 , 108
+Category : 1 Segment : 535 65 , 120 , 56 , 108
+Category : 1 Segment : 536 120 , 56 , 65 , 108
+Category : 1 Segment : 537 56 , 65 , 108
+Category : 1 Segment : 538 56 , 65 , 108
+Category : 1 Segment : 539 56 , 108 , 65
+Category : 1 Segment : 545 108 , 56 , 65
+Category : 1 Segment : 546 65 , 108 , 56
+Category : 1 Segment : 547 65 , 108 , 56
+Category : 1 Segment : 548 65 , 108 , 56
+Category : 1 Segment : 549 65 , 108 , 56
+Category : 1 Segment : 550 65 , 108 , 56
+Category : 1 Segment : 551 108 , 56 , 65
+Category : 1 Segment : 552 108 , 56 , 65
+Category : 1 Segment : 553 108 , 56 , 65
+Category : 1 Segment : 554 108 , 56 , 65
+Category : 1 Segment : 555 108 , 56 , 65
+Category : 1 Segment : 556 108 , 56 , 65
+Category : 1 Segment : 557 56 , 65 , 108
+Category : 1 Segment : 558 56 , 65 , 108
+Category : 1 Segment : 559 108 , 56 , 65
+Category : 1 Segment : 560 108 , 56 , 65
+Category : 1 Segment : 561 108 , 56 , 65
+Category : 1 Segment : 562 108 , 56 , 65
+Category : 1 Segment : 565 108 , 56 , 65
+Category : 1 Segment : 566 108 , 56 , 65
+Category : 1 Segment : 567 108 , 56 , 65
+Category : 1 Segment : 568 108 , 56 , 65
+Category : 1 Segment : 569 108 , 56 , 65
+Category : 1 Segment : 574 56 , 108 , 65
+Category : 1 Segment : 575 56 , 65 , 108
+Category : 1 Segment : 576 56 , 65 , 108
+Category : 1 Segment : 577 56 , 65 , 108
+Category : 1 Segment : 578 56 , 108 , 65
+Category : 1 Segment : 579 108 , 56 , 65
+Category : 1 Segment : 580 56 , 65 , 108
+Category : 1 Segment : 581 108 , 56 , 65
+Category : 1 Segment : 582 108 , 56 , 65
+Category : 1 Segment : 583 56 , 65 , 108
+Category : 1 Segment : 584 56 , 65 , 108
+Category : 1 Segment : 585 56 , 65 , 108
+Category : 1 Segment : 586 56 , 108 , 65
+Category : 1 Segment : 587 56 , 65 , 108
+Category : 1 Segment : 588 56 , 65 , 108
+Category : 1 Segment : 589 56 , 65 , 108
+Category : 1 Segment : 596 108 , 56 , 65
+Category : 1 Segment : 597 108 , 56 , 65
+Category : 1 Segment : 598 108 , 56 , 65
+Category : 1 Segment : 599 108 , 56 , 65
+Category : 1 Segment : 600 108 , 56 , 65
+Category : 1 Segment : 601 88 , 108 , 56 , 65
+Category : 1 Segment : 602 88 , 108 , 56 , 65
+Category : 1 Segment : 603 88 , 108 , 56 , 65
+Category : 1 Segment : 604 108 , 56 , 65
+Category : 1 Segment : 605 65 , 108 , 56
+Category : 1 Segment : 606 65 , 108 , 56
+Category : 1 Segment : 607 65 , 108 , 56
+Category : 1 Segment : 617 56 , 65 , 107 , 108 , 119
+Category : 1 Segment : 618 56 , 65 , 107 , 108 , 119
+Category : 1 Segment : 619 56 , 65 , 108 , 119
+Category : 1 Segment : 620 56 , 108 , 119 , 65
+Category : 1 Segment : 621 56 , 108 , 119 , 65
+Category : 1 Segment : 622 108 , 119 , 56 , 65
+Category : 1 Segment : 623 65 , 108 , 56
+Category : 1 Segment : 624 65 , 108 , 119 , 56
+Category : 1 Segment : 625 65 , 108 , 119 , 56
+Category : 1 Segment : 626 65 , 108 , 56
+Category : 1 Segment : 627 65 , 108 , 56
+Category : 1 Segment : 628 108 , 119 , 56 , 65
+Category : 1 Segment : 634 108 , 119 , 56 , 65
+Category : 1 Segment : 635 119 , 56 , 65 , 108
+Category : 1 Segment : 636 119 , 56 , 65 , 108
+Category : 1 Segment : 637 119 , 120 , 56 , 65 , 108
+Category : 1 Segment : 638 108 , 119 , 120 , 56 , 65
+Category : 1 Segment : 639 108 , 119 , 56 , 65
+Category : 1 Segment : 640 108 , 119 , 56 , 65
+Category : 1 Segment : 641 108 , 119 , 56 , 65
+Category : 1 Segment : 642 65 , 108 , 119 , 56
+Category : 1 Segment : 643 65 , 108 , 119 , 56
+Category : 1 Segment : 644 108 , 119 , 56 , 65
+Category : 1 Segment : 645 108 , 119 , 56 , 65
+Category : 1 Segment : 646 108 , 119 , 56 , 65
+Category : 1 Segment : 647 108 , 119 , 56 , 65
+Category : 1 Segment : 648 119 , 56 , 65 , 108
+Category : 1 Segment : 649 119 , 56 , 65 , 108
+Category : 1 Segment : 650 108 , 56 , 65
+Category : 1 Segment : 651 108 , 56 , 65
+Category : 1 Segment : 652 108 , 119 , 56 , 65
+Category : 1 Segment : 653 119 , 56 , 65 , 108
+Category : 1 Segment : 654 119 , 56 , 65 , 108
+Category : 1 Segment : 655 119 , 56 , 65 , 108
+Category : 1 Segment : 656 56 , 65 , 108
+Category : 1 Segment : 657 56 , 65 , 108
+Category : 1 Segment : 658 56 , 65 , 108
+Category : 1 Segment : 662 108 , 56 , 65
+Category : 1 Segment : 663 108 , 56 , 65
+Category : 1 Segment : 664 108 , 56 , 65
+Category : 1 Segment : 665 108 , 56 , 65
+Category : 1 Segment : 671 108 , 56 , 65
+Category : 1 Segment : 672 108 , 56 , 65
+Category : 1 Segment : 673 108 , 56 , 65
+Category : 1 Segment : 674 65 , 108 , 56
+Category : 1 Segment : 675 65 , 108 , 56
+Category : 1 Segment : 676 65 , 108 , 56
+Category : 1 Segment : 677 108 , 56 , 65
+Category : 1 Segment : 678 108 , 56 , 65
+Category : 1 Segment : 683 108 , 56 , 65
+Category : 1 Segment : 684 108 , 56 , 65
+Category : 1 Segment : 689 108 , 56 , 65
+Category : 1 Segment : 690 56 , 65 , 108
+Category : 1 Segment : 691 56 , 65 , 108
+Category : 1 Segment : 692 56 , 65 , 108
+Category : 1 Segment : 693 56 , 65 , 108
+Category : 1 Segment : 701 108 , 56 , 65
+Category : 1 Segment : 702 108 , 56 , 65
+Category : 1 Segment : 703 108 , 56 , 65
+Category : 1 Segment : 704 108 , 56 , 65
+Category : 1 Segment : 705 108 , 56 , 65
+Category : 1 Segment : 706 108 , 56 , 65
+Category : 1 Segment : 710 22 , 65 , 108 , 56
+Category : 1 Segment : 711 65 , 108 , 56
+Category : 1 Segment : 712 108 , 56 , 65
+Category : 1 Segment : 731 108 , 56 , 65
+Category : 1 Segment : 732 108 , 56 , 65
+Category : 1 Segment : 733 108 , 56 , 65
+Category : 1 Segment : 734 108 , 56 , 65
+Category : 1 Segment : 735 108 , 56 , 65
+Category : 1 Segment : 736 65 , 108 , 56
+Category : 1 Segment : 737 108 , 56 , 65
+Category : 1 Segment : 738 108 , 56 , 65
+Category : 1 Segment : 739 108 , 56 , 65
+Category : 1 Segment : 740 108 , 56 , 65
+Category : 1 Segment : 741 108 , 56 , 65
+Category : 1 Segment : 742 108 , 56 , 65
+Category : 1 Segment : 743 65 , 108 , 56
+Category : 1 Segment : 744 56 , 65 , 108
+Category : 1 Segment : 745 65 , 56 , 108
+Category : 1 Segment : 746 65 , 56 , 108
+Category : 1 Segment : 747 65 , 108 , 56
+Category : 1 Segment : 748 56 , 65 , 108
+Category : 1 Segment : 749 108 , 56 , 65
+Category : 1 Segment : 750 108 , 56 , 65
+Category : 1 Segment : 751 56 , 65 , 108
+Category : 1 Segment : 752 108 , 56 , 65
+Category : 1 Segment : 756 65 , 108 , 56
+Category : 1 Segment : 757 65 , 108 , 56
+Category : 1 Segment : 758 65 , 108 , 56
+Category : 1 Segment : 759 56 , 108 , 65
+Category : 1 Segment : 760 56 , 108 , 65
+Category : 1 Segment : 761 56 , 65 , 107 , 108
+Category : 1 Segment : 762 56 , 107 , 108 , 65
+Category : 1 Segment : 763 56 , 65 , 108
+Category : 1 Segment : 764 56 , 108 , 65
+Category : 1 Segment : 765 56 , 108 , 65
+Category : 1 Segment : 766 56 , 108 , 65
+Category : 1 Segment : 767 65 , 108 , 56
+Category : 1 Segment : 768 65 , 108 , 56
+Category : 1 Segment : 769 108 , 56 , 65
+Category : 1 Segment : 770 65 , 108 , 56
+Category : 1 Segment : 771 65 , 108 , 56
+Category : 1 Segment : 772 108 , 56 , 65
+Category : 1 Segment : 773 108 , 56 , 65
+Category : 1 Segment : 774 65 , 108 , 56
+Category : 1 Segment : 775 65 , 56 , 108
+Category : 1 Segment : 776 108 , 56 , 65
+Category : 1 Segment : 777 108 , 56 , 65
+Category : 1 Segment : 778 108 , 56 , 65
+Category : 1 Segment : 779 65 , 108 , 56
+Category : 1 Segment : 780 65 , 108 , 56
+Category : 1 Segment : 781 108 , 56 , 65
+Category : 1 Segment : 782 108 , 56 , 65
+Category : 1 Segment : 783 108 , 56 , 65
+Category : 1 Segment : 784 108 , 56 , 65
+Category : 1 Segment : 785 65 , 108 , 56
+Category : 1 Segment : 786 65 , 108 , 56
+Category : 1 Segment : 791 108 , 56 , 65
+Category : 1 Segment : 792 108 , 56 , 65
+Category : 1 Segment : 793 108 , 56 , 65
+Category : 1 Segment : 794 56 , 108 , 65
+Category : 1 Segment : 802 108 , 56 , 65
+Category : 1 Segment : 803 108 , 56 , 65
+Category : 1 Segment : 804 108 , 56 , 65
+Category : 1 Segment : 807 108 , 56 , 65
+Category : 1 Segment : 812 56 , 65 , 108
+Category : 1 Segment : 813 108 , 56 , 65
+Category : 1 Segment : 814 108 , 56 , 65
+Category : 1 Segment : 815 108 , 56 , 65
+Category : 1 Segment : 816 108 , 56 , 65
+Category : 1 Segment : 817 108 , 56 , 65
+Category : 1 Segment : 818 108 , 56 , 65
+Category : 1 Segment : 823 108 , 56 , 65
+Category : 1 Segment : 824 108 , 56 , 65
+Category : 1 Segment : 825 108 , 56 , 65
+Category : 1 Segment : 826 108 , 56 , 65
+Category : 1 Segment : 827 108 , 56 , 65
+Category : 1 Segment : 828 108 , 56 , 65
+Category : 1 Segment : 829 56 , 108 , 65
+Category : 1 Segment : 830 56 , 107 , 108 , 65
+Category : 1 Segment : 831 56 , 108 , 65
+Category : 1 Segment : 832 56 , 65 , 108
+Category : 1 Segment : 833 56 , 65 , 108
+Category : 1 Segment : 834 56 , 65 , 108
+Category : 1 Segment : 835 56 , 65 , 108
+Category : 1 Segment : 836 56 , 65 , 108
+Category : 1 Segment : 837 56 , 65 , 108
+Category : 1 Segment : 838 56 , 65 , 108
+Category : 1 Segment : 839 65 , 108 , 56
+Category : 1 Segment : 840 65 , 56 , 108
+Category : 1 Segment : 849 56 , 65 , 108
+Category : 1 Segment : 850 56 , 65 , 108
+Category : 1 Segment : 851 56 , 65 , 108
+Category : 1 Segment : 852 108 , 56 , 65
+Category : 1 Segment : 853 108 , 56 , 65
+Category : 1 Segment : 854 108 , 56 , 65
+Category : 1 Segment : 855 56 , 108 , 65
+Category : 1 Segment : 856 56 , 65 , 108
+Category : 1 Segment : 857 56 , 65 , 108
+Category : 1 Segment : 858 56 , 107 , 65 , 108
+Category : 1 Segment : 859 56 , 107 , 65 , 108
+Category : 1 Segment : 860 56 , 65 , 108
+Category : 1 Segment : 861 56 , 65 , 108
+Category : 1 Segment : 862 56 , 108 , 65
+Category : 1 Segment : 863 108 , 56 , 65
+Category : 1 Segment : 870 56 , 108 , 65
+Category : 1 Segment : 871 56 , 108 , 65
+Category : 1 Segment : 873 56 , 65 , 108
+Category : 1 Segment : 874 56 , 65 , 108
+Category : 1 Segment : 875 56 , 65 , 108
+Category : 1 Segment : 876 108 , 56 , 65
+Category : 1 Segment : 877 56 , 108 , 65
+Category : 1 Segment : 878 56 , 108 , 65
+Category : 1 Segment : 879 56 , 108 , 65
+Category : 1 Segment : 880 56 , 108 , 65
+Category : 1 Segment : 881 56 , 108 , 65
+Category : 1 Segment : 882 56 , 108 , 65
+Category : 1 Segment : 883 56 , 65 , 108
+Category : 1 Segment : 884 56 , 65 , 108
+Category : 1 Segment : 885 65 , 108 , 56
+Category : 1 Segment : 886 65 , 108 , 56
+Category : 2 Segment : 1 108 , 56 , 65
+Category : 2 Segment : 2 56 , 108 , 65
+Category : 2 Segment : 3 65 , 108 , 56
+Category : 2 Segment : 4 56 , 65 , 108
+Category : 2 Segment : 5 56 , 65 , 108
+Category : 2 Segment : 6 56 , 65 , 108
+Category : 2 Segment : 7 56 , 65 , 108
+Category : 2 Segment : 8 56 , 65 , 108
+Category : 2 Segment : 9 65 , 108 , 56
+Category : 2 Segment : 10 65 , 108 , 56
+Category : 2 Segment : 11 108 , 56 , 65
+Category : 2 Segment : 12 108 , 56 , 65
+Category : 2 Segment : 13 108 , 56 , 65
+Category : 2 Segment : 14 65 , 108 , 56
+Category : 2 Segment : 15 65 , 108 , 120 , 56
+Category : 2 Segment : 16 108 , 56 , 65
+Category : 2 Segment : 17 56 , 108 , 65
+Category : 2 Segment : 18 56 , 65 , 108
+Category : 2 Segment : 19 65 , 108 , 56
+Category : 2 Segment : 20 65 , 108 , 56
+Category : 2 Segment : 23 108 , 56 , 65
+Category : 2 Segment : 24 56 , 108 , 65
+Category : 2 Segment : 25 56 , 65 , 108
+Category : 2 Segment : 26 65 , 108 , 56
+Category : 2 Segment : 27 65 , 56 , 108
+Category : 2 Segment : 28 65 , 56 , 108
+Category : 2 Segment : 29 56 , 65 , 108
+Category : 2 Segment : 30 108 , 56 , 65
+Category : 2 Segment : 31 56 , 65 , 108
+Category : 2 Segment : 32 108 , 56 , 65
+Category : 2 Segment : 34 56 , 65 , 108
+Category : 2 Segment : 35 108 , 56 , 65
+Category : 2 Segment : 37 65 , 56 , 108
+Category : 2 Segment : 39 108 , 56 , 65
+Category : 2 Segment : 41 108 , 56 , 65
+Category : 2 Segment : 42 108 , 56 , 65
+Category : 2 Segment : 43 108 , 56 , 65
+Category : 2 Segment : 45 108 , 56 , 65
+Category : 2 Segment : 46 108 , 56 , 65
+Category : 2 Segment : 47 56 , 65 , 108
+Category : 2 Segment : 49 108 , 56 , 65
+Category : 2 Segment : 50 65 , 108 , 56
+Category : 2 Segment : 51 65 , 108 , 56
+Category : 2 Segment : 52 108 , 56 , 65
+Category : 2 Segment : 54 65 , 56 , 108
+Category : 2 Segment : 55 65 , 56 , 108
+Category : 2 Segment : 56 56 , 65 , 108
+Category : 2 Segment : 59 65 , 56 , 108
+Category : 2 Segment : 60 108 , 56 , 65
+Category : 2 Segment : 62 113 , 56 , 65 , 108
+Category : 2 Segment : 63 65 , 113 , 56 , 108
+Category : 2 Segment : 64 56 , 65 , 108
+Category : 2 Segment : 65 56 , 65 , 108
+Category : 2 Segment : 66 56 , 108 , 65
+Category : 2 Segment : 67 56 , 65 , 108
+Category : 2 Segment : 68 56 , 65 , 108
+Category : 2 Segment : 69 56 , 108 , 65
+Category : 2 Segment : 70 65 , 108 , 56
+Category : 2 Segment : 71 65 , 108 , 56
+Category : 2 Segment : 72 56 , 65 , 108
+Category : 2 Segment : 73 56 , 65 , 108
+Category : 2 Segment : 74 65 , 108 , 56
+Category : 2 Segment : 76 108 , 56 , 65
+Category : 2 Segment : 77 56 , 65 , 108
+Category : 2 Segment : 78 65 , 108 , 56
+Category : 2 Segment : 79 65 , 108 , 56
+Category : 2 Segment : 80 65 , 108 , 56
+Category : 2 Segment : 81 108 , 56 , 65
+Category : 2 Segment : 82 56 , 108 , 65
+Category : 2 Segment : 83 56 , 108 , 65
+Category : 2 Segment : 84 65 , 108 , 56
+Category : 2 Segment : 85 65 , 108 , 56
+Category : 2 Segment : 86 65 , 108 , 56
+Category : 2 Segment : 87 56 , 108 , 65
+Category : 2 Segment : 88 65 , 56 , 108
+Category : 2 Segment : 89 56 , 108 , 65
+Category : 2 Segment : 90 56 , 65 , 108
+Category : 2 Segment : 91 108 , 56 , 65
+Category : 2 Segment : 92 65 , 108 , 56
+Category : 2 Segment : 93 65 , 108 , 56
+Category : 2 Segment : 94 65 , 108 , 56
+Category : 2 Segment : 95 65 , 108 , 56
+Category : 2 Segment : 96 65 , 56 , 108
+Category : 2 Segment : 97 65 , 56 , 108
+Category : 2 Segment : 98 65 , 108 , 56
+Category : 2 Segment : 99 108 , 56 , 65
+Category : 2 Segment : 100 65 , 108 , 56
+Category : 2 Segment : 101 65 , 108 , 56
+Category : 2 Segment : 107 9 , 56 , 108 , 65
+Category : 2 Segment : 108 9 , 56 , 108 , 65
+Category : 2 Segment : 109 9 , 56 , 108 , 65
+Category : 2 Segment : 110 9 , 56 , 65 , 108
+Category : 2 Segment : 111 56 , 65 , 108
+Category : 2 Segment : 112 56 , 65 , 108
+Category : 2 Segment : 113 56 , 65 , 108
+Category : 2 Segment : 114 108 , 56 , 65
+Category : 2 Segment : 115 108 , 56 , 65
+Category : 2 Segment : 116 108 , 56 , 65
+Category : 2 Segment : 117 65 , 108 , 56
+Category : 2 Segment : 118 48 , 56 , 108 , 119 , 65
+Category : 2 Segment : 119 108 , 56 , 65
+Category : 2 Segment : 120 56 , 119 , 65 , 108
+Category : 2 Segment : 121 56 , 65 , 108
+Category : 2 Segment : 122 65 , 56 , 108
+Category : 2 Segment : 123 120 , 56 , 65 , 108
+Category : 2 Segment : 124 56 , 108 , 119 , 65
+Category : 2 Segment : 125 108 , 56 , 65
+Category : 2 Segment : 126 108 , 56 , 65
+Category : 2 Segment : 130 108 , 56 , 65
+Category : 2 Segment : 131 108 , 56 , 65
+Category : 2 Segment : 132 56 , 65 , 108
+Category : 2 Segment : 133 56 , 65 , 108
+Category : 2 Segment : 134 108 , 56 , 65
+Category : 2 Segment : 139 56 , 65 , 107 , 108 , 119
+Category : 2 Segment : 140 56 , 108 , 119 , 65
+Category : 2 Segment : 141 65 , 108 , 56
+Category : 2 Segment : 142 65 , 108 , 119 , 56
+Category : 2 Segment : 143 65 , 108 , 56
+Category : 2 Segment : 144 108 , 56 , 65
+Category : 2 Segment : 145 108 , 119 , 56 , 65
+Category : 2 Segment : 146 108 , 119 , 56 , 65
+Category : 2 Segment : 147 119 , 56 , 65 , 108
+Category : 2 Segment : 148 108 , 119 , 56 , 65
+Category : 2 Segment : 149 108 , 119 , 56 , 65
+Category : 2 Segment : 150 56 , 65 , 108
+Category : 2 Segment : 153 108 , 56 , 65
+Category : 2 Segment : 154 108 , 56 , 65
+Category : 2 Segment : 155 108 , 56 , 65
+Category : 2 Segment : 156 56 , 65 , 108
+Category : 2 Segment : 157 108 , 56 , 65
+Category : 2 Segment : 158 108 , 56 , 65
+Category : 2 Segment : 159 108 , 56 , 65
+Category : 2 Segment : 161 56 , 65 , 108
+Category : 2 Segment : 162 56 , 65 , 108
+Category : 2 Segment : 163 56 , 65 , 108
+Category : 2 Segment : 164 56 , 65 , 108
+Category : 2 Segment : 165 108 , 56 , 65
+Category : 2 Segment : 169 108 , 56 , 65
+Category : 2 Segment : 170 108 , 56 , 65
+Category : 2 Segment : 173 108 , 56 , 65
+Category : 2 Segment : 174 108 , 56 , 65
+Category : 2 Segment : 175 108 , 56 , 65
+Category : 2 Segment : 176 65 , 108 , 56
+Category : 2 Segment : 177 108 , 56 , 65
+Category : 2 Segment : 178 56 , 65 , 108
+Category : 2 Segment : 179 65 , 56 , 108
+Category : 2 Segment : 181 56 , 107 , 108 , 65
+Category : 2 Segment : 182 56 , 65 , 108
+Category : 2 Segment : 183 65 , 108 , 56
+Category : 2 Segment : 184 108 , 56 , 65
+Category : 2 Segment : 185 65 , 56 , 108
+Category : 2 Segment : 186 108 , 56 , 65
+Category : 2 Segment : 189 56 , 65 , 108
+Category : 2 Segment : 193 108 , 56 , 65
+Category : 2 Segment : 195 108 , 56 , 65
+Category : 2 Segment : 196 65 , 108 , 56
+Category : 2 Segment : 198 56 , 65 , 108
+Category : 2 Segment : 199 56 , 108 , 65
+Category : 2 Segment : 200 56 , 65 , 108
+Category : 2 Segment : 203 56 , 65 , 108
+Category : 2 Segment : 204 108 , 56 , 65
+Category : 2 Segment : 212 56 , 108 , 65
+Category : 2 Segment : 213 65 , 56 , 108
+Category : 3 Segment : 1 56 , 108 , 119 , 65
+Category : 3 Segment : 2 56 , 108 , 119 , 65
+Category : 3 Segment : 3 56 , 108 , 65
+Category : 3 Segment : 4 56 , 108 , 65
+Category : 3 Segment : 5 108 , 56 , 65
+Category : 3 Segment : 6 108 , 56 , 65
+Category : 3 Segment : 7 108 , 56 , 65
+Category : 3 Segment : 8 108 , 56 , 65
+Category : 3 Segment : 9 56 , 108 , 65
+Category : 3 Segment : 10 108 , 56 , 65
+Category : 3 Segment : 11 56 , 108 , 65
+Category : 3 Segment : 12 56 , 108 , 65
+Category : 3 Segment : 13 108 , 56 , 65
+Category : 3 Segment : 14 108 , 56 , 65
+Category : 3 Segment : 15 56 , 108 , 65
+Category : 3 Segment : 16 56 , 108 , 65
+Category : 3 Segment : 17 108 , 56 , 65
+Category : 3 Segment : 18 108 , 56 , 65
+Category : 3 Segment : 23 56 , 108 , 65
+Category : 3 Segment : 24 56 , 108 , 65
+Category : 3 Segment : 25 56 , 108 , 65
+Category : 3 Segment : 26 108 , 56 , 65
+Category : 3 Segment : 27 108 , 56 , 65
+Category : 3 Segment : 28 65 , 108 , 56
+Category : 3 Segment : 29 56 , 65 , 108
+Category : 3 Segment : 30 56 , 108 , 65
+Category : 3 Segment : 31 108 , 56 , 65
+Category : 3 Segment : 32 65 , 108 , 56
+Category : 3 Segment : 33 65 , 108 , 56
+Category : 3 Segment : 34 65 , 108 , 56
+Category : 3 Segment : 35 56 , 65 , 108
+Category : 3 Segment : 36 56 , 65 , 108
+Category : 3 Segment : 37 65 , 56 , 108
+Category : 3 Segment : 38 108 , 56 , 65
+Category : 3 Segment : 39 108 , 56 , 65
+Category : 3 Segment : 40 65 , 108 , 56
+Category : 3 Segment : 41 65 , 108 , 56
+Category : 3 Segment : 42 65 , 108 , 56
+Category : 3 Segment : 43 65 , 56 , 108
+Category : 3 Segment : 44 56 , 65 , 108
+Category : 3 Segment : 45 56 , 108 , 65
+Category : 3 Segment : 46 56 , 108 , 65
+Category : 3 Segment : 47 56 , 65 , 108
+Category : 3 Segment : 48 65 , 108 , 56
+Category : 3 Segment : 49 56 , 65 , 108
+Category : 3 Segment : 50 56 , 65 , 108
+Category : 3 Segment : 51 56 , 65 , 108
+Category : 3 Segment : 52 65 , 108 , 56
+Category : 3 Segment : 53 108 , 56 , 65
+Category : 3 Segment : 54 56 , 108 , 65
+Category : 3 Segment : 55 56 , 65 , 108
+Category : 3 Segment : 56 56 , 65 , 108
+Category : 3 Segment : 57 56 , 65 , 108
+Category : 3 Segment : 58 56 , 65 , 108
+Category : 3 Segment : 59 56 , 65 , 108
+Category : 3 Segment : 60 56 , 65 , 108
+Category : 3 Segment : 61 56 , 65 , 108
+Category : 3 Segment : 62 56 , 65 , 108
+Category : 3 Segment : 63 56 , 65 , 108
+Category : 3 Segment : 64 56 , 65 , 108
+Category : 3 Segment : 65 65 , 56 , 108
+Category : 3 Segment : 66 56 , 65 , 108
+Category : 3 Segment : 67 108 , 56 , 65
+Category : 3 Segment : 68 108 , 56 , 65
+Category : 3 Segment : 69 108 , 56 , 65
+Category : 3 Segment : 70 56 , 65 , 108
+Category : 3 Segment : 71 56 , 65 , 108
+Category : 3 Segment : 72 56 , 108 , 65
+Category : 3 Segment : 73 56 , 108 , 65
+Category : 3 Segment : 74 56 , 108 , 65
+Category : 3 Segment : 75 56 , 108 , 65
+Category : 3 Segment : 76 56 , 108 , 65
+Category : 3 Segment : 77 56 , 108 , 65
+Category : 3 Segment : 78 56 , 108 , 65
+Category : 3 Segment : 79 56 , 108 , 65
+Category : 3 Segment : 80 56 , 65 , 108
+Category : 3 Segment : 81 56 , 65 , 108
+Category : 3 Segment : 82 56 , 65 , 108
+Category : 3 Segment : 83 56 , 65 , 108
+Category : 3 Segment : 88 56 , 65 , 108
+Category : 3 Segment : 89 56 , 108 , 65
+Category : 3 Segment : 90 108 , 56 , 65
+Category : 3 Segment : 91 56 , 65 , 108
+Category : 3 Segment : 92 56 , 65 , 108
+Category : 3 Segment : 93 56 , 108 , 65
+Category : 3 Segment : 94 56 , 108 , 65
+Category : 3 Segment : 95 56 , 65 , 108
+Category : 3 Segment : 96 56 , 65 , 108
+Category : 3 Segment : 97 56 , 65 , 108
+Category : 3 Segment : 98 56 , 108 , 65
+Category : 3 Segment : 99 65 , 108 , 56
+Category : 3 Segment : 100 65 , 108 , 56
+Category : 3 Segment : 101 108 , 56 , 65
+Category : 3 Segment : 102 108 , 56 , 65
+Category : 3 Segment : 103 65 , 108 , 56
+Category : 3 Segment : 104 65 , 108 , 56
+Category : 3 Segment : 105 65 , 108 , 56
+Category : 3 Segment : 106 108 , 56 , 65
+Category : 3 Segment : 107 108 , 56 , 65
+Category : 3 Segment : 108 108 , 56 , 65
+Category : 3 Segment : 109 56 , 108 , 65
+Category : 3 Segment : 110 56 , 65 , 108
+Category : 3 Segment : 111 65 , 108 , 56
+Category : 3 Segment : 112 65 , 108 , 56
+Category : 3 Segment : 113 108 , 56 , 65
+Category : 3 Segment : 114 65 , 108 , 56
+Category : 3 Segment : 115 65 , 108 , 56
+Category : 3 Segment : 116 65 , 108 , 56
+Category : 3 Segment : 117 65 , 108 , 56
+Category : 3 Segment : 118 65 , 108 , 56
+Category : 3 Segment : 119 56 , 65 , 108
+Category : 3 Segment : 120 65 , 108 , 56
+Category : 3 Segment : 121 65 , 108 , 56
+Category : 3 Segment : 122 65 , 108 , 56
+Category : 3 Segment : 123 56 , 65 , 108
+Category : 3 Segment : 124 56 , 65 , 108
+Category : 3 Segment : 125 56 , 65 , 108
+Category : 3 Segment : 126 65 , 108 , 56
+Category : 3 Segment : 127 108 , 56 , 65
+Category : 3 Segment : 128 108 , 56 , 65
+Category : 3 Segment : 129 108 , 56 , 65
+Category : 3 Segment : 130 108 , 56 , 65
+Category : 3 Segment : 131 108 , 56 , 65
+Category : 3 Segment : 132 108 , 56 , 65
+Category : 3 Segment : 133 108 , 56 , 65
+Category : 3 Segment : 139 65 , 108 , 56
+Category : 3 Segment : 140 108 , 56 , 65
+Category : 3 Segment : 141 65 , 108 , 119 , 56
+Category : 3 Segment : 142 65 , 108 , 119 , 56
+Category : 3 Segment : 143 56 , 65 , 108 , 113 , 119
+Category : 3 Segment : 144 56 , 113 , 119 , 65 , 108
+Category : 3 Segment : 148 56 , 65 , 108
+Category : 3 Segment : 149 56 , 65 , 108
+Category : 3 Segment : 150 56 , 65 , 108
+Category : 3 Segment : 151 56 , 65 , 108
+Category : 3 Segment : 152 56 , 108 , 65
+Category : 3 Segment : 153 56 , 108 , 65
+Category : 3 Segment : 154 56 , 108 , 65
+Category : 3 Segment : 155 56 , 108 , 65
+Category : 3 Segment : 156 56 , 108 , 65
+Category : 3 Segment : 157 56 , 108 , 65
+Category : 3 Segment : 158 56 , 108 , 65
+Category : 3 Segment : 159 56 , 108 , 65
+Category : 3 Segment : 160 56 , 108 , 65
+Category : 3 Segment : 161 56 , 108 , 65
+Category : 3 Segment : 162 56 , 108 , 65
+Category : 3 Segment : 163 56 , 65 , 108
+Category : 3 Segment : 164 56 , 108 , 65
+Category : 3 Segment : 165 56 , 108 , 65
+Category : 3 Segment : 166 56 , 65 , 108
+Category : 3 Segment : 167 56 , 65 , 108
+Category : 3 Segment : 168 56 , 65 , 108
+Category : 3 Segment : 169 56 , 65 , 108
+Category : 3 Segment : 170 56 , 65 , 108
+Category : 3 Segment : 171 65 , 56 , 108
+Category : 3 Segment : 172 65 , 108 , 56
+Category : 3 Segment : 173 56 , 65 , 108
+Category : 3 Segment : 174 56 , 65 , 108
+Category : 3 Segment : 175 65 , 56 , 108
+Category : 3 Segment : 176 65 , 56 , 108
+Category : 3 Segment : 177 108 , 56 , 65
+Category : 3 Segment : 178 108 , 56 , 65
+Category : 3 Segment : 179 56 , 108 , 65
+Category : 3 Segment : 180 56 , 65 , 108
+Category : 3 Segment : 181 56 , 108 , 65
+Category : 3 Segment : 187 108 , 56 , 65
+Category : 3 Segment : 188 108 , 56 , 65
+Category : 3 Segment : 189 56 , 108 , 65
+Category : 3 Segment : 190 56 , 65 , 108
+Category : 3 Segment : 191 56 , 65 , 108
+Category : 3 Segment : 192 56 , 65 , 108
+Category : 3 Segment : 193 56 , 65 , 108
+Category : 3 Segment : 194 56 , 108 , 65
+Category : 3 Segment : 195 56 , 108 , 65
+Category : 3 Segment : 196 56 , 108 , 65
+Category : 3 Segment : 197 56 , 108 , 65
+Category : 3 Segment : 198 56 , 108 , 65
+Category : 3 Segment : 199 108 , 56 , 65
+Category : 3 Segment : 200 108 , 56 , 65
+Category : 3 Segment : 201 56 , 65 , 108
+Category : 3 Segment : 202 56 , 65 , 108
+Category : 3 Segment : 203 56 , 65 , 108
+Category : 3 Segment : 204 56 , 108 , 65
+Category : 3 Segment : 205 56 , 108 , 65
+Category : 3 Segment : 206 108 , 56 , 65
+Category : 3 Segment : 207 108 , 56 , 65
+Category : 3 Segment : 208 108 , 56 , 65
+Category : 3 Segment : 209 56 , 65 , 108
+Category : 3 Segment : 210 108 , 56 , 65
+Category : 3 Segment : 211 65 , 108 , 56
+Category : 3 Segment : 212 65 , 108 , 56
+Category : 3 Segment : 213 56 , 65 , 108
+Category : 3 Segment : 214 56 , 65 , 108
+Category : 3 Segment : 215 56 , 108 , 65
+Category : 3 Segment : 216 56 , 108 , 65
+Category : 3 Segment : 217 56 , 108 , 65
+Category : 3 Segment : 218 56 , 108 , 65
+Category : 3 Segment : 219 56 , 65 , 108
+Category : 3 Segment : 220 56 , 108 , 65
+Category : 3 Segment : 221 56 , 108 , 65
+Category : 3 Segment : 222 56 , 108 , 65
+Category : 3 Segment : 223 56 , 65 , 108
+Category : 3 Segment : 224 65 , 108 , 56
+Category : 3 Segment : 225 56 , 65 , 108
+Category : 3 Segment : 226 56 , 65 , 108
+Category : 3 Segment : 227 56 , 65 , 108
+Category : 3 Segment : 228 56 , 65 , 108
+Category : 3 Segment : 229 56 , 65 , 108
+Category : 3 Segment : 230 56 , 65 , 108
+Category : 3 Segment : 231 56 , 65 , 108
+Category : 3 Segment : 232 56 , 65 , 108
+Category : 3 Segment : 233 56 , 65 , 108
+Category : 3 Segment : 234 56 , 65 , 108
+Category : 3 Segment : 235 108 , 56 , 65
+Category : 3 Segment : 236 108 , 56 , 65
+Category : 3 Segment : 237 108 , 56 , 65
+Category : 3 Segment : 238 108 , 56 , 65
+Category : 3 Segment : 239 108 , 56 , 65
+Category : 3 Segment : 240 56 , 65 , 108
+Category : 3 Segment : 241 56 , 65 , 108
+Category : 3 Segment : 242 56 , 65 , 108
+Category : 3 Segment : 243 56 , 108 , 65
+Category : 3 Segment : 244 56 , 108 , 65
+Category : 3 Segment : 245 56 , 65 , 108
+Category : 3 Segment : 246 56 , 108 , 65
+Category : 3 Segment : 247 56 , 108 , 65
+Category : 3 Segment : 248 56 , 108 , 65
+Category : 3 Segment : 249 56 , 108 , 65
+Category : 3 Segment : 250 108 , 56 , 65
+Category : 3 Segment : 251 108 , 56 , 65
+Category : 3 Segment : 252 56 , 108 , 65
+Category : 3 Segment : 253 56 , 108 , 65
+Category : 3 Segment : 254 56 , 108 , 65
+Category : 3 Segment : 255 56 , 108 , 65
+Category : 3 Segment : 256 108 , 56 , 65
+Category : 3 Segment : 257 108 , 56 , 65
+Category : 3 Segment : 263 56 , 65 , 108
+Category : 3 Segment : 264 56 , 108 , 65
+Category : 3 Segment : 265 56 , 108 , 65
+Category : 3 Segment : 266 56 , 108 , 65
+Category : 3 Segment : 267 56 , 108 , 65
+Category : 3 Segment : 268 108 , 56 , 65
+Category : 3 Segment : 269 108 , 56 , 65
+Category : 3 Segment : 270 108 , 56 , 65
+Category : 3 Segment : 271 56 , 108 , 65
+Category : 3 Segment : 272 56 , 108 , 65
+Category : 3 Segment : 273 65 , 108 , 56
+Category : 3 Segment : 279 56 , 108 , 65
+Category : 3 Segment : 280 56 , 108 , 119 , 65
+Category : 3 Segment : 281 56 , 108 , 119 , 65
+Category : 3 Segment : 282 56 , 108 , 119 , 65
+Category : 3 Segment : 283 56 , 65 , 108
+Category : 3 Segment : 284 56 , 65 , 108
+Category : 3 Segment : 285 56 , 65 , 108
+Category : 3 Segment : 286 56 , 65 , 108
+Category : 3 Segment : 287 56 , 108 , 65
+Category : 3 Segment : 288 108 , 56 , 65
+Category : 3 Segment : 289 65 , 108 , 56
+Category : 3 Segment : 290 65 , 108 , 56
+Category : 3 Segment : 291 65 , 108 , 56
+Category : 3 Segment : 292 65 , 108 , 56
+Category : 3 Segment : 293 65 , 108 , 56
+Category : 3 Segment : 294 108 , 56 , 65
+Category : 3 Segment : 295 108 , 56 , 65
+Category : 3 Segment : 296 108 , 56 , 65
+Category : 3 Segment : 297 108 , 56 , 65
+Category : 3 Segment : 298 108 , 56 , 65
+Category : 3 Segment : 299 108 , 56 , 65
+Category : 3 Segment : 300 108 , 56 , 65
+Category : 3 Segment : 301 56 , 65 , 108
+Category : 3 Segment : 302 108 , 56 , 65
+Category : 3 Segment : 303 108 , 56 , 65
+Category : 3 Segment : 304 56 , 65 , 108
+Category : 3 Segment : 305 108 , 56 , 65
+Category : 3 Segment : 306 108 , 56 , 65
+Category : 3 Segment : 307 108 , 56 , 65
+Category : 3 Segment : 308 56 , 65 , 108
+Category : 3 Segment : 309 56 , 65 , 108
+Category : 3 Segment : 310 108 , 56 , 65
+Category : 3 Segment : 311 56 , 65 , 108
+Category : 3 Segment : 312 108 , 56 , 65
+Category : 3 Segment : 320 108 , 56 , 65
+Category : 3 Segment : 321 108 , 56 , 65
+Category : 3 Segment : 322 108 , 56 , 65
+Category : 3 Segment : 323 82 , 108 , 56 , 65
+Category : 3 Segment : 324 82 , 108 , 56 , 65
+Category : 3 Segment : 325 82 , 108 , 56 , 65
+Category : 3 Segment : 326 82 , 108 , 56 , 65
+Category : 3 Segment : 327 108 , 56 , 65
+Category : 3 Segment : 328 108 , 56 , 65
+Category : 3 Segment : 329 108 , 56 , 65
+Category : 3 Segment : 330 108 , 56 , 65
+Category : 3 Segment : 331 108 , 56 , 65
+Category : 3 Segment : 332 56 , 65 , 108
+Category : 3 Segment : 333 56 , 65 , 108
+Category : 3 Segment : 334 56 , 65 , 108
+Category : 3 Segment : 335 56 , 65 , 108
+Category : 3 Segment : 336 56 , 65 , 108
+Category : 3 Segment : 337 56 , 65 , 108
+Category : 3 Segment : 338 56 , 65 , 108
+Category : 3 Segment : 339 56 , 65 , 108
+Category : 3 Segment : 340 108 , 56 , 65
+Category : 3 Segment : 341 108 , 56 , 65
+Category : 3 Segment : 342 65 , 108 , 56
+Category : 3 Segment : 343 65 , 108 , 56
+Category : 3 Segment : 349 65 , 108 , 56
+Category : 3 Segment : 350 65 , 108 , 56
+Category : 3 Segment : 351 65 , 108 , 56
+Category : 3 Segment : 352 65 , 56 , 108
+Category : 3 Segment : 353 56 , 65 , 108
+Category : 3 Segment : 354 56 , 65 , 108
+Category : 3 Segment : 355 108 , 56 , 65
+Category : 3 Segment : 356 56 , 65 , 108
+Category : 3 Segment : 357 108 , 56 , 65
+Category : 3 Segment : 362 108 , 56 , 65
+Category : 3 Segment : 363 65 , 108 , 56
+Category : 3 Segment : 364 65 , 108 , 56
+Category : 3 Segment : 365 65 , 108 , 56
+Category : 3 Segment : 366 65 , 108 , 56
+Category : 3 Segment : 367 108 , 56 , 65
+Category : 3 Segment : 368 108 , 56 , 65
+Category : 3 Segment : 369 108 , 56 , 65
+Category : 3 Segment : 370 108 , 56 , 65
+Category : 3 Segment : 371 108 , 56 , 65
+Category : 3 Segment : 372 108 , 56 , 65
+Category : 3 Segment : 376 108 , 119 , 56 , 65
+Category : 3 Segment : 377 119 , 56 , 65 , 108
+Category : 3 Segment : 378 56 , 65 , 108
+Category : 3 Segment : 384 119 , 56 , 65 , 108
+Category : 3 Segment : 389 108 , 56 , 65
+Category : 3 Segment : 390 108 , 56 , 65
+Category : 3 Segment : 391 108 , 56 , 65
+Category : 3 Segment : 392 108 , 56 , 65
+Category : 3 Segment : 393 108 , 56 , 65
+Category : 3 Segment : 394 108 , 56 , 65
+Category : 3 Segment : 395 108 , 119 , 56 , 65
+Category : 3 Segment : 396 108 , 119 , 56 , 65
+Category : 3 Segment : 397 108 , 119 , 56 , 65
+Category : 3 Segment : 398 108 , 119 , 56 , 65
+Category : 3 Segment : 403 108 , 56 , 65
+Category : 3 Segment : 404 56 , 108 , 65
+Category : 3 Segment : 405 56 , 108 , 65
+Category : 3 Segment : 406 108 , 119 , 56 , 65
+Category : 3 Segment : 407 108 , 119 , 56 , 65
+Category : 3 Segment : 408 108 , 119 , 56 , 65
+Category : 3 Segment : 409 108 , 119 , 56 , 65
+Category : 3 Segment : 410 108 , 119 , 56 , 65
+Category : 3 Segment : 411 108 , 56 , 65
+Category : 3 Segment : 412 108 , 56 , 65
+Category : 3 Segment : 413 108 , 56 , 65
+Category : 3 Segment : 414 108 , 56 , 65
+Category : 3 Segment : 415 108 , 56 , 65
+Category : 3 Segment : 416 108 , 56 , 65
+Category : 3 Segment : 417 108 , 56 , 65
+Category : 3 Segment : 418 108 , 56 , 65
+Category : 3 Segment : 419 108 , 119 , 56 , 65
+Category : 3 Segment : 423 65 , 108 , 56
+Category : 3 Segment : 424 108 , 56 , 65
+Category : 3 Segment : 425 108 , 56 , 65
+Category : 3 Segment : 426 108 , 56 , 65
+Category : 3 Segment : 427 65 , 108 , 56
+Category : 3 Segment : 428 65 , 108 , 56
+Category : 3 Segment : 429 65 , 108 , 56
+Category : 3 Segment : 430 65 , 108 , 56
+Category : 3 Segment : 439 56 , 65 , 82 , 88 , 91 , 101 , 107 , 108 , 115 , 119
+Category : 3 Segment : 440 56 , 65 , 82 , 101 , 107 , 108 , 119
+Category : 3 Segment : 441 56 , 65 , 82 , 107 , 108 , 119
+Category : 3 Segment : 442 56 , 62 , 65 , 82 , 88 , 91 , 107 , 108 , 119 , 120
+Category : 3 Segment : 447 56 , 65 , 82 , 107 , 108 , 113 , 119
+Category : 3 Segment : 448 56 , 65 , 82 , 107 , 108 , 119
+Category : 3 Segment : 449 65 , 108 , 119 , 56
+Category : 3 Segment : 450 56 , 65 , 108 , 119
+Category : 3 Segment : 451 56 , 65 , 108
+Category : 3 Segment : 452 56 , 65 , 108
+Category : 3 Segment : 453 56 , 65 , 108
+Category : 3 Segment : 454 56 , 108 , 65
+Category : 3 Segment : 455 108 , 56 , 65
+Category : 3 Segment : 456 108 , 56 , 65
+Category : 3 Segment : 457 108 , 56 , 65
+Category : 3 Segment : 458 108 , 56 , 65
+Category : 3 Segment : 459 56 , 108 , 65
+Category : 3 Segment : 464 56 , 65 , 119 , 108
+Category : 3 Segment : 465 119 , 56 , 65 , 108
+Category : 3 Segment : 466 56 , 65 , 108
+Category : 3 Segment : 467 108 , 56 , 65
+Category : 3 Segment : 468 108 , 56 , 65
+Category : 3 Segment : 469 108 , 56 , 65
+Category : 3 Segment : 470 108 , 56 , 65
+Category : 3 Segment : 471 108 , 119 , 56 , 65
+Category : 3 Segment : 472 108 , 119 , 56 , 65
+Category : 3 Segment : 473 56 , 119 , 65 , 108
+Category : 3 Segment : 474 56 , 108 , 119 , 65
+Category : 3 Segment : 475 56 , 108 , 119 , 65
+Category : 3 Segment : 476 108 , 119 , 56 , 65
+Category : 3 Segment : 477 108 , 119 , 56 , 65
+Category : 3 Segment : 478 108 , 119 , 56 , 65
+Category : 3 Segment : 479 65 , 108 , 56
+Category : 3 Segment : 480 65 , 108 , 119 , 56
+Category : 3 Segment : 481 65 , 108 , 119 , 56
+Category : 3 Segment : 482 65 , 108 , 119 , 56
+Category : 3 Segment : 483 65 , 108 , 119 , 56
+Category : 3 Segment : 484 108 , 119 , 56 , 65
+Category : 3 Segment : 485 65 , 108 , 119 , 56
+Category : 3 Segment : 486 65 , 108 , 119 , 56
+Category : 3 Segment : 487 65 , 108 , 119 , 56
+Category : 3 Segment : 488 108 , 120 , 56 , 65
+Category : 3 Segment : 489 56 , 65 , 108
+Category : 3 Segment : 490 108 , 56 , 65
+Category : 3 Segment : 491 108 , 56 , 65
+Category : 3 Segment : 496 65 , 108 , 119 , 56
+Category : 3 Segment : 497 108 , 119 , 56 , 65
+Category : 3 Segment : 498 119 , 56 , 65 , 108
+Category : 3 Segment : 499 119 , 56 , 65 , 108
+Category : 3 Segment : 500 119 , 56 , 65 , 108
+Category : 3 Segment : 501 119 , 56 , 65 , 108
+Category : 3 Segment : 502 119 , 56 , 65 , 108
+Category : 3 Segment : 503 119 , 56 , 65 , 108
+Category : 3 Segment : 504 56 , 65 , 108
+Category : 3 Segment : 505 56 , 65 , 108
+Category : 3 Segment : 506 119 , 56 , 65 , 108
+Category : 3 Segment : 512 119 , 56 , 65 , 108
+Category : 3 Segment : 513 119 , 56 , 65 , 108
+Category : 3 Segment : 514 119 , 56 , 65 , 108
+Category : 3 Segment : 515 119 , 56 , 65 , 108
+Category : 3 Segment : 516 119 , 56 , 65 , 108
+Category : 3 Segment : 523 65 , 119 , 56 , 108
+Category : 3 Segment : 524 65 , 108 , 119 , 56
+Category : 3 Segment : 525 108 , 119 , 56 , 65
+Category : 3 Segment : 526 108 , 119 , 56 , 65
+Category : 3 Segment : 527 65 , 119 , 56 , 108
+Category : 3 Segment : 528 65 , 119 , 56 , 108
+Category : 3 Segment : 529 65 , 56 , 108
+Category : 3 Segment : 535 65 , 56 , 108
+Category : 3 Segment : 536 65 , 108 , 56
+Category : 3 Segment : 537 56 , 65 , 108
+Category : 3 Segment : 538 56 , 65 , 108
+Category : 3 Segment : 539 56 , 65 , 108
+Category : 3 Segment : 540 56 , 65 , 108
+Category : 3 Segment : 541 56 , 65 , 108
+Category : 3 Segment : 550 108 , 56 , 65
+Category : 3 Segment : 551 108 , 56 , 65
+Category : 3 Segment : 552 108 , 56 , 65
+Category : 3 Segment : 553 56 , 108 , 65
+Category : 3 Segment : 554 56 , 108 , 65
+Category : 3 Segment : 559 108 , 56 , 65
+Category : 3 Segment : 560 108 , 56 , 65
+Category : 3 Segment : 561 108 , 56 , 65
+Category : 3 Segment : 562 56 , 108 , 65
+Category : 3 Segment : 563 56 , 108 , 65
+Category : 3 Segment : 564 56 , 65 , 108
+Category : 3 Segment : 565 56 , 108 , 65
+Category : 3 Segment : 566 56 , 65 , 108
+Category : 3 Segment : 567 56 , 65 , 108
+Category : 3 Segment : 568 56 , 108 , 65
+Category : 3 Segment : 569 56 , 108 , 65
+Category : 3 Segment : 570 56 , 108 , 65
+Category : 3 Segment : 571 108 , 56 , 65
+Category : 3 Segment : 572 108 , 56 , 65
+Category : 3 Segment : 573 56 , 65 , 108
+Category : 3 Segment : 574 108 , 56 , 65
+Category : 3 Segment : 575 108 , 56 , 65
+Category : 3 Segment : 576 108 , 56 , 65
+Category : 3 Segment : 581 56 , 65 , 108
+Category : 3 Segment : 582 56 , 108 , 65
+Category : 3 Segment : 583 108 , 56 , 65
+Category : 3 Segment : 584 108 , 56 , 65
+Category : 3 Segment : 585 108 , 56 , 65
+Category : 3 Segment : 586 56 , 65 , 108
+Category : 3 Segment : 587 108 , 56 , 65
+Category : 3 Segment : 588 65 , 108 , 56
+Category : 3 Segment : 589 65 , 108 , 56
+Category : 3 Segment : 590 65 , 108 , 56
+Category : 3 Segment : 591 108 , 56 , 65
+Category : 3 Segment : 592 108 , 56 , 65
+Category : 3 Segment : 593 65 , 108 , 56
+Category : 3 Segment : 598 65 , 108 , 56
+Category : 3 Segment : 599 65 , 108 , 56
+Category : 3 Segment : 600 65 , 108 , 56
+Category : 3 Segment : 601 56 , 65 , 108
+Category : 3 Segment : 602 65 , 108 , 56
+Category : 3 Segment : 606 65 , 108 , 56
+Category : 3 Segment : 607 56 , 65 , 108
+Category : 3 Segment : 608 56 , 65 , 108
+Category : 3 Segment : 609 56 , 108 , 65
+Category : 3 Segment : 610 56 , 108 , 65
+Category : 3 Segment : 611 56 , 65 , 108
+Category : 3 Segment : 615 65 , 108 , 56
+Category : 3 Segment : 616 108 , 56 , 65
+Category : 3 Segment : 617 108 , 56 , 65
+Category : 3 Segment : 618 108 , 56 , 65
+Category : 3 Segment : 619 108 , 56 , 65
+Category : 3 Segment : 620 108 , 56 , 65
+Category : 3 Segment : 621 108 , 56 , 65
+Category : 3 Segment : 622 108 , 56 , 65
+Category : 3 Segment : 628 108 , 56 , 65
+Category : 3 Segment : 629 108 , 56 , 65
+Category : 3 Segment : 630 108 , 56 , 65
+Category : 3 Segment : 631 56 , 65 , 108
+Category : 3 Segment : 632 108 , 56 , 65
+Category : 3 Segment : 633 108 , 56 , 65
+Category : 3 Segment : 634 56 , 65 , 108
+Category : 3 Segment : 635 65 , 56 , 108
+Category : 3 Segment : 636 65 , 56 , 108
+Category : 3 Segment : 637 65 , 56 , 108
+Category : 3 Segment : 643 56 , 108 , 65
+Category : 3 Segment : 644 56 , 65 , 108
+Category : 3 Segment : 645 65 , 108 , 56
+Category : 3 Segment : 646 65 , 108 , 56
+Category : 3 Segment : 647 108 , 56 , 65
+Category : 3 Segment : 648 108 , 56 , 65
+Category : 3 Segment : 649 108 , 56 , 65
+Category : 3 Segment : 658 108 , 56 , 65
+Category : 3 Segment : 659 56 , 65 , 108
+Category : 3 Segment : 660 56 , 65 , 108
+Category : 3 Segment : 661 65 , 56 , 108
+Category : 3 Segment : 662 56 , 65 , 108
+Category : 3 Segment : 663 56 , 65 , 108
+Category : 3 Segment : 664 56 , 65 , 108
+Category : 3 Segment : 665 56 , 65 , 108
+Category : 3 Segment : 666 56 , 65 , 108
+Category : 3 Segment : 667 108 , 56 , 65
+Category : 3 Segment : 668 108 , 56 , 65
+Category : 3 Segment : 669 108 , 56 , 65
+Category : 3 Segment : 670 108 , 56 , 65
+Category : 3 Segment : 675 65 , 108 , 56
+Category : 3 Segment : 676 65 , 108 , 56
+Category : 3 Segment : 677 65 , 108 , 56
+Category : 3 Segment : 678 65 , 108 , 56
+Category : 3 Segment : 679 65 , 108 , 56
+Category : 3 Segment : 680 56 , 65 , 108
+Category : 3 Segment : 681 56 , 65 , 108
+Category : 3 Segment : 684 108 , 56 , 65
+Category : 3 Segment : 685 56 , 65 , 108
+Category : 3 Segment : 686 56 , 65 , 108
+Category : 3 Segment : 687 108 , 56 , 65
+Category : 3 Segment : 688 108 , 56 , 65
+Category : 3 Segment : 693 56 , 65 , 108
+Category : 3 Segment : 694 65 , 108 , 56
+Category : 3 Segment : 695 65 , 108 , 56
+Category : 3 Segment : 696 65 , 108 , 56
+Category : 3 Segment : 697 56 , 65 , 108
+Category : 3 Segment : 698 65 , 56 , 108
+Category : 3 Segment : 699 65 , 56 , 108
+Category : 3 Segment : 700 56 , 65 , 108
+Category : 3 Segment : 701 56 , 65 , 108
+Category : 3 Segment : 702 56 , 65 , 108
+Category : 3 Segment : 703 108 , 56 , 65
+Category : 3 Segment : 704 108 , 56 , 65
+Category : 3 Segment : 705 108 , 56 , 65
+Category : 3 Segment : 706 108 , 56 , 65
+Category : 3 Segment : 707 108 , 56 , 65
+Category : 3 Segment : 708 65 , 108 , 56
+Category : 3 Segment : 709 65 , 108 , 56
+Category : 3 Segment : 710 56 , 65 , 108
+Category : 3 Segment : 716 108 , 56 , 65
+Category : 3 Segment : 723 108 , 56 , 65
+Category : 3 Segment : 724 108 , 56 , 65
+Category : 3 Segment : 725 108 , 56 , 65
+Category : 3 Segment : 726 65 , 108 , 56
+Category : 3 Segment : 727 56 , 65 , 108
+Category : 3 Segment : 728 56 , 65 , 108
+Category : 3 Segment : 732 108 , 56 , 65
+Category : 3 Segment : 733 56 , 65 , 108
+Category : 3 Segment : 739 108 , 56 , 65
+Category : 3 Segment : 740 108 , 56 , 65
+Category : 3 Segment : 741 108 , 56 , 65
+Category : 3 Segment : 742 108 , 56 , 65
+Category : 3 Segment : 750 65 , 108 , 56
+Category : 3 Segment : 751 65 , 108 , 56
+Category : 3 Segment : 752 65 , 56 , 108
+Category : 3 Segment : 753 65 , 56 , 108
+Category : 3 Segment : 754 108 , 56 , 65
+Category : 3 Segment : 761 56 , 65 , 108
+Category : 3 Segment : 768 108 , 56 , 65
+Category : 3 Segment : 777 56 , 65 , 108
+Category : 3 Segment : 778 65 , 56 , 108
+Category : 3 Segment : 779 65 , 56 , 108
+Category : 3 Segment : 780 65 , 108 , 56
+Category : 3 Segment : 781 65 , 56 , 108
+Category : 3 Segment : 787 56 , 65 , 108
+Category : 3 Segment : 788 56 , 65 , 108
+Category : 3 Segment : 789 65 , 108 , 56
+Category : 3 Segment : 790 65 , 107 , 108 , 115 , 56
+Category : 3 Segment : 791 65 , 88 , 91 , 101 , 107 , 108 , 115 , 56
+Category : 3 Segment : 805 108 , 56 , 65
+Category : 3 Segment : 814 108 , 56 , 65
+Category : 3 Segment : 815 108 , 56 , 65
+Category : 3 Segment : 816 108 , 56 , 65
+Category : 3 Segment : 817 108 , 56 , 65
+Category : 3 Segment : 818 108 , 56 , 65
+Category : 3 Segment : 819 108 , 56 , 65
+Category : 3 Segment : 820 108 , 56 , 65
+Category : 3 Segment : 821 108 , 56 , 65
+Category : 3 Segment : 822 108 , 56 , 65
+Category : 3 Segment : 823 108 , 56 , 65
+Category : 3 Segment : 830 56 , 65 , 108
+Category : 3 Segment : 831 56 , 65 , 108
+Category : 3 Segment : 832 56 , 65 , 108
+Category : 3 Segment : 839 108 , 56 , 65
+Category : 3 Segment : 846 108 , 56 , 65
+Category : 3 Segment : 847 56 , 65 , 108
+Category : 3 Segment : 848 56 , 65 , 108
+Category : 3 Segment : 849 56 , 65 , 108
+Category : 3 Segment : 850 65 , 56 , 108
+Category : 3 Segment : 851 65 , 56 , 108
+Category : 3 Segment : 852 65 , 56 , 108
+Category : 3 Segment : 853 56 , 65 , 108
+Category : 3 Segment : 854 108 , 56 , 65
+Category : 3 Segment : 855 65 , 108 , 56
+Category : 3 Segment : 856 56 , 65 , 108
+Category : 3 Segment : 857 56 , 65 , 108
+Category : 3 Segment : 858 108 , 56 , 65
+Category : 3 Segment : 859 108 , 56 , 65
+Category : 3 Segment : 860 56 , 65 , 108
+Category : 3 Segment : 861 65 , 108 , 56
+Category : 3 Segment : 862 65 , 108 , 56
+Category : 4 Segment : 1 56 , 108 , 65
+Category : 4 Segment : 2 56 , 108 , 65
+Category : 4 Segment : 3 108 , 56 , 65
+Category : 4 Segment : 4 56 , 108 , 65
+Category : 4 Segment : 5 108 , 56 , 65
+Category : 4 Segment : 6 108 , 56 , 65
+Category : 4 Segment : 7 108 , 56 , 65
+Category : 4 Segment : 9 65 , 56 , 108
+Category : 4 Segment : 10 65 , 56 , 108
+Category : 4 Segment : 11 65 , 108 , 56
+Category : 4 Segment : 12 56 , 65 , 108
+Category : 4 Segment : 13 56 , 65 , 108
+Category : 4 Segment : 14 65 , 108 , 56
+Category : 4 Segment : 15 56 , 65 , 108
+Category : 4 Segment : 16 56 , 65 , 108
+Category : 4 Segment : 17 56 , 65 , 108
+Category : 4 Segment : 18 56 , 65 , 108
+Category : 4 Segment : 19 56 , 65 , 108
+Category : 4 Segment : 20 56 , 65 , 108
+Category : 4 Segment : 21 56 , 108 , 65
+Category : 4 Segment : 22 108 , 56 , 65
+Category : 4 Segment : 23 108 , 56 , 65
+Category : 4 Segment : 24 108 , 56 , 65
+Category : 4 Segment : 25 56 , 65 , 108
+Category : 4 Segment : 26 56 , 65 , 108
+Category : 4 Segment : 27 56 , 65 , 108
+Category : 4 Segment : 28 56 , 65 , 108
+Category : 4 Segment : 29 56 , 65 , 108
+Category : 4 Segment : 31 108 , 56 , 65
+Category : 4 Segment : 32 56 , 65 , 108
+Category : 4 Segment : 33 65 , 108 , 56
+Category : 4 Segment : 34 65 , 108 , 56
+Category : 4 Segment : 35 56 , 65 , 108
+Category : 4 Segment : 36 108 , 56 , 65
+Category : 4 Segment : 37 108 , 56 , 65
+Category : 4 Segment : 40 56 , 108 , 65
+Category : 4 Segment : 41 56 , 65 , 108
+Category : 4 Segment : 42 56 , 65 , 108
+Category : 4 Segment : 43 56 , 65 , 108
+Category : 4 Segment : 44 56 , 65 , 108
+Category : 4 Segment : 45 56 , 108 , 65
+Category : 4 Segment : 46 56 , 65 , 108
+Category : 4 Segment : 47 56 , 65 , 108
+Category : 4 Segment : 48 56 , 65 , 108
+Category : 4 Segment : 49 65 , 56 , 108
+Category : 4 Segment : 50 56 , 65 , 108
+Category : 4 Segment : 51 108 , 56 , 65
+Category : 4 Segment : 52 56 , 108 , 65
+Category : 4 Segment : 53 56 , 108 , 65
+Category : 4 Segment : 54 56 , 108 , 65
+Category : 4 Segment : 55 56 , 108 , 65
+Category : 4 Segment : 56 108 , 56 , 65
+Category : 4 Segment : 57 108 , 56 , 65
+Category : 4 Segment : 58 108 , 56 , 65
+Category : 4 Segment : 59 108 , 56 , 65
+Category : 4 Segment : 60 108 , 56 , 65
+Category : 4 Segment : 61 56 , 108 , 65
+Category : 4 Segment : 62 56 , 65 , 108
+Category : 4 Segment : 63 56 , 65 , 108
+Category : 4 Segment : 64 56 , 108 , 65
+Category : 4 Segment : 65 56 , 108 , 65
+Category : 4 Segment : 66 108 , 56 , 65
+Category : 4 Segment : 67 56 , 108 , 65
+Category : 4 Segment : 69 108 , 56 , 65
+Category : 4 Segment : 70 108 , 56 , 65
+Category : 4 Segment : 71 56 , 108 , 65
+Category : 4 Segment : 72 108 , 56 , 65
+Category : 4 Segment : 73 56 , 65 , 107 , 108
+Category : 4 Segment : 74 56 , 108 , 119 , 65
+Category : 4 Segment : 75 56 , 108 , 119 , 65
+Category : 4 Segment : 76 56 , 108 , 119 , 65
+Category : 4 Segment : 77 56 , 108 , 65
+Category : 4 Segment : 78 108 , 56 , 65
+Category : 4 Segment : 79 56 , 65 , 108
+Category : 4 Segment : 80 56 , 108 , 65
+Category : 4 Segment : 81 65 , 108 , 56
+Category : 4 Segment : 82 108 , 56 , 65
+Category : 4 Segment : 83 108 , 56 , 65
+Category : 4 Segment : 84 108 , 56 , 65
+Category : 4 Segment : 85 108 , 56 , 65
+Category : 4 Segment : 86 108 , 56 , 65
+Category : 4 Segment : 89 108 , 56 , 65
+Category : 4 Segment : 90 56 , 65 , 108
+Category : 4 Segment : 91 65 , 108 , 56
+Category : 4 Segment : 92 65 , 108 , 56
+Category : 4 Segment : 93 65 , 108 , 56
+Category : 4 Segment : 94 56 , 65 , 108
+Category : 4 Segment : 95 108 , 56 , 65
+Category : 4 Segment : 97 108 , 56 , 65
+Category : 4 Segment : 98 108 , 56 , 65
+Category : 4 Segment : 99 108 , 119 , 56 , 65
+Category : 4 Segment : 100 108 , 119 , 56 , 65
+Category : 4 Segment : 105 108 , 56 , 65
+Category : 4 Segment : 106 108 , 56 , 65
+Category : 4 Segment : 108 108 , 119 , 56 , 65
+Category : 4 Segment : 109 56 , 65 , 108
+Category : 4 Segment : 110 108 , 119 , 56 , 65
+Category : 4 Segment : 111 108 , 119 , 56 , 65
+Category : 4 Segment : 112 108 , 119 , 56 , 65
+Category : 4 Segment : 115 65 , 108 , 56
+Category : 4 Segment : 116 108 , 56 , 65
+Category : 4 Segment : 117 108 , 56 , 65
+Category : 4 Segment : 118 108 , 56 , 65
+Category : 4 Segment : 119 15 , 65 , 108 , 56
+Category : 4 Segment : 122 56 , 65 , 82 , 107 , 108 , 119
+Category : 4 Segment : 123 56 , 65 , 82 , 88 , 91 , 107 , 108 , 119
+Category : 4 Segment : 125 65 , 108 , 119 , 56
+Category : 4 Segment : 126 56 , 65 , 108 , 119
+Category : 4 Segment : 127 108 , 56 , 65
+Category : 4 Segment : 129 56 , 65 , 108 , 119
+Category : 4 Segment : 130 65 , 119 , 56 , 108
+Category : 4 Segment : 131 108 , 56 , 65
+Category : 4 Segment : 132 56 , 119 , 65 , 108
+Category : 4 Segment : 133 56 , 119 , 65 , 108
+Category : 4 Segment : 134 56 , 108 , 119 , 65
+Category : 4 Segment : 135 108 , 119 , 56 , 65
+Category : 4 Segment : 136 108 , 119 , 56 , 65
+Category : 4 Segment : 137 108 , 56 , 65
+Category : 4 Segment : 138 65 , 108 , 56
+Category : 4 Segment : 139 65 , 108 , 56
+Category : 4 Segment : 140 65 , 108 , 119 , 56
+Category : 4 Segment : 141 65 , 108 , 120 , 56
+Category : 4 Segment : 142 120 , 56 , 65 , 108
+Category : 4 Segment : 144 65 , 108 , 119 , 56
+Category : 4 Segment : 145 56 , 65 , 108
+Category : 4 Segment : 146 119 , 56 , 65 , 108
+Category : 4 Segment : 147 56 , 65 , 108
+Category : 4 Segment : 151 65 , 108 , 56
+Category : 4 Segment : 152 65 , 56 , 108
+Category : 4 Segment : 153 108 , 56 , 65
+Category : 4 Segment : 154 56 , 65 , 108
+Category : 4 Segment : 156 56 , 108 , 65
+Category : 4 Segment : 158 108 , 56 , 65
+Category : 4 Segment : 161 56 , 65 , 108
+Category : 4 Segment : 162 56 , 65 , 108
+Category : 4 Segment : 163 56 , 65 , 108
+Category : 4 Segment : 164 108 , 56 , 65
+Category : 4 Segment : 166 108 , 56 , 65
+Category : 4 Segment : 168 65 , 108 , 56
+Category : 4 Segment : 171 56 , 65 , 108
+Category : 4 Segment : 174 65 , 108 , 56
+Category : 4 Segment : 175 65 , 108 , 56
+Category : 4 Segment : 176 108 , 56 , 65
+Category : 4 Segment : 177 108 , 56 , 65
+Category : 4 Segment : 178 108 , 56 , 65
+Category : 4 Segment : 181 56 , 108 , 65
+Category : 4 Segment : 182 56 , 65 , 108
+Category : 4 Segment : 183 108 , 56 , 65
+Category : 4 Segment : 187 65 , 108 , 56
+Category : 4 Segment : 188 108 , 56 , 65
+Category : 4 Segment : 189 65 , 56 , 108
+Category : 4 Segment : 190 65 , 108 , 56
+Category : 4 Segment : 191 65 , 108 , 56
+Category : 4 Segment : 192 65 , 56 , 108
+Category : 4 Segment : 193 56 , 65 , 108
+Category : 4 Segment : 198 65 , 108 , 56
+Category : 4 Segment : 204 108 , 56 , 65
+Category : 4 Segment : 205 108 , 56 , 65
+Category : 4 Segment : 214 56 , 65 , 108
+Category : 4 Segment : 223 65 , 56 , 108
+Category : 4 Segment : 226 108 , 56 , 65
+Category : 4 Segment : 227 56 , 65 , 108
+Category : 4 Segment : 229 56 , 65 , 108
+Category : 4 Segment : 230 56 , 65 , 108
+Category : 4 Segment : 231 108 , 56 , 65
+Category : 4 Segment : 232 56 , 65 , 108
+Category : 4 Segment : 233 56 , 65 , 108
+Category : 4 Segment : 234 65 , 56 , 108
+Category : 4 Segment : 235 56 , 65 , 108
+Category : 4 Segment : 236 108 , 56 , 65
+Bad Channels Corrected: 5049
+
+
+Averaging : Averaging
+Time Stamp :
+Start Time: Fri, July, 28, 2017, 11:45:46 AM
+End Time: Fri, July, 28, 2017, 11:45:57 AM
+Time To Completion 00:00:11.246
+
+Settings: 
+Tool Version: 5.4
+Handle source files separately
+Subjects are not averaged together.
+
+Results:
+Subjects processed
+p3je-02-js
+     1: 'Visual Common' has 1 segments.
+     2: 'Visual Rare' has 1 segments.
+     3: 'Audio Common' has 1 segments.
+     4: 'Audio Rare' has 1 segments.
+
+
+Montage Operations Tool : Average Reference
+Time Stamp :
+Start Time: Fri, July, 28, 2017, 11:45:57 AM
+End Time: Fri, July, 28, 2017, 11:45:58 AM
+Time To Completion 00:00:00.262
+
+Settings: 
+Tool Version: 5.4
+Original Layout: HydroCel GSN 128 1.0
+New Layout: Average Reference
+Average Reference
+Excluding Bad Channels
+
+
+Baseline Correction : Baseline Correction 200
+Time Stamp :
+Start Time: Fri, July, 28, 2017, 11:45:58 AM
+End Time: Fri, July, 28, 2017, 11:45:58 AM
+Time To Completion 00:00:00.112
+
+Settings: 
+Tool Version: 5.4
+Select baseline from: Portion of Segment
+Select baseline with respect to: Segment Time = 0
+Baseline begins 200 milliseconds before the sample and 200 milliseconds long
+
