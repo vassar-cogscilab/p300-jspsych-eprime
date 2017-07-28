@@ -1,0 +1,1520 @@
+p3je-04-ep_20170725_044247_fil_seg_bcr_ave__fin.mff
+
+Filtering : 0.1 Hz Highpass
+Time Stamp :
+Start Time: Fri, July, 28, 2017, 11:56:04 AM
+End Time: Fri, July, 28, 2017, 11:56:19 AM
+Time To Completion 00:00:15.371
+
+Settings: 
+Tool Version: 5.4
+Filter Setting: 0.1 Hz Highpass
+Filter Type: IIR
+Passband Gain: -0.01 dB
+Stopband Gain: -40 dB
+Rolloff: 2 Hz
+Compensated Phase Delay: FOHP
+
+
+Filtering : 30 Hz Lowpass
+Time Stamp :
+Start Time: Fri, July, 28, 2017, 11:56:04 AM
+End Time: Fri, July, 28, 2017, 11:56:19 AM
+Time To Completion 00:00:15.371
+
+Settings: 
+Tool Version: 5.4
+Filter Setting: 30 Hz Lowpass
+Filter Type: FIR
+Passband Gain: -0.01 dB
+Stopband Gain: -40 dB
+Rolloff: 2 Hz
+Compensated Phase Delay: 886 samples
+
+
+Segmentation : jspsych-eprime segmentation
+Time Stamp :
+Start Time: Fri, July, 28, 2017, 11:56:19 AM
+End Time: Fri, July, 28, 2017, 11:56:33 AM
+Time To Completion 00:00:13.486
+
+Settings: 
+Tool Version: 5.4
+  1: Rules for category "Visual Common"
+    Milliseconds Before: 200
+    Milliseconds After: 800
+    Milliseconds Offset: 0
+    Event 1:
+        Code is "DI16" or
+        (Code is "stim" and
+        Cell is "vis_common")
+  2: Rules for category "Visual Rare"
+    Milliseconds Before: 200
+    Milliseconds After: 800
+    Milliseconds Offset: 0
+    Event 1:
+        Code is "DIN8" or
+        (Code is "stim" and
+        Cell is "vis_rare")
+  3: Rules for category "Audio Common"
+    Milliseconds Before: 200
+    Milliseconds After: 800
+    Milliseconds Offset: 0
+    Event 1:
+        Code is "DIN4" or
+        (Code is "stim" and
+        Cell is "aud_common")
+  4: Rules for category "Audio Rare"
+    Milliseconds Before: 200
+    Milliseconds After: 800
+    Milliseconds Offset: 0
+    Event 1:
+        Code is "DIN2" or
+        (Code is "stim" and
+        Cell is "aud_rare")
+
+Results:
+Segmented to 4 categories and 2200 segments
+    1  : "Visual Common" has 863 segments
+    2  : "Visual Rare" has 237 segments
+    3  : "Audio Common" has 867 segments
+    4  : "Audio Rare" has 233 segments
+
+
+Artifact Detection : Artifact Detection
+Time Stamp :
+Start Time: Fri, July, 28, 2017, 11:56:39 AM
+End Time: Fri, July, 28, 2017, 11:56:53 AM
+Time To Completion 00:00:14.492
+
+Settings: 
+Tool Version: 5.4
+Create log file
+Mark channel bad in recording if bad for greater than 20 percent.
+    Mark segment bad if it contains more than 10 bad channels.
+    Mark segment bad if it contains eye blinks.
+    Mark segment bad if it contains eye movement.
+Overwrite prior threshold records.
+Bad Channel Threshold
+Max - Min > 200.00
+Entire segment.
+Perform a moving average of 80 ms
+
+Eye Blink Threshold
+Max - Min > 140.00
+Window size: 640 ms
+Perform a moving average of 80 ms
+Exclude inferior eye channels?
+    Left: No
+    Right: No
+
+Eye Movement Threshold
+Max - Min > 55.00
+Window size: 640 ms
+Perform a moving average of 80 ms
+
+
+Results:
+Log File: p3je-04-ep_20170725_044247_fil_seg.log
+Results from: Bad Channel Threshold
+    Number of Channels Marked Bad: 6373
+    Number of Bad Channel Records: 6373
+Results from: Eye Blink Threshold
+    Number of Eye Blink Records: 3157
+Results from: Eye Movement Threshold
+    Number of Eye Movement Records: 286
+Channels marked bad in entire recording.
+119
+Segments Marked Bad: 872
+Segments marked bad for eye blinks: 38.45% (846/2200)
+Segments marked bad for eye movements: 1.09% (24/2200)
+Segments marked bad for number of bad channels: 0.09% (2/2200)
+
+
+Bad Channel Replacement Tool : Bad Channel Replacement Copy
+Time Stamp :
+Start Time: Fri, July, 28, 2017, 11:57:04 AM
+End Time: Fri, July, 28, 2017, 12:00:56 PM
+Time To Completion 00:03:52.787
+
+Settings: 
+Tool Version: 5.4
+
+Results:
+Category : 1 Segment : 3 62 , 88 , 114 , 119 , 127
+Category : 1 Segment : 4 114 , 119 , 126 , 127
+Category : 1 Segment : 5 114 , 119
+Category : 1 Segment : 6 114 , 119
+Category : 1 Segment : 7 114 , 119
+Category : 1 Segment : 8 114 , 119
+Category : 1 Segment : 9 119
+Category : 1 Segment : 10 119
+Category : 1 Segment : 11 109 , 119
+Category : 1 Segment : 12 109 , 119
+Category : 1 Segment : 13 109 , 119
+Category : 1 Segment : 14 119
+Category : 1 Segment : 15 119
+Category : 1 Segment : 16 119
+Category : 1 Segment : 17 119
+Category : 1 Segment : 18 119
+Category : 1 Segment : 19 119
+Category : 1 Segment : 20 119
+Category : 1 Segment : 21 119
+Category : 1 Segment : 22 119
+Category : 1 Segment : 23 119
+Category : 1 Segment : 24 119
+Category : 1 Segment : 25 119
+Category : 1 Segment : 26 119
+Category : 1 Segment : 27 119
+Category : 1 Segment : 28 119
+Category : 1 Segment : 29 119
+Category : 1 Segment : 34 119
+Category : 1 Segment : 35 119
+Category : 1 Segment : 36 119
+Category : 1 Segment : 37 119
+Category : 1 Segment : 38 119
+Category : 1 Segment : 39 119
+Category : 1 Segment : 42 119
+Category : 1 Segment : 43 119
+Category : 1 Segment : 44 119
+Category : 1 Segment : 45 119
+Category : 1 Segment : 46 119
+Category : 1 Segment : 47 119
+Category : 1 Segment : 48 119
+Category : 1 Segment : 49 119
+Category : 1 Segment : 50 119
+Category : 1 Segment : 51 119
+Category : 1 Segment : 52 119
+Category : 1 Segment : 53 119
+Category : 1 Segment : 54 119
+Category : 1 Segment : 55 119
+Category : 1 Segment : 56 119
+Category : 1 Segment : 57 119
+Category : 1 Segment : 58 119
+Category : 1 Segment : 59 119
+Category : 1 Segment : 60 119
+Category : 1 Segment : 61 119
+Category : 1 Segment : 62 119
+Category : 1 Segment : 63 119
+Category : 1 Segment : 64 119
+Category : 1 Segment : 65 119
+Category : 1 Segment : 66 119
+Category : 1 Segment : 67 119
+Category : 1 Segment : 68 119
+Category : 1 Segment : 71 119
+Category : 1 Segment : 72 119
+Category : 1 Segment : 73 119
+Category : 1 Segment : 74 119
+Category : 1 Segment : 75 119
+Category : 1 Segment : 76 119
+Category : 1 Segment : 77 119
+Category : 1 Segment : 78 119
+Category : 1 Segment : 79 119
+Category : 1 Segment : 80 119
+Category : 1 Segment : 81 119
+Category : 1 Segment : 82 119
+Category : 1 Segment : 83 119
+Category : 1 Segment : 84 119
+Category : 1 Segment : 85 119
+Category : 1 Segment : 86 119
+Category : 1 Segment : 87 119
+Category : 1 Segment : 88 119
+Category : 1 Segment : 89 119
+Category : 1 Segment : 90 119
+Category : 1 Segment : 91 119
+Category : 1 Segment : 92 119
+Category : 1 Segment : 93 119
+Category : 1 Segment : 94 119
+Category : 1 Segment : 95 119
+Category : 1 Segment : 96 119
+Category : 1 Segment : 97 119
+Category : 1 Segment : 98 119
+Category : 1 Segment : 99 119
+Category : 1 Segment : 100 119
+Category : 1 Segment : 101 119
+Category : 1 Segment : 102 119
+Category : 1 Segment : 103 119
+Category : 1 Segment : 104 119
+Category : 1 Segment : 105 119
+Category : 1 Segment : 106 119
+Category : 1 Segment : 107 119
+Category : 1 Segment : 108 119
+Category : 1 Segment : 109 119
+Category : 1 Segment : 110 119
+Category : 1 Segment : 111 119
+Category : 1 Segment : 112 119
+Category : 1 Segment : 113 119
+Category : 1 Segment : 114 119
+Category : 1 Segment : 115 119
+Category : 1 Segment : 122 119
+Category : 1 Segment : 123 119
+Category : 1 Segment : 124 119
+Category : 1 Segment : 125 119
+Category : 1 Segment : 126 119
+Category : 1 Segment : 127 119
+Category : 1 Segment : 128 119
+Category : 1 Segment : 129 119
+Category : 1 Segment : 130 119
+Category : 1 Segment : 131 119
+Category : 1 Segment : 132 119
+Category : 1 Segment : 133 119
+Category : 1 Segment : 134 119
+Category : 1 Segment : 135 119
+Category : 1 Segment : 136 119
+Category : 1 Segment : 137 119
+Category : 1 Segment : 138 119
+Category : 1 Segment : 139 119
+Category : 1 Segment : 140 119
+Category : 1 Segment : 141 119
+Category : 1 Segment : 142 119
+Category : 1 Segment : 143 119
+Category : 1 Segment : 144 119
+Category : 1 Segment : 145 119
+Category : 1 Segment : 146 119
+Category : 1 Segment : 147 119
+Category : 1 Segment : 148 119
+Category : 1 Segment : 149 119
+Category : 1 Segment : 150 119
+Category : 1 Segment : 151 119
+Category : 1 Segment : 152 119
+Category : 1 Segment : 153 119
+Category : 1 Segment : 154 119
+Category : 1 Segment : 155 119
+Category : 1 Segment : 156 119
+Category : 1 Segment : 157 119
+Category : 1 Segment : 158 119
+Category : 1 Segment : 159 119
+Category : 1 Segment : 160 119
+Category : 1 Segment : 161 119
+Category : 1 Segment : 162 119
+Category : 1 Segment : 166 119
+Category : 1 Segment : 167 119
+Category : 1 Segment : 168 119
+Category : 1 Segment : 171 119
+Category : 1 Segment : 172 119
+Category : 1 Segment : 173 119
+Category : 1 Segment : 174 119
+Category : 1 Segment : 175 119
+Category : 1 Segment : 176 119
+Category : 1 Segment : 177 119
+Category : 1 Segment : 178 119
+Category : 1 Segment : 179 119
+Category : 1 Segment : 180 119
+Category : 1 Segment : 181 119
+Category : 1 Segment : 182 119
+Category : 1 Segment : 183 119
+Category : 1 Segment : 184 119
+Category : 1 Segment : 185 119
+Category : 1 Segment : 186 119
+Category : 1 Segment : 187 119
+Category : 1 Segment : 188 119
+Category : 1 Segment : 189 119
+Category : 1 Segment : 190 119
+Category : 1 Segment : 191 119
+Category : 1 Segment : 192 119
+Category : 1 Segment : 193 119
+Category : 1 Segment : 194 119
+Category : 1 Segment : 195 119
+Category : 1 Segment : 196 119
+Category : 1 Segment : 197 119
+Category : 1 Segment : 198 119
+Category : 1 Segment : 199 119
+Category : 1 Segment : 200 119
+Category : 1 Segment : 201 119
+Category : 1 Segment : 202 119
+Category : 1 Segment : 203 119
+Category : 1 Segment : 204 119
+Category : 1 Segment : 205 119
+Category : 1 Segment : 206 119
+Category : 1 Segment : 207 119
+Category : 1 Segment : 208 119
+Category : 1 Segment : 209 119
+Category : 1 Segment : 210 119
+Category : 1 Segment : 211 119
+Category : 1 Segment : 212 119
+Category : 1 Segment : 213 119
+Category : 1 Segment : 214 119
+Category : 1 Segment : 218 119
+Category : 1 Segment : 219 119
+Category : 1 Segment : 220 119
+Category : 1 Segment : 221 119
+Category : 1 Segment : 222 119
+Category : 1 Segment : 223 119
+Category : 1 Segment : 224 119
+Category : 1 Segment : 225 119
+Category : 1 Segment : 226 119
+Category : 1 Segment : 227 119
+Category : 1 Segment : 228 119
+Category : 1 Segment : 229 119
+Category : 1 Segment : 232 119
+Category : 1 Segment : 233 119
+Category : 1 Segment : 234 119
+Category : 1 Segment : 235 119
+Category : 1 Segment : 236 119
+Category : 1 Segment : 237 119
+Category : 1 Segment : 238 119
+Category : 1 Segment : 239 119
+Category : 1 Segment : 240 119
+Category : 1 Segment : 244 119
+Category : 1 Segment : 245 119
+Category : 1 Segment : 246 119
+Category : 1 Segment : 247 119
+Category : 1 Segment : 248 119
+Category : 1 Segment : 249 119
+Category : 1 Segment : 250 119
+Category : 1 Segment : 251 119
+Category : 1 Segment : 252 119
+Category : 1 Segment : 253 119
+Category : 1 Segment : 254 119
+Category : 1 Segment : 255 119
+Category : 1 Segment : 261 119
+Category : 1 Segment : 262 119
+Category : 1 Segment : 263 119
+Category : 1 Segment : 264 119
+Category : 1 Segment : 269 119
+Category : 1 Segment : 270 119
+Category : 1 Segment : 271 119
+Category : 1 Segment : 272 119
+Category : 1 Segment : 273 119
+Category : 1 Segment : 274 119
+Category : 1 Segment : 282 119
+Category : 1 Segment : 283 119
+Category : 1 Segment : 284 119
+Category : 1 Segment : 285 119
+Category : 1 Segment : 286 119
+Category : 1 Segment : 287 119
+Category : 1 Segment : 288 119
+Category : 1 Segment : 289 119
+Category : 1 Segment : 290 119
+Category : 1 Segment : 291 119
+Category : 1 Segment : 298 119
+Category : 1 Segment : 299 119
+Category : 1 Segment : 300 119
+Category : 1 Segment : 301 119
+Category : 1 Segment : 302 119
+Category : 1 Segment : 303 119
+Category : 1 Segment : 304 119
+Category : 1 Segment : 305 119
+Category : 1 Segment : 306 119
+Category : 1 Segment : 307 119
+Category : 1 Segment : 308 119
+Category : 1 Segment : 309 119
+Category : 1 Segment : 310 119
+Category : 1 Segment : 311 119
+Category : 1 Segment : 312 119
+Category : 1 Segment : 313 119
+Category : 1 Segment : 314 119
+Category : 1 Segment : 315 119
+Category : 1 Segment : 316 119
+Category : 1 Segment : 317 119
+Category : 1 Segment : 318 119
+Category : 1 Segment : 319 119
+Category : 1 Segment : 320 119
+Category : 1 Segment : 321 119
+Category : 1 Segment : 322 119
+Category : 1 Segment : 323 119
+Category : 1 Segment : 324 119
+Category : 1 Segment : 325 119
+Category : 1 Segment : 326 119
+Category : 1 Segment : 327 119
+Category : 1 Segment : 328 119
+Category : 1 Segment : 329 119
+Category : 1 Segment : 330 119
+Category : 1 Segment : 331 119
+Category : 1 Segment : 332 119
+Category : 1 Segment : 333 119
+Category : 1 Segment : 334 119
+Category : 1 Segment : 335 119
+Category : 1 Segment : 336 119
+Category : 1 Segment : 337 119
+Category : 1 Segment : 338 119
+Category : 1 Segment : 339 119
+Category : 1 Segment : 340 119
+Category : 1 Segment : 341 119
+Category : 1 Segment : 342 119
+Category : 1 Segment : 343 119
+Category : 1 Segment : 344 119
+Category : 1 Segment : 345 119
+Category : 1 Segment : 346 119
+Category : 1 Segment : 347 119
+Category : 1 Segment : 348 119
+Category : 1 Segment : 349 119
+Category : 1 Segment : 350 119
+Category : 1 Segment : 351 119
+Category : 1 Segment : 352 119
+Category : 1 Segment : 353 119
+Category : 1 Segment : 354 119
+Category : 1 Segment : 355 119
+Category : 1 Segment : 356 119
+Category : 1 Segment : 375 119
+Category : 1 Segment : 376 119
+Category : 1 Segment : 377 119
+Category : 1 Segment : 378 119
+Category : 1 Segment : 379 119
+Category : 1 Segment : 380 119
+Category : 1 Segment : 381 119
+Category : 1 Segment : 382 119
+Category : 1 Segment : 383 119
+Category : 1 Segment : 384 119
+Category : 1 Segment : 385 119
+Category : 1 Segment : 386 119
+Category : 1 Segment : 387 119
+Category : 1 Segment : 388 119
+Category : 1 Segment : 389 119
+Category : 1 Segment : 390 119
+Category : 1 Segment : 391 119
+Category : 1 Segment : 392 119
+Category : 1 Segment : 393 119
+Category : 1 Segment : 394 119
+Category : 1 Segment : 395 119
+Category : 1 Segment : 396 119
+Category : 1 Segment : 397 119
+Category : 1 Segment : 398 119
+Category : 1 Segment : 399 119
+Category : 1 Segment : 400 119
+Category : 1 Segment : 405 119
+Category : 1 Segment : 406 119
+Category : 1 Segment : 407 119
+Category : 1 Segment : 408 119
+Category : 1 Segment : 409 119
+Category : 1 Segment : 410 119
+Category : 1 Segment : 411 119
+Category : 1 Segment : 412 119
+Category : 1 Segment : 413 119
+Category : 1 Segment : 414 119
+Category : 1 Segment : 425 114 , 119
+Category : 1 Segment : 426 114 , 119
+Category : 1 Segment : 427 119
+Category : 1 Segment : 428 119
+Category : 1 Segment : 429 119
+Category : 1 Segment : 430 119
+Category : 1 Segment : 431 119
+Category : 1 Segment : 432 119
+Category : 1 Segment : 433 119
+Category : 1 Segment : 434 119
+Category : 1 Segment : 435 119
+Category : 1 Segment : 436 119
+Category : 1 Segment : 437 119
+Category : 1 Segment : 438 119
+Category : 1 Segment : 439 119
+Category : 1 Segment : 440 119
+Category : 1 Segment : 445 17 , 114 , 119
+Category : 1 Segment : 446 17 , 109 , 114 , 119
+Category : 1 Segment : 447 17 , 107 , 109 , 114 , 119
+Category : 1 Segment : 448 17 , 62 , 72 , 107 , 109 , 114 , 119
+Category : 1 Segment : 449 17 , 62 , 109 , 114 , 119
+Category : 1 Segment : 452 8 , 17 , 62 , 72 , 119
+Category : 1 Segment : 453 88 , 119
+Category : 1 Segment : 454 88 , 119
+Category : 1 Segment : 455 88 , 119
+Category : 1 Segment : 456 119
+Category : 1 Segment : 457 119
+Category : 1 Segment : 458 119
+Category : 1 Segment : 459 119
+Category : 1 Segment : 460 119
+Category : 1 Segment : 461 119
+Category : 1 Segment : 462 119
+Category : 1 Segment : 463 119
+Category : 1 Segment : 464 119
+Category : 1 Segment : 465 119
+Category : 1 Segment : 466 119
+Category : 1 Segment : 467 119
+Category : 1 Segment : 468 119
+Category : 1 Segment : 469 119
+Category : 1 Segment : 470 119
+Category : 1 Segment : 471 119
+Category : 1 Segment : 472 119
+Category : 1 Segment : 473 119
+Category : 1 Segment : 474 119
+Category : 1 Segment : 475 119
+Category : 1 Segment : 476 119
+Category : 1 Segment : 477 119
+Category : 1 Segment : 478 119
+Category : 1 Segment : 479 119
+Category : 1 Segment : 480 119
+Category : 1 Segment : 481 119
+Category : 1 Segment : 482 119
+Category : 1 Segment : 483 62 , 88 , 119
+Category : 1 Segment : 484 62 , 67 , 88 , 89 , 119
+Category : 1 Segment : 485 62 , 63 , 67 , 88 , 89 , 119
+Category : 1 Segment : 486 62 , 63 , 67 , 89 , 109 , 114 , 119
+Category : 1 Segment : 487 63 , 109 , 119
+Category : 1 Segment : 488 119
+Category : 1 Segment : 497 114 , 119
+Category : 1 Segment : 505 119
+Category : 1 Segment : 506 119
+Category : 1 Segment : 507 119
+Category : 1 Segment : 508 119
+Category : 1 Segment : 509 119
+Category : 1 Segment : 510 119
+Category : 1 Segment : 511 119
+Category : 1 Segment : 512 119
+Category : 1 Segment : 513 119
+Category : 1 Segment : 514 119
+Category : 1 Segment : 515 119
+Category : 1 Segment : 516 119
+Category : 1 Segment : 517 119
+Category : 1 Segment : 525 119
+Category : 1 Segment : 526 119
+Category : 1 Segment : 527 119
+Category : 1 Segment : 528 119
+Category : 1 Segment : 529 119
+Category : 1 Segment : 530 119
+Category : 1 Segment : 531 119
+Category : 1 Segment : 532 119
+Category : 1 Segment : 533 119
+Category : 1 Segment : 534 119
+Category : 1 Segment : 535 119
+Category : 1 Segment : 536 119
+Category : 1 Segment : 537 119
+Category : 1 Segment : 538 119
+Category : 1 Segment : 539 119
+Category : 1 Segment : 540 119
+Category : 1 Segment : 541 119
+Category : 1 Segment : 542 119
+Category : 1 Segment : 543 119
+Category : 1 Segment : 544 119
+Category : 1 Segment : 545 119
+Category : 1 Segment : 546 119
+Category : 1 Segment : 547 119
+Category : 1 Segment : 548 119
+Category : 1 Segment : 549 119
+Category : 1 Segment : 550 119
+Category : 1 Segment : 551 119
+Category : 1 Segment : 552 119
+Category : 1 Segment : 553 119
+Category : 1 Segment : 554 119
+Category : 1 Segment : 555 119
+Category : 1 Segment : 559 94 , 119
+Category : 1 Segment : 560 119
+Category : 1 Segment : 561 119
+Category : 1 Segment : 579 119
+Category : 1 Segment : 581 63 , 119
+Category : 1 Segment : 582 119
+Category : 1 Segment : 583 63 , 119
+Category : 1 Segment : 589 119
+Category : 1 Segment : 595 119
+Category : 1 Segment : 596 119
+Category : 1 Segment : 597 119
+Category : 1 Segment : 598 119
+Category : 1 Segment : 599 119
+Category : 1 Segment : 600 119
+Category : 1 Segment : 601 119
+Category : 1 Segment : 602 119
+Category : 1 Segment : 603 119
+Category : 1 Segment : 604 119
+Category : 1 Segment : 605 119
+Category : 1 Segment : 606 119
+Category : 1 Segment : 607 119
+Category : 1 Segment : 608 119
+Category : 1 Segment : 609 119
+Category : 1 Segment : 610 119
+Category : 1 Segment : 611 119
+Category : 1 Segment : 612 119
+Category : 1 Segment : 613 119
+Category : 1 Segment : 614 119
+Category : 1 Segment : 615 119
+Category : 1 Segment : 619 119
+Category : 1 Segment : 620 119
+Category : 1 Segment : 621 119
+Category : 1 Segment : 622 119
+Category : 1 Segment : 623 119
+Category : 1 Segment : 624 119
+Category : 1 Segment : 625 119
+Category : 1 Segment : 626 119
+Category : 1 Segment : 627 119
+Category : 1 Segment : 628 119
+Category : 1 Segment : 629 119
+Category : 1 Segment : 630 119
+Category : 1 Segment : 631 119
+Category : 1 Segment : 632 119
+Category : 1 Segment : 633 119
+Category : 1 Segment : 634 119
+Category : 1 Segment : 635 119
+Category : 1 Segment : 636 119
+Category : 1 Segment : 637 119
+Category : 1 Segment : 638 119
+Category : 1 Segment : 639 119
+Category : 1 Segment : 640 119
+Category : 1 Segment : 641 119
+Category : 1 Segment : 642 119
+Category : 1 Segment : 645 119
+Category : 1 Segment : 646 119
+Category : 1 Segment : 647 119
+Category : 1 Segment : 648 119
+Category : 1 Segment : 649 119
+Category : 1 Segment : 654 119
+Category : 1 Segment : 655 119
+Category : 1 Segment : 656 119
+Category : 1 Segment : 657 119
+Category : 1 Segment : 658 119
+Category : 1 Segment : 659 119
+Category : 1 Segment : 660 119
+Category : 1 Segment : 661 119
+Category : 1 Segment : 662 119
+Category : 1 Segment : 663 119
+Category : 1 Segment : 664 119
+Category : 1 Segment : 665 119
+Category : 1 Segment : 666 119
+Category : 1 Segment : 667 119
+Category : 1 Segment : 668 119
+Category : 1 Segment : 669 119
+Category : 1 Segment : 670 119
+Category : 1 Segment : 671 119
+Category : 1 Segment : 672 119
+Category : 1 Segment : 673 119
+Category : 1 Segment : 674 119
+Category : 1 Segment : 675 119
+Category : 1 Segment : 676 119
+Category : 1 Segment : 677 119
+Category : 1 Segment : 678 119
+Category : 1 Segment : 679 119
+Category : 1 Segment : 680 119
+Category : 1 Segment : 681 119
+Category : 1 Segment : 682 119
+Category : 1 Segment : 683 119
+Category : 1 Segment : 684 119
+Category : 1 Segment : 685 119
+Category : 1 Segment : 686 119
+Category : 1 Segment : 687 119
+Category : 1 Segment : 688 119
+Category : 1 Segment : 689 119
+Category : 1 Segment : 690 119
+Category : 1 Segment : 691 119
+Category : 1 Segment : 692 119
+Category : 1 Segment : 693 119
+Category : 1 Segment : 694 119
+Category : 1 Segment : 695 119
+Category : 1 Segment : 696 119
+Category : 1 Segment : 697 119
+Category : 1 Segment : 698 119
+Category : 1 Segment : 699 119
+Category : 1 Segment : 700 119
+Category : 1 Segment : 701 119
+Category : 1 Segment : 702 119
+Category : 1 Segment : 703 119
+Category : 1 Segment : 704 119
+Category : 1 Segment : 705 119
+Category : 1 Segment : 706 119
+Category : 1 Segment : 707 119
+Category : 1 Segment : 708 119
+Category : 1 Segment : 709 119
+Category : 1 Segment : 710 119
+Category : 1 Segment : 711 119
+Category : 1 Segment : 712 119
+Category : 1 Segment : 713 119
+Category : 1 Segment : 714 119
+Category : 1 Segment : 715 119
+Category : 1 Segment : 718 119
+Category : 1 Segment : 719 119
+Category : 1 Segment : 720 119
+Category : 1 Segment : 721 119
+Category : 1 Segment : 722 119
+Category : 1 Segment : 723 119
+Category : 1 Segment : 724 119
+Category : 1 Segment : 725 119
+Category : 1 Segment : 726 119
+Category : 1 Segment : 727 119
+Category : 1 Segment : 728 119
+Category : 1 Segment : 729 119
+Category : 1 Segment : 730 119
+Category : 1 Segment : 731 119
+Category : 1 Segment : 732 119
+Category : 1 Segment : 733 119
+Category : 1 Segment : 734 119
+Category : 1 Segment : 735 119
+Category : 1 Segment : 736 119
+Category : 1 Segment : 737 119
+Category : 1 Segment : 741 119
+Category : 1 Segment : 742 119
+Category : 1 Segment : 743 119
+Category : 1 Segment : 744 119
+Category : 1 Segment : 745 119
+Category : 1 Segment : 746 119
+Category : 1 Segment : 747 119
+Category : 1 Segment : 748 119
+Category : 1 Segment : 749 119
+Category : 1 Segment : 750 119
+Category : 1 Segment : 753 119
+Category : 1 Segment : 754 119
+Category : 1 Segment : 755 119
+Category : 1 Segment : 756 119
+Category : 1 Segment : 757 119
+Category : 1 Segment : 758 119
+Category : 1 Segment : 759 119
+Category : 1 Segment : 760 119
+Category : 1 Segment : 761 119
+Category : 1 Segment : 762 119
+Category : 1 Segment : 763 119
+Category : 1 Segment : 764 119
+Category : 1 Segment : 765 119
+Category : 1 Segment : 766 119
+Category : 1 Segment : 767 119
+Category : 1 Segment : 768 119
+Category : 1 Segment : 769 119
+Category : 1 Segment : 770 119
+Category : 1 Segment : 771 119
+Category : 1 Segment : 772 119
+Category : 1 Segment : 773 119
+Category : 1 Segment : 774 119
+Category : 1 Segment : 775 119
+Category : 1 Segment : 776 119
+Category : 1 Segment : 777 119
+Category : 1 Segment : 778 119
+Category : 1 Segment : 779 119
+Category : 1 Segment : 780 119
+Category : 1 Segment : 781 119
+Category : 1 Segment : 782 119
+Category : 1 Segment : 783 119
+Category : 1 Segment : 784 119
+Category : 1 Segment : 785 119
+Category : 1 Segment : 786 119
+Category : 1 Segment : 787 119
+Category : 1 Segment : 790 119
+Category : 1 Segment : 795 119
+Category : 1 Segment : 796 119
+Category : 1 Segment : 797 119
+Category : 1 Segment : 798 119
+Category : 1 Segment : 799 119
+Category : 1 Segment : 800 119
+Category : 1 Segment : 801 119
+Category : 1 Segment : 802 119
+Category : 1 Segment : 803 119
+Category : 1 Segment : 804 119
+Category : 1 Segment : 805 119
+Category : 1 Segment : 806 119
+Category : 1 Segment : 807 119
+Category : 1 Segment : 808 119
+Category : 1 Segment : 809 119
+Category : 1 Segment : 810 119
+Category : 1 Segment : 811 119
+Category : 1 Segment : 812 119
+Category : 1 Segment : 813 119
+Category : 1 Segment : 814 119
+Category : 1 Segment : 815 119
+Category : 1 Segment : 820 119
+Category : 1 Segment : 824 119
+Category : 1 Segment : 825 119
+Category : 1 Segment : 826 119
+Category : 1 Segment : 827 119
+Category : 1 Segment : 828 119
+Category : 1 Segment : 829 119
+Category : 1 Segment : 830 119
+Category : 1 Segment : 836 119
+Category : 1 Segment : 837 119
+Category : 1 Segment : 838 119
+Category : 1 Segment : 839 119
+Category : 1 Segment : 844 119
+Category : 1 Segment : 845 119
+Category : 1 Segment : 846 119
+Category : 1 Segment : 847 119
+Category : 1 Segment : 848 119
+Category : 1 Segment : 849 119
+Category : 1 Segment : 850 119
+Category : 1 Segment : 855 119
+Category : 1 Segment : 856 119
+Category : 1 Segment : 857 119
+Category : 1 Segment : 858 119
+Category : 1 Segment : 859 119
+Category : 1 Segment : 860 119
+Category : 1 Segment : 861 119
+Category : 1 Segment : 862 119
+Category : 1 Segment : 863 119
+Category : 2 Segment : 2 114 , 119
+Category : 2 Segment : 3 119
+Category : 2 Segment : 4 119
+Category : 2 Segment : 5 119
+Category : 2 Segment : 6 119
+Category : 2 Segment : 7 119
+Category : 2 Segment : 11 119
+Category : 2 Segment : 12 119
+Category : 2 Segment : 13 119
+Category : 2 Segment : 14 119
+Category : 2 Segment : 15 119
+Category : 2 Segment : 16 119
+Category : 2 Segment : 17 119
+Category : 2 Segment : 18 119
+Category : 2 Segment : 21 119
+Category : 2 Segment : 22 119
+Category : 2 Segment : 23 119
+Category : 2 Segment : 24 119
+Category : 2 Segment : 25 119
+Category : 2 Segment : 26 119
+Category : 2 Segment : 27 119
+Category : 2 Segment : 28 119
+Category : 2 Segment : 29 119
+Category : 2 Segment : 32 119
+Category : 2 Segment : 33 119
+Category : 2 Segment : 34 119
+Category : 2 Segment : 35 119
+Category : 2 Segment : 36 119
+Category : 2 Segment : 37 119
+Category : 2 Segment : 38 119
+Category : 2 Segment : 39 119
+Category : 2 Segment : 42 119
+Category : 2 Segment : 45 119
+Category : 2 Segment : 46 119
+Category : 2 Segment : 47 119
+Category : 2 Segment : 48 119
+Category : 2 Segment : 49 119
+Category : 2 Segment : 50 119
+Category : 2 Segment : 51 119
+Category : 2 Segment : 52 119
+Category : 2 Segment : 53 119
+Category : 2 Segment : 54 119
+Category : 2 Segment : 55 119
+Category : 2 Segment : 57 119
+Category : 2 Segment : 58 119
+Category : 2 Segment : 59 119
+Category : 2 Segment : 60 119
+Category : 2 Segment : 63 119
+Category : 2 Segment : 64 119
+Category : 2 Segment : 65 119
+Category : 2 Segment : 70 119
+Category : 2 Segment : 71 119
+Category : 2 Segment : 72 119
+Category : 2 Segment : 74 119
+Category : 2 Segment : 75 119
+Category : 2 Segment : 76 119
+Category : 2 Segment : 79 119
+Category : 2 Segment : 80 119
+Category : 2 Segment : 81 119
+Category : 2 Segment : 82 119
+Category : 2 Segment : 83 119
+Category : 2 Segment : 84 119
+Category : 2 Segment : 85 119
+Category : 2 Segment : 86 119
+Category : 2 Segment : 87 119
+Category : 2 Segment : 88 119
+Category : 2 Segment : 89 119
+Category : 2 Segment : 93 119
+Category : 2 Segment : 94 119
+Category : 2 Segment : 95 119
+Category : 2 Segment : 96 119
+Category : 2 Segment : 97 119
+Category : 2 Segment : 99 119
+Category : 2 Segment : 100 119
+Category : 2 Segment : 101 119
+Category : 2 Segment : 102 119
+Category : 2 Segment : 103 119
+Category : 2 Segment : 104 119
+Category : 2 Segment : 108 114 , 119
+Category : 2 Segment : 109 114 , 119
+Category : 2 Segment : 110 119
+Category : 2 Segment : 112 17 , 107 , 109 , 114 , 119
+Category : 2 Segment : 113 119
+Category : 2 Segment : 114 119
+Category : 2 Segment : 115 119
+Category : 2 Segment : 116 119
+Category : 2 Segment : 117 119
+Category : 2 Segment : 118 119
+Category : 2 Segment : 119 119
+Category : 2 Segment : 120 119
+Category : 2 Segment : 121 119
+Category : 2 Segment : 122 119
+Category : 2 Segment : 123 119
+Category : 2 Segment : 124 119
+Category : 2 Segment : 125 119
+Category : 2 Segment : 126 119
+Category : 2 Segment : 127 119
+Category : 2 Segment : 128 89 , 119
+Category : 2 Segment : 129 89 , 119
+Category : 2 Segment : 136 114 , 119
+Category : 2 Segment : 139 119
+Category : 2 Segment : 140 119
+Category : 2 Segment : 141 119
+Category : 2 Segment : 142 119
+Category : 2 Segment : 143 119
+Category : 2 Segment : 144 119
+Category : 2 Segment : 145 119
+Category : 2 Segment : 146 119
+Category : 2 Segment : 147 119
+Category : 2 Segment : 158 63 , 119
+Category : 2 Segment : 163 119
+Category : 2 Segment : 164 119
+Category : 2 Segment : 165 119
+Category : 2 Segment : 166 119
+Category : 2 Segment : 167 119
+Category : 2 Segment : 168 119
+Category : 2 Segment : 169 119
+Category : 2 Segment : 171 119
+Category : 2 Segment : 172 119
+Category : 2 Segment : 173 119
+Category : 2 Segment : 174 119
+Category : 2 Segment : 180 119
+Category : 2 Segment : 181 119
+Category : 2 Segment : 182 119
+Category : 2 Segment : 183 119
+Category : 2 Segment : 184 119
+Category : 2 Segment : 185 119
+Category : 2 Segment : 186 119
+Category : 2 Segment : 187 119
+Category : 2 Segment : 188 119
+Category : 2 Segment : 189 119
+Category : 2 Segment : 190 119
+Category : 2 Segment : 191 119
+Category : 2 Segment : 192 119
+Category : 2 Segment : 193 119
+Category : 2 Segment : 194 119
+Category : 2 Segment : 197 119
+Category : 2 Segment : 198 119
+Category : 2 Segment : 200 119
+Category : 2 Segment : 201 119
+Category : 2 Segment : 202 119
+Category : 2 Segment : 203 119
+Category : 2 Segment : 206 119
+Category : 2 Segment : 207 119
+Category : 2 Segment : 208 119
+Category : 2 Segment : 209 119
+Category : 2 Segment : 210 119
+Category : 2 Segment : 211 119
+Category : 2 Segment : 212 119
+Category : 2 Segment : 213 119
+Category : 2 Segment : 214 119
+Category : 2 Segment : 218 119
+Category : 2 Segment : 219 119
+Category : 2 Segment : 220 119
+Category : 2 Segment : 221 119
+Category : 2 Segment : 222 119
+Category : 2 Segment : 223 119
+Category : 2 Segment : 224 119
+Category : 2 Segment : 226 119
+Category : 2 Segment : 227 119
+Category : 2 Segment : 228 119
+Category : 2 Segment : 229 119
+Category : 2 Segment : 230 119
+Category : 2 Segment : 231 119
+Category : 2 Segment : 234 119
+Category : 2 Segment : 235 119
+Category : 2 Segment : 236 119
+Category : 2 Segment : 237 119
+Category : 3 Segment : 1 114 , 119
+Category : 3 Segment : 2 114 , 119
+Category : 3 Segment : 7 60 , 114 , 119
+Category : 3 Segment : 8 60 , 114 , 119
+Category : 3 Segment : 9 60 , 114 , 119
+Category : 3 Segment : 10 60 , 114 , 119
+Category : 3 Segment : 11 114 , 119
+Category : 3 Segment : 12 114 , 119
+Category : 3 Segment : 13 114 , 119
+Category : 3 Segment : 14 114 , 119
+Category : 3 Segment : 15 114 , 119
+Category : 3 Segment : 16 114 , 119
+Category : 3 Segment : 17 114 , 119
+Category : 3 Segment : 18 114 , 119
+Category : 3 Segment : 22 95 , 114 , 119
+Category : 3 Segment : 23 95 , 114 , 119
+Category : 3 Segment : 24 95 , 114 , 119
+Category : 3 Segment : 25 95 , 114 , 119
+Category : 3 Segment : 26 95 , 119
+Category : 3 Segment : 27 95 , 119
+Category : 3 Segment : 28 95 , 119
+Category : 3 Segment : 29 95 , 119
+Category : 3 Segment : 30 95 , 119
+Category : 3 Segment : 34 119
+Category : 3 Segment : 35 119
+Category : 3 Segment : 36 119
+Category : 3 Segment : 37 119
+Category : 3 Segment : 42 119
+Category : 3 Segment : 46 119
+Category : 3 Segment : 47 119
+Category : 3 Segment : 48 119
+Category : 3 Segment : 49 119
+Category : 3 Segment : 55 119
+Category : 3 Segment : 56 119
+Category : 3 Segment : 57 119
+Category : 3 Segment : 58 119
+Category : 3 Segment : 59 119
+Category : 3 Segment : 60 119
+Category : 3 Segment : 61 119
+Category : 3 Segment : 62 119
+Category : 3 Segment : 63 119
+Category : 3 Segment : 64 119
+Category : 3 Segment : 65 119
+Category : 3 Segment : 66 119
+Category : 3 Segment : 67 119
+Category : 3 Segment : 68 119
+Category : 3 Segment : 69 119
+Category : 3 Segment : 70 119
+Category : 3 Segment : 71 119
+Category : 3 Segment : 72 119
+Category : 3 Segment : 73 119
+Category : 3 Segment : 74 119
+Category : 3 Segment : 75 119
+Category : 3 Segment : 76 119
+Category : 3 Segment : 77 119
+Category : 3 Segment : 78 119
+Category : 3 Segment : 79 119
+Category : 3 Segment : 80 119
+Category : 3 Segment : 81 119
+Category : 3 Segment : 82 119
+Category : 3 Segment : 86 119
+Category : 3 Segment : 87 119
+Category : 3 Segment : 88 119
+Category : 3 Segment : 95 119
+Category : 3 Segment : 96 119
+Category : 3 Segment : 100 119
+Category : 3 Segment : 101 119
+Category : 3 Segment : 102 119
+Category : 3 Segment : 113 119
+Category : 3 Segment : 114 119
+Category : 3 Segment : 115 119
+Category : 3 Segment : 116 119
+Category : 3 Segment : 117 119
+Category : 3 Segment : 118 119
+Category : 3 Segment : 131 119
+Category : 3 Segment : 132 119
+Category : 3 Segment : 133 119
+Category : 3 Segment : 134 119
+Category : 3 Segment : 135 119
+Category : 3 Segment : 146 114 , 119
+Category : 3 Segment : 155 75 , 76 , 114 , 119
+Category : 3 Segment : 156 75 , 76 , 114 , 119
+Category : 3 Segment : 157 75 , 76 , 114 , 119
+Category : 3 Segment : 162 114 , 119
+Category : 3 Segment : 163 114 , 119
+Category : 3 Segment : 164 114 , 119
+Category : 3 Segment : 175 114 , 119
+Category : 3 Segment : 181 114 , 119
+Category : 3 Segment : 182 114 , 119
+Category : 3 Segment : 183 114 , 119
+Category : 3 Segment : 192 119
+Category : 3 Segment : 193 119
+Category : 3 Segment : 196 119
+Category : 3 Segment : 200 119
+Category : 3 Segment : 201 119
+Category : 3 Segment : 202 119
+Category : 3 Segment : 203 119
+Category : 3 Segment : 218 114 , 119
+Category : 3 Segment : 223 119
+Category : 3 Segment : 226 119
+Category : 3 Segment : 234 114 , 119
+Category : 3 Segment : 239 114 , 119
+Category : 3 Segment : 240 114 , 119
+Category : 3 Segment : 241 114 , 119
+Category : 3 Segment : 242 114 , 119
+Category : 3 Segment : 243 114 , 119
+Category : 3 Segment : 248 114 , 119
+Category : 3 Segment : 249 114 , 119
+Category : 3 Segment : 250 119
+Category : 3 Segment : 251 119
+Category : 3 Segment : 252 119
+Category : 3 Segment : 253 119
+Category : 3 Segment : 254 119
+Category : 3 Segment : 255 119
+Category : 3 Segment : 256 119
+Category : 3 Segment : 257 119
+Category : 3 Segment : 258 119
+Category : 3 Segment : 259 119
+Category : 3 Segment : 260 119
+Category : 3 Segment : 261 119
+Category : 3 Segment : 262 119
+Category : 3 Segment : 263 119
+Category : 3 Segment : 264 119
+Category : 3 Segment : 265 119
+Category : 3 Segment : 266 119
+Category : 3 Segment : 267 119
+Category : 3 Segment : 268 119
+Category : 3 Segment : 269 119
+Category : 3 Segment : 270 119
+Category : 3 Segment : 271 119
+Category : 3 Segment : 272 119
+Category : 3 Segment : 273 119
+Category : 3 Segment : 278 119
+Category : 3 Segment : 279 119
+Category : 3 Segment : 280 119
+Category : 3 Segment : 281 119
+Category : 3 Segment : 282 119
+Category : 3 Segment : 283 119
+Category : 3 Segment : 284 119
+Category : 3 Segment : 285 119
+Category : 3 Segment : 286 119
+Category : 3 Segment : 287 119
+Category : 3 Segment : 288 119
+Category : 3 Segment : 289 119
+Category : 3 Segment : 290 119
+Category : 3 Segment : 291 119
+Category : 3 Segment : 292 114 , 119
+Category : 3 Segment : 293 114 , 119
+Category : 3 Segment : 294 114 , 119
+Category : 3 Segment : 311 114 , 119
+Category : 3 Segment : 312 114 , 119
+Category : 3 Segment : 313 114 , 119
+Category : 3 Segment : 314 114 , 119
+Category : 3 Segment : 315 114 , 119
+Category : 3 Segment : 316 114 , 119
+Category : 3 Segment : 317 114 , 119
+Category : 3 Segment : 318 114 , 119
+Category : 3 Segment : 319 114 , 119
+Category : 3 Segment : 320 119
+Category : 3 Segment : 321 119
+Category : 3 Segment : 322 119
+Category : 3 Segment : 323 119
+Category : 3 Segment : 324 114 , 119
+Category : 3 Segment : 325 119
+Category : 3 Segment : 326 119
+Category : 3 Segment : 327 119
+Category : 3 Segment : 328 119
+Category : 3 Segment : 329 119
+Category : 3 Segment : 330 119
+Category : 3 Segment : 331 114 , 119
+Category : 3 Segment : 337 114 , 119
+Category : 3 Segment : 338 114 , 119
+Category : 3 Segment : 339 114 , 119
+Category : 3 Segment : 340 114 , 119
+Category : 3 Segment : 341 119
+Category : 3 Segment : 342 119
+Category : 3 Segment : 343 114 , 119
+Category : 3 Segment : 344 119
+Category : 3 Segment : 345 119
+Category : 3 Segment : 346 119
+Category : 3 Segment : 347 119
+Category : 3 Segment : 348 119
+Category : 3 Segment : 349 119
+Category : 3 Segment : 350 119
+Category : 3 Segment : 351 119
+Category : 3 Segment : 352 119
+Category : 3 Segment : 353 119
+Category : 3 Segment : 354 119
+Category : 3 Segment : 355 119
+Category : 3 Segment : 356 119
+Category : 3 Segment : 363 114 , 119
+Category : 3 Segment : 369 114 , 119
+Category : 3 Segment : 378 119
+Category : 3 Segment : 383 114 , 119
+Category : 3 Segment : 384 114 , 119
+Category : 3 Segment : 385 119
+Category : 3 Segment : 386 114 , 119
+Category : 3 Segment : 387 114 , 119
+Category : 3 Segment : 397 119
+Category : 3 Segment : 398 119
+Category : 3 Segment : 404 114 , 119
+Category : 3 Segment : 429 119
+Category : 3 Segment : 430 114 , 119
+Category : 3 Segment : 431 119
+Category : 3 Segment : 432 119
+Category : 3 Segment : 433 114 , 119
+Category : 3 Segment : 434 114 , 119
+Category : 3 Segment : 435 114 , 119
+Category : 3 Segment : 436 114 , 119
+Category : 3 Segment : 437 119
+Category : 3 Segment : 438 119
+Category : 3 Segment : 439 114 , 119
+Category : 3 Segment : 440 114 , 119
+Category : 3 Segment : 441 114 , 119
+Category : 3 Segment : 442 114 , 119
+Category : 3 Segment : 443 114 , 119
+Category : 3 Segment : 444 114 , 119
+Category : 3 Segment : 445 114 , 119
+Category : 3 Segment : 446 114 , 119
+Category : 3 Segment : 447 114 , 119
+Category : 3 Segment : 453 119
+Category : 3 Segment : 454 119
+Category : 3 Segment : 455 119
+Category : 3 Segment : 456 119
+Category : 3 Segment : 457 62 , 119
+Category : 3 Segment : 458 62 , 72 , 119
+Category : 3 Segment : 460 119
+Category : 3 Segment : 461 119
+Category : 3 Segment : 468 119
+Category : 3 Segment : 469 119
+Category : 3 Segment : 470 119
+Category : 3 Segment : 471 119
+Category : 3 Segment : 476 119
+Category : 3 Segment : 480 119
+Category : 3 Segment : 481 119
+Category : 3 Segment : 486 119
+Category : 3 Segment : 487 119
+Category : 3 Segment : 498 119
+Category : 3 Segment : 499 119
+Category : 3 Segment : 500 119
+Category : 3 Segment : 512 119
+Category : 3 Segment : 513 119
+Category : 3 Segment : 514 119
+Category : 3 Segment : 515 119
+Category : 3 Segment : 516 119
+Category : 3 Segment : 517 119
+Category : 3 Segment : 518 119
+Category : 3 Segment : 519 119
+Category : 3 Segment : 520 119
+Category : 3 Segment : 521 119
+Category : 3 Segment : 522 119
+Category : 3 Segment : 523 119
+Category : 3 Segment : 528 119
+Category : 3 Segment : 529 119
+Category : 3 Segment : 545 119
+Category : 3 Segment : 546 119
+Category : 3 Segment : 547 119
+Category : 3 Segment : 548 119
+Category : 3 Segment : 553 119
+Category : 3 Segment : 565 119
+Category : 3 Segment : 566 119
+Category : 3 Segment : 567 119
+Category : 3 Segment : 568 119
+Category : 3 Segment : 569 119
+Category : 3 Segment : 570 119
+Category : 3 Segment : 571 119
+Category : 3 Segment : 572 119
+Category : 3 Segment : 578 119
+Category : 3 Segment : 579 119
+Category : 3 Segment : 580 119
+Category : 3 Segment : 581 119
+Category : 3 Segment : 582 119
+Category : 3 Segment : 587 119
+Category : 3 Segment : 588 119
+Category : 3 Segment : 589 119
+Category : 3 Segment : 590 119
+Category : 3 Segment : 591 119
+Category : 3 Segment : 592 119
+Category : 3 Segment : 593 119
+Category : 3 Segment : 594 119
+Category : 3 Segment : 595 119
+Category : 3 Segment : 596 119
+Category : 3 Segment : 597 119
+Category : 3 Segment : 598 119
+Category : 3 Segment : 599 119
+Category : 3 Segment : 600 119
+Category : 3 Segment : 601 119
+Category : 3 Segment : 602 119
+Category : 3 Segment : 603 119
+Category : 3 Segment : 604 119
+Category : 3 Segment : 605 119
+Category : 3 Segment : 611 119
+Category : 3 Segment : 617 119
+Category : 3 Segment : 621 119
+Category : 3 Segment : 622 119
+Category : 3 Segment : 623 119
+Category : 3 Segment : 624 119
+Category : 3 Segment : 628 119
+Category : 3 Segment : 632 119
+Category : 3 Segment : 633 119
+Category : 3 Segment : 634 119
+Category : 3 Segment : 635 114 , 119
+Category : 3 Segment : 640 119
+Category : 3 Segment : 648 119
+Category : 3 Segment : 649 119
+Category : 3 Segment : 650 119
+Category : 3 Segment : 658 119
+Category : 3 Segment : 662 119
+Category : 3 Segment : 663 119
+Category : 3 Segment : 664 119
+Category : 3 Segment : 665 119
+Category : 3 Segment : 666 119
+Category : 3 Segment : 667 119
+Category : 3 Segment : 668 119
+Category : 3 Segment : 669 119
+Category : 3 Segment : 670 119
+Category : 3 Segment : 671 119
+Category : 3 Segment : 672 119
+Category : 3 Segment : 673 119
+Category : 3 Segment : 674 119
+Category : 3 Segment : 675 119
+Category : 3 Segment : 676 119
+Category : 3 Segment : 677 119
+Category : 3 Segment : 711 119
+Category : 3 Segment : 712 119
+Category : 3 Segment : 725 119
+Category : 3 Segment : 726 119
+Category : 3 Segment : 727 119
+Category : 3 Segment : 728 119
+Category : 3 Segment : 729 119
+Category : 3 Segment : 735 119
+Category : 3 Segment : 736 119
+Category : 3 Segment : 737 119
+Category : 3 Segment : 738 119
+Category : 3 Segment : 739 119
+Category : 3 Segment : 744 119
+Category : 3 Segment : 745 119
+Category : 3 Segment : 746 119
+Category : 3 Segment : 747 119
+Category : 3 Segment : 762 119
+Category : 3 Segment : 763 119
+Category : 3 Segment : 764 119
+Category : 3 Segment : 765 119
+Category : 3 Segment : 769 119
+Category : 3 Segment : 774 119
+Category : 3 Segment : 775 119
+Category : 3 Segment : 778 119
+Category : 3 Segment : 779 119
+Category : 3 Segment : 783 119
+Category : 3 Segment : 784 119
+Category : 3 Segment : 785 119
+Category : 3 Segment : 792 119
+Category : 3 Segment : 793 119
+Category : 3 Segment : 794 119
+Category : 3 Segment : 795 119
+Category : 3 Segment : 799 119
+Category : 3 Segment : 800 119
+Category : 3 Segment : 801 119
+Category : 3 Segment : 802 119
+Category : 3 Segment : 807 119
+Category : 3 Segment : 808 119
+Category : 3 Segment : 813 119
+Category : 3 Segment : 814 119
+Category : 3 Segment : 815 119
+Category : 3 Segment : 816 119
+Category : 3 Segment : 824 119
+Category : 3 Segment : 830 119
+Category : 3 Segment : 831 119
+Category : 3 Segment : 832 119
+Category : 3 Segment : 833 119
+Category : 3 Segment : 834 119
+Category : 3 Segment : 835 119
+Category : 3 Segment : 836 119
+Category : 3 Segment : 837 119
+Category : 3 Segment : 838 119
+Category : 3 Segment : 839 119
+Category : 3 Segment : 840 119
+Category : 3 Segment : 841 119
+Category : 3 Segment : 846 119
+Category : 3 Segment : 847 119
+Category : 3 Segment : 848 119
+Category : 3 Segment : 853 119
+Category : 3 Segment : 854 119
+Category : 3 Segment : 855 119
+Category : 3 Segment : 856 119
+Category : 3 Segment : 857 119
+Category : 3 Segment : 858 119
+Category : 3 Segment : 859 119
+Category : 3 Segment : 860 119
+Category : 3 Segment : 861 119
+Category : 3 Segment : 862 119
+Category : 3 Segment : 863 119
+Category : 3 Segment : 864 119
+Category : 3 Segment : 865 119
+Category : 3 Segment : 866 119
+Category : 3 Segment : 867 119
+Category : 4 Segment : 3 114 , 119
+Category : 4 Segment : 6 95 , 114 , 119
+Category : 4 Segment : 12 119
+Category : 4 Segment : 13 119
+Category : 4 Segment : 14 119
+Category : 4 Segment : 15 119
+Category : 4 Segment : 20 119
+Category : 4 Segment : 23 119
+Category : 4 Segment : 24 119
+Category : 4 Segment : 25 119
+Category : 4 Segment : 26 119
+Category : 4 Segment : 34 114 , 119
+Category : 4 Segment : 37 114 , 119
+Category : 4 Segment : 49 119
+Category : 4 Segment : 53 119
+Category : 4 Segment : 54 119
+Category : 4 Segment : 55 114 , 119
+Category : 4 Segment : 62 119
+Category : 4 Segment : 63 119
+Category : 4 Segment : 64 119
+Category : 4 Segment : 65 119
+Category : 4 Segment : 66 119
+Category : 4 Segment : 67 119
+Category : 4 Segment : 73 114 , 119
+Category : 4 Segment : 74 114 , 119
+Category : 4 Segment : 75 119
+Category : 4 Segment : 76 119
+Category : 4 Segment : 78 114 , 119
+Category : 4 Segment : 79 114 , 119
+Category : 4 Segment : 84 114 , 119
+Category : 4 Segment : 89 114 , 119
+Category : 4 Segment : 90 119
+Category : 4 Segment : 91 114 , 119
+Category : 4 Segment : 97 114 , 119
+Category : 4 Segment : 98 114 , 119
+Category : 4 Segment : 99 114 , 119
+Category : 4 Segment : 100 114 , 119
+Category : 4 Segment : 105 119
+Category : 4 Segment : 106 119
+Category : 4 Segment : 113 119
+Category : 4 Segment : 114 119
+Category : 4 Segment : 117 119
+Category : 4 Segment : 121 119
+Category : 4 Segment : 122 119
+Category : 4 Segment : 131 119
+Category : 4 Segment : 132 119
+Category : 4 Segment : 134 119
+Category : 4 Segment : 135 119
+Category : 4 Segment : 140 119
+Category : 4 Segment : 145 119
+Category : 4 Segment : 146 119
+Category : 4 Segment : 148 119
+Category : 4 Segment : 149 119
+Category : 4 Segment : 150 119
+Category : 4 Segment : 151 119
+Category : 4 Segment : 155 119
+Category : 4 Segment : 158 119
+Category : 4 Segment : 159 119
+Category : 4 Segment : 160 119
+Category : 4 Segment : 165 119
+Category : 4 Segment : 166 119
+Category : 4 Segment : 168 119
+Category : 4 Segment : 175 119
+Category : 4 Segment : 176 119
+Category : 4 Segment : 178 119
+Category : 4 Segment : 179 119
+Category : 4 Segment : 180 119
+Category : 4 Segment : 193 119
+Category : 4 Segment : 196 119
+Category : 4 Segment : 197 119
+Category : 4 Segment : 198 119
+Category : 4 Segment : 199 119
+Category : 4 Segment : 200 119
+Category : 4 Segment : 201 119
+Category : 4 Segment : 202 119
+Category : 4 Segment : 203 119
+Category : 4 Segment : 206 119
+Category : 4 Segment : 209 119
+Category : 4 Segment : 210 119
+Category : 4 Segment : 211 119
+Category : 4 Segment : 214 119
+Category : 4 Segment : 216 119
+Category : 4 Segment : 217 119
+Category : 4 Segment : 225 119
+Category : 4 Segment : 227 119
+Bad Channels Corrected: 1522
+
+
+Averaging : Averaging
+Time Stamp :
+Start Time: Fri, July, 28, 2017, 12:01:07 PM
+End Time: Fri, July, 28, 2017, 12:01:20 PM
+Time To Completion 00:00:13.039
+
+Settings: 
+Tool Version: 5.4
+Handle source files separately
+Subjects are not averaged together.
+
+Results:
+Subjects processed
+p3je-04-ep
+     1: 'Visual Common' has 1 segments.
+     2: 'Visual Rare' has 1 segments.
+     3: 'Audio Common' has 1 segments.
+     4: 'Audio Rare' has 1 segments.
+
+
+Montage Operations Tool : Average Reference
+Time Stamp :
+Start Time: Fri, July, 28, 2017, 12:01:30 PM
+End Time: Fri, July, 28, 2017, 12:01:30 PM
+Time To Completion 00:00:00.280
+
+Settings: 
+Tool Version: 5.4
+Original Layout: HydroCel GSN 128 1.0
+New Layout: Average Reference
+Average Reference
+Excluding Bad Channels
+
+
+Baseline Correction : Baseline Correction 200
+Time Stamp :
+Start Time: Fri, July, 28, 2017, 12:01:40 PM
+End Time: Fri, July, 28, 2017, 12:01:40 PM
+Time To Completion 00:00:00.228
+
+Settings: 
+Tool Version: 5.4
+Select baseline from: Portion of Segment
+Select baseline with respect to: Segment Time = 0
+Baseline begins 200 milliseconds before the sample and 200 milliseconds long
+
