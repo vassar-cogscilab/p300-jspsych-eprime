@@ -1,0 +1,196 @@
+p3je-29-js_20171116_054854_fil_seg_bcr_ave__fin.mff
+
+Filtering : 0.1 Hz Highpass
+Time Stamp :
+Start Time: Mon, November, 20, 2017, 06:10:11 PM
+End Time: Mon, November, 20, 2017, 06:10:27 PM
+Time To Completion 00:00:15.990
+
+Settings: 
+Tool Version: 5.4
+Filter Setting: 0.1 Hz Highpass
+Filter Type: IIR
+Passband Gain: -0.01 dB
+Stopband Gain: -40 dB
+Rolloff: 2 Hz
+Compensated Phase Delay: FOHP
+
+
+Filtering : 30 Hz Lowpass
+Time Stamp :
+Start Time: Mon, November, 20, 2017, 06:10:11 PM
+End Time: Mon, November, 20, 2017, 06:10:27 PM
+Time To Completion 00:00:15.990
+
+Settings: 
+Tool Version: 5.4
+Filter Setting: 30 Hz Lowpass
+Filter Type: FIR
+Passband Gain: -0.01 dB
+Stopband Gain: -40 dB
+Rolloff: 2 Hz
+Compensated Phase Delay: 886 samples
+
+
+Segmentation : jspsych-eprime segmentation
+Time Stamp :
+Start Time: Mon, November, 20, 2017, 06:10:28 PM
+End Time: Mon, November, 20, 2017, 06:10:45 PM
+Time To Completion 00:00:17.785
+
+Settings: 
+Tool Version: 5.4
+  1: Rules for category "Visual Common"
+    Milliseconds Before: 200
+    Milliseconds After: 800
+    Milliseconds Offset: 0
+    Event 1:
+        Code is "DI16" or
+        (Code is "stim" and
+        Cell is "vis_common")
+  2: Rules for category "Visual Rare"
+    Milliseconds Before: 200
+    Milliseconds After: 800
+    Milliseconds Offset: 0
+    Event 1:
+        Code is "DIN8" or
+        (Code is "stim" and
+        Cell is "vis_rare")
+  3: Rules for category "Audio Common"
+    Milliseconds Before: 200
+    Milliseconds After: 800
+    Milliseconds Offset: 0
+    Event 1:
+        Code is "DIN4" or
+        (Code is "stim" and
+        Cell is "aud_common")
+  4: Rules for category "Audio Rare"
+    Milliseconds Before: 200
+    Milliseconds After: 800
+    Milliseconds Offset: 0
+    Event 1:
+        Code is "DIN2" or
+        (Code is "stim" and
+        Cell is "aud_rare")
+
+Results:
+Segmented to 4 categories and 2199 segments
+    1  : "Visual Common" has 893 segments
+    2  : "Visual Rare" has 207 segments
+    3  : "Audio Common" has 843 segments
+    4  : "Audio Rare" has 256 segments
+
+
+Artifact Detection : Artifact Detection
+Time Stamp :
+Start Time: Mon, November, 20, 2017, 06:10:52 PM
+End Time: Mon, November, 20, 2017, 06:11:05 PM
+Time To Completion 00:00:13.275
+
+Settings: 
+Tool Version: 5.4
+Create log file
+Mark channel bad in recording if bad for greater than 20 percent.
+    Mark segment bad if it contains more than 10 bad channels.
+    Mark segment bad if it contains eye blinks.
+    Mark segment bad if it contains eye movement.
+Overwrite prior threshold records.
+Bad Channel Threshold
+Max - Min > 200.00
+Entire segment.
+Perform a moving average of 80 ms
+
+Eye Blink Threshold
+Max - Min > 140.00
+Window size: 640 ms
+Perform a moving average of 80 ms
+Exclude inferior eye channels?
+    Left: No
+    Right: No
+
+Eye Movement Threshold
+Max - Min > 55.00
+Window size: 640 ms
+Perform a moving average of 80 ms
+
+
+Results:
+Log File: p3je-29-js_20171116_054854_fil_seg.log
+Results from: Bad Channel Threshold
+    Number of Channels Marked Bad: 1036
+    Number of Bad Channel Records: 1036
+Results from: Eye Blink Threshold
+    Number of Eye Blink Records: 1748
+Results from: Eye Movement Threshold
+    Number of Eye Movement Records: 331
+Channels marked bad in entire recording.
+
+Segments Marked Bad: 649
+Segments marked bad for eye blinks: 26.24% (577/2199)
+Segments marked bad for eye movements: 3.27% (72/2199)
+Segments marked bad for number of bad channels: 0.00% (0/2199)
+
+
+Bad Channel Replacement Tool : Bad Channel Replacement Copy
+Time Stamp :
+Start Time: Mon, November, 20, 2017, 06:11:05 PM
+End Time: Mon, November, 20, 2017, 06:14:45 PM
+Time To Completion 00:03:39.563
+
+Settings: 
+Tool Version: 5.4
+
+Results:
+Category : 1 Segment : 766 46
+Category : 2 Segment : 175 46
+Category : 2 Segment : 176 46
+Category : 2 Segment : 177 46
+Bad Channels Corrected: 4
+
+
+Averaging : Averaging
+Time Stamp :
+Start Time: Mon, November, 20, 2017, 06:14:45 PM
+End Time: Mon, November, 20, 2017, 06:14:54 PM
+Time To Completion 00:00:08.762
+
+Settings: 
+Tool Version: 5.4
+Handle source files separately
+Subjects are not averaged together.
+
+Results:
+Subjects processed
+p3je-29-js
+     1: 'Visual Common' has 1 segments.
+     2: 'Visual Rare' has 1 segments.
+     3: 'Audio Common' has 1 segments.
+     4: 'Audio Rare' has 1 segments.
+
+
+Montage Operations Tool : Average Reference
+Time Stamp :
+Start Time: Mon, November, 20, 2017, 06:14:54 PM
+End Time: Mon, November, 20, 2017, 06:14:54 PM
+Time To Completion 00:00:00.194
+
+Settings: 
+Tool Version: 5.4
+Original Layout: HydroCel GSN 128 1.0
+New Layout: Average Reference
+Average Reference
+Excluding Bad Channels
+
+
+Baseline Correction : Baseline Correction 200
+Time Stamp :
+Start Time: Mon, November, 20, 2017, 06:14:54 PM
+End Time: Mon, November, 20, 2017, 06:14:54 PM
+Time To Completion 00:00:00.083
+
+Settings: 
+Tool Version: 5.4
+Select baseline from: Portion of Segment
+Select baseline with respect to: Segment Time = 0
+Baseline begins 200 milliseconds before the sample and 200 milliseconds long
+
