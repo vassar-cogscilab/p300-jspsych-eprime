@@ -1,0 +1,238 @@
+p3je-23-ep_20171102_010949_fil_seg_bcr_ave__fin.mff
+
+Filtering : 0.1 Hz Highpass
+Time Stamp :
+Start Time: Thu, November, 02, 2017, 06:31:19 PM
+End Time: Thu, November, 02, 2017, 06:31:37 PM
+Time To Completion 00:00:17.569
+
+Settings: 
+Tool Version: 5.4
+Filter Setting: 0.1 Hz Highpass
+Filter Type: IIR
+Passband Gain: -0.01 dB
+Stopband Gain: -40 dB
+Rolloff: 2 Hz
+Compensated Phase Delay: FOHP
+
+
+Filtering : 30 Hz Lowpass
+Time Stamp :
+Start Time: Thu, November, 02, 2017, 06:31:19 PM
+End Time: Thu, November, 02, 2017, 06:31:37 PM
+Time To Completion 00:00:17.569
+
+Settings: 
+Tool Version: 5.4
+Filter Setting: 30 Hz Lowpass
+Filter Type: FIR
+Passband Gain: -0.01 dB
+Stopband Gain: -40 dB
+Rolloff: 2 Hz
+Compensated Phase Delay: 886 samples
+
+
+Segmentation : jspsych-eprime segmentation
+Time Stamp :
+Start Time: Thu, November, 02, 2017, 06:31:37 PM
+End Time: Thu, November, 02, 2017, 06:31:52 PM
+Time To Completion 00:00:15.347
+
+Settings: 
+Tool Version: 5.4
+  1: Rules for category "Visual Common"
+    Milliseconds Before: 200
+    Milliseconds After: 800
+    Milliseconds Offset: 0
+    Event 1:
+        Code is "DI16" or
+        (Code is "stim" and
+        Cell is "vis_common")
+  2: Rules for category "Visual Rare"
+    Milliseconds Before: 200
+    Milliseconds After: 800
+    Milliseconds Offset: 0
+    Event 1:
+        Code is "DIN8" or
+        (Code is "stim" and
+        Cell is "vis_rare")
+  3: Rules for category "Audio Common"
+    Milliseconds Before: 200
+    Milliseconds After: 800
+    Milliseconds Offset: 0
+    Event 1:
+        Code is "DIN4" or
+        (Code is "stim" and
+        Cell is "aud_common")
+  4: Rules for category "Audio Rare"
+    Milliseconds Before: 200
+    Milliseconds After: 800
+    Milliseconds Offset: 0
+    Event 1:
+        Code is "DIN2" or
+        (Code is "stim" and
+        Cell is "aud_rare")
+
+Results:
+Segmented to 4 categories and 2200 segments
+    1  : "Visual Common" has 879 segments
+    2  : "Visual Rare" has 221 segments
+    3  : "Audio Common" has 895 segments
+    4  : "Audio Rare" has 205 segments
+
+
+Artifact Detection : Artifact Detection
+Time Stamp :
+Start Time: Thu, November, 02, 2017, 06:31:58 PM
+End Time: Thu, November, 02, 2017, 06:32:12 PM
+Time To Completion 00:00:13.964
+
+Settings: 
+Tool Version: 5.4
+Create log file
+Mark channel bad in recording if bad for greater than 20 percent.
+    Mark segment bad if it contains more than 10 bad channels.
+    Mark segment bad if it contains eye blinks.
+    Mark segment bad if it contains eye movement.
+Overwrite prior threshold records.
+Bad Channel Threshold
+Max - Min > 200.00
+Entire segment.
+Perform a moving average of 80 ms
+
+Eye Blink Threshold
+Max - Min > 140.00
+Window size: 640 ms
+Perform a moving average of 80 ms
+Exclude inferior eye channels?
+    Left: No
+    Right: No
+
+Eye Movement Threshold
+Max - Min > 55.00
+Window size: 640 ms
+Perform a moving average of 80 ms
+
+
+Results:
+Log File: p3je-23-ep_20171102_010949_fil_seg.log
+Results from: Bad Channel Threshold
+    Number of Channels Marked Bad: 1498
+    Number of Bad Channel Records: 1498
+Results from: Eye Blink Threshold
+    Number of Eye Blink Records: 796
+Results from: Eye Movement Threshold
+    Number of Eye Movement Records: 425
+Channels marked bad in entire recording.
+
+Segments Marked Bad: 491
+Segments marked bad for eye blinks: 12.82% (282/2200)
+Segments marked bad for eye movements: 9.50% (209/2200)
+Segments marked bad for number of bad channels: 0.00% (0/2200)
+
+
+Bad Channel Replacement Tool : Bad Channel Replacement Copy
+Time Stamp :
+Start Time: Thu, November, 02, 2017, 06:32:12 PM
+End Time: Thu, November, 02, 2017, 06:36:02 PM
+Time To Completion 00:03:49.621
+
+Settings: 
+Tool Version: 5.4
+
+Results:
+Category : 1 Segment : 125 99 , 100
+Category : 1 Segment : 126 99 , 100
+Category : 1 Segment : 127 99 , 100
+Category : 1 Segment : 128 100
+Category : 1 Segment : 129 100
+Category : 1 Segment : 130 100
+Category : 1 Segment : 131 100
+Category : 1 Segment : 148 100
+Category : 1 Segment : 149 100
+Category : 1 Segment : 155 16
+Category : 1 Segment : 156 16
+Category : 1 Segment : 157 16
+Category : 1 Segment : 158 16
+Category : 1 Segment : 160 16
+Category : 1 Segment : 161 16
+Category : 1 Segment : 163 16
+Category : 1 Segment : 173 16
+Category : 1 Segment : 174 16
+Category : 1 Segment : 175 16
+Category : 1 Segment : 176 16
+Category : 1 Segment : 202 16
+Category : 1 Segment : 203 16
+Category : 1 Segment : 204 16
+Category : 1 Segment : 205 16
+Category : 1 Segment : 206 16
+Category : 1 Segment : 207 16
+Category : 1 Segment : 208 16
+Category : 1 Segment : 209 16
+Category : 1 Segment : 210 16
+Category : 2 Segment : 27 100
+Category : 2 Segment : 32 16
+Category : 2 Segment : 81 100
+Category : 3 Segment : 26 46
+Category : 3 Segment : 27 46
+Category : 3 Segment : 28 46
+Category : 3 Segment : 362 56
+Category : 3 Segment : 363 56
+Category : 3 Segment : 364 56
+Category : 3 Segment : 365 56
+Category : 3 Segment : 757 39
+Category : 3 Segment : 758 39
+Category : 3 Segment : 760 39
+Category : 4 Segment : 8 46
+Category : 4 Segment : 79 56
+Category : 4 Segment : 167 39
+Category : 4 Segment : 168 39
+Bad Channels Corrected: 49
+
+
+Averaging : Averaging
+Time Stamp :
+Start Time: Thu, November, 02, 2017, 06:36:02 PM
+End Time: Thu, November, 02, 2017, 06:36:14 PM
+Time To Completion 00:00:12.702
+
+Settings: 
+Tool Version: 5.4
+Handle source files separately
+Subjects are not averaged together.
+
+Results:
+Subjects processed
+p3je-23-ep
+     1: 'Visual Common' has 1 segments.
+     2: 'Visual Rare' has 1 segments.
+     3: 'Audio Common' has 1 segments.
+     4: 'Audio Rare' has 1 segments.
+
+
+Montage Operations Tool : Average Reference
+Time Stamp :
+Start Time: Thu, November, 02, 2017, 06:36:15 PM
+End Time: Thu, November, 02, 2017, 06:36:15 PM
+Time To Completion 00:00:00.155
+
+Settings: 
+Tool Version: 5.4
+Original Layout: HydroCel GSN 128 1.0
+New Layout: Average Reference
+Average Reference
+Excluding Bad Channels
+
+
+Baseline Correction : Baseline Correction 200
+Time Stamp :
+Start Time: Thu, November, 02, 2017, 06:36:15 PM
+End Time: Thu, November, 02, 2017, 06:36:15 PM
+Time To Completion 00:00:00.070
+
+Settings: 
+Tool Version: 5.4
+Select baseline from: Portion of Segment
+Select baseline with respect to: Segment Time = 0
+Baseline begins 200 milliseconds before the sample and 200 milliseconds long
+
