@@ -1,0 +1,404 @@
+p3je-19-ep_20171005_112510_fil_seg_bcr_ave__fin.mff
+
+Filtering : 0.1 Hz Highpass
+Time Stamp :
+Start Time: Wed, October, 18, 2017, 12:48:04 PM
+End Time: Wed, October, 18, 2017, 12:48:22 PM
+Time To Completion 00:00:17.887
+
+Settings: 
+Tool Version: 5.4
+Filter Setting: 0.1 Hz Highpass
+Filter Type: IIR
+Passband Gain: -0.01 dB
+Stopband Gain: -40 dB
+Rolloff: 2 Hz
+Compensated Phase Delay: FOHP
+
+
+Filtering : 30 Hz Lowpass
+Time Stamp :
+Start Time: Wed, October, 18, 2017, 12:48:04 PM
+End Time: Wed, October, 18, 2017, 12:48:22 PM
+Time To Completion 00:00:17.887
+
+Settings: 
+Tool Version: 5.4
+Filter Setting: 30 Hz Lowpass
+Filter Type: FIR
+Passband Gain: -0.01 dB
+Stopband Gain: -40 dB
+Rolloff: 2 Hz
+Compensated Phase Delay: 886 samples
+
+
+Segmentation : jspsych-eprime segmentation
+Time Stamp :
+Start Time: Wed, October, 18, 2017, 12:48:22 PM
+End Time: Wed, October, 18, 2017, 12:48:36 PM
+Time To Completion 00:00:14.007
+
+Settings: 
+Tool Version: 5.4
+  1: Rules for category "Visual Common"
+    Milliseconds Before: 200
+    Milliseconds After: 800
+    Milliseconds Offset: 0
+    Event 1:
+        Code is "DI16" or
+        (Code is "stim" and
+        Cell is "vis_common")
+  2: Rules for category "Visual Rare"
+    Milliseconds Before: 200
+    Milliseconds After: 800
+    Milliseconds Offset: 0
+    Event 1:
+        Code is "DIN8" or
+        (Code is "stim" and
+        Cell is "vis_rare")
+  3: Rules for category "Audio Common"
+    Milliseconds Before: 200
+    Milliseconds After: 800
+    Milliseconds Offset: 0
+    Event 1:
+        Code is "DIN4" or
+        (Code is "stim" and
+        Cell is "aud_common")
+  4: Rules for category "Audio Rare"
+    Milliseconds Before: 200
+    Milliseconds After: 800
+    Milliseconds Offset: 0
+    Event 1:
+        Code is "DIN2" or
+        (Code is "stim" and
+        Cell is "aud_rare")
+
+Results:
+Segmented to 4 categories and 2200 segments
+    1  : "Visual Common" has 883 segments
+    2  : "Visual Rare" has 217 segments
+    3  : "Audio Common" has 889 segments
+    4  : "Audio Rare" has 211 segments
+
+
+Artifact Detection : Artifact Detection
+Time Stamp :
+Start Time: Wed, October, 18, 2017, 12:48:42 PM
+End Time: Wed, October, 18, 2017, 12:48:55 PM
+Time To Completion 00:00:12.901
+
+Settings: 
+Tool Version: 5.4
+Create log file
+Mark channel bad in recording if bad for greater than 20 percent.
+    Mark segment bad if it contains more than 10 bad channels.
+    Mark segment bad if it contains eye blinks.
+    Mark segment bad if it contains eye movement.
+Overwrite prior threshold records.
+Bad Channel Threshold
+Max - Min > 200.00
+Entire segment.
+Perform a moving average of 80 ms
+
+Eye Blink Threshold
+Max - Min > 140.00
+Window size: 640 ms
+Perform a moving average of 80 ms
+Exclude inferior eye channels?
+    Left: No
+    Right: No
+
+Eye Movement Threshold
+Max - Min > 55.00
+Window size: 640 ms
+Perform a moving average of 80 ms
+
+
+Results:
+Log File: p3je-19-ep_20171005_112510_fil_seg.log
+Results from: Bad Channel Threshold
+    Number of Channels Marked Bad: 7079
+    Number of Bad Channel Records: 7079
+Results from: Eye Blink Threshold
+    Number of Eye Blink Records: 2308
+Results from: Eye Movement Threshold
+    Number of Eye Movement Records: 1408
+Channels marked bad in entire recording.
+
+Segments Marked Bad: 1595
+Segments marked bad for eye blinks: 26.82% (590/2200)
+Segments marked bad for eye movements: 45.68% (1005/2200)
+Segments marked bad for number of bad channels: 0.00% (0/2200)
+
+
+Bad Channel Replacement Tool : Bad Channel Replacement Copy
+Time Stamp :
+Start Time: Wed, October, 18, 2017, 12:48:55 PM
+End Time: Wed, October, 18, 2017, 12:52:42 PM
+Time To Completion 00:03:46.509
+
+Settings: 
+Tool Version: 5.4
+
+Results:
+Category : 1 Segment : 33 48
+Category : 1 Segment : 67 48
+Category : 1 Segment : 68 48
+Category : 1 Segment : 95 48
+Category : 1 Segment : 96 48
+Category : 1 Segment : 156 48
+Category : 1 Segment : 159 48
+Category : 1 Segment : 160 48
+Category : 1 Segment : 161 48
+Category : 1 Segment : 162 48
+Category : 1 Segment : 188 48
+Category : 1 Segment : 191 48
+Category : 1 Segment : 197 48
+Category : 1 Segment : 346 48
+Category : 1 Segment : 347 48
+Category : 1 Segment : 348 48
+Category : 1 Segment : 349 48
+Category : 1 Segment : 350 48
+Category : 1 Segment : 351 48
+Category : 1 Segment : 352 48
+Category : 1 Segment : 353 48
+Category : 1 Segment : 354 48
+Category : 1 Segment : 362 48
+Category : 1 Segment : 369 48
+Category : 1 Segment : 370 48
+Category : 1 Segment : 371 48
+Category : 1 Segment : 372 48
+Category : 1 Segment : 373 48
+Category : 1 Segment : 406 48
+Category : 2 Segment : 32 48
+Category : 2 Segment : 33 48
+Category : 2 Segment : 44 48
+Category : 2 Segment : 55 48
+Category : 2 Segment : 97 48
+Category : 2 Segment : 98 48
+Category : 3 Segment : 13 48
+Category : 3 Segment : 14 48
+Category : 3 Segment : 15 48
+Category : 3 Segment : 16 48
+Category : 3 Segment : 17 48
+Category : 3 Segment : 18 48
+Category : 3 Segment : 23 48
+Category : 3 Segment : 24 48
+Category : 3 Segment : 25 48
+Category : 3 Segment : 26 48
+Category : 3 Segment : 27 48
+Category : 3 Segment : 28 48
+Category : 3 Segment : 32 48
+Category : 3 Segment : 33 48
+Category : 3 Segment : 34 48
+Category : 3 Segment : 35 48
+Category : 3 Segment : 36 48
+Category : 3 Segment : 37 48
+Category : 3 Segment : 45 48
+Category : 3 Segment : 50 48
+Category : 3 Segment : 51 48
+Category : 3 Segment : 52 48
+Category : 3 Segment : 58 48
+Category : 3 Segment : 59 48
+Category : 3 Segment : 60 48
+Category : 3 Segment : 64 48
+Category : 3 Segment : 65 48
+Category : 3 Segment : 66 48
+Category : 3 Segment : 67 48
+Category : 3 Segment : 68 48
+Category : 3 Segment : 69 48
+Category : 3 Segment : 76 48
+Category : 3 Segment : 77 48
+Category : 3 Segment : 78 48
+Category : 3 Segment : 79 48
+Category : 3 Segment : 80 48
+Category : 3 Segment : 81 48
+Category : 3 Segment : 82 48
+Category : 3 Segment : 83 48
+Category : 3 Segment : 84 48
+Category : 3 Segment : 89 48
+Category : 3 Segment : 90 48
+Category : 3 Segment : 91 48
+Category : 3 Segment : 92 48
+Category : 3 Segment : 93 48
+Category : 3 Segment : 94 48
+Category : 3 Segment : 95 48
+Category : 3 Segment : 96 48
+Category : 3 Segment : 99 48
+Category : 3 Segment : 100 48
+Category : 3 Segment : 118 48
+Category : 3 Segment : 119 48
+Category : 3 Segment : 120 48
+Category : 3 Segment : 121 48
+Category : 3 Segment : 122 48
+Category : 3 Segment : 123 48
+Category : 3 Segment : 124 48
+Category : 3 Segment : 125 48
+Category : 3 Segment : 126 48
+Category : 3 Segment : 127 48
+Category : 3 Segment : 130 48
+Category : 3 Segment : 139 48
+Category : 3 Segment : 153 48
+Category : 3 Segment : 170 48
+Category : 3 Segment : 171 48
+Category : 3 Segment : 172 48
+Category : 3 Segment : 173 48
+Category : 3 Segment : 174 48
+Category : 3 Segment : 185 48
+Category : 3 Segment : 186 48
+Category : 3 Segment : 187 48
+Category : 3 Segment : 188 48
+Category : 3 Segment : 189 48
+Category : 3 Segment : 190 48
+Category : 3 Segment : 191 48
+Category : 3 Segment : 192 48
+Category : 3 Segment : 193 48
+Category : 3 Segment : 194 48
+Category : 3 Segment : 195 48
+Category : 3 Segment : 196 48
+Category : 3 Segment : 197 48
+Category : 3 Segment : 198 48
+Category : 3 Segment : 199 48
+Category : 3 Segment : 206 48
+Category : 3 Segment : 207 48
+Category : 3 Segment : 208 48
+Category : 3 Segment : 210 48
+Category : 3 Segment : 211 48
+Category : 3 Segment : 212 48
+Category : 3 Segment : 213 48
+Category : 3 Segment : 214 48
+Category : 3 Segment : 215 48
+Category : 3 Segment : 216 48
+Category : 3 Segment : 217 48
+Category : 3 Segment : 219 48
+Category : 3 Segment : 222 48
+Category : 3 Segment : 223 48
+Category : 3 Segment : 227 48
+Category : 3 Segment : 239 48
+Category : 3 Segment : 249 48
+Category : 3 Segment : 250 48
+Category : 3 Segment : 251 48
+Category : 3 Segment : 252 48
+Category : 3 Segment : 253 48
+Category : 3 Segment : 254 48
+Category : 3 Segment : 257 48
+Category : 3 Segment : 258 48
+Category : 3 Segment : 259 48
+Category : 3 Segment : 260 48
+Category : 3 Segment : 261 48
+Category : 3 Segment : 262 48
+Category : 3 Segment : 263 48
+Category : 3 Segment : 264 48
+Category : 3 Segment : 273 48
+Category : 3 Segment : 274 48
+Category : 3 Segment : 275 48
+Category : 3 Segment : 280 48
+Category : 3 Segment : 281 48
+Category : 3 Segment : 282 48
+Category : 3 Segment : 283 48
+Category : 3 Segment : 284 48
+Category : 3 Segment : 285 48
+Category : 3 Segment : 286 48
+Category : 3 Segment : 287 48
+Category : 3 Segment : 288 48
+Category : 3 Segment : 289 48
+Category : 3 Segment : 299 48
+Category : 3 Segment : 303 48
+Category : 3 Segment : 304 48
+Category : 3 Segment : 313 48
+Category : 3 Segment : 320 48
+Category : 3 Segment : 321 48
+Category : 3 Segment : 322 48
+Category : 3 Segment : 323 48
+Category : 3 Segment : 324 48
+Category : 3 Segment : 332 48
+Category : 3 Segment : 333 48
+Category : 3 Segment : 334 48
+Category : 3 Segment : 335 48
+Category : 3 Segment : 338 48
+Category : 3 Segment : 339 48
+Category : 3 Segment : 340 48
+Category : 3 Segment : 381 48
+Category : 3 Segment : 382 48
+Category : 3 Segment : 445 48
+Category : 4 Segment : 5 48
+Category : 4 Segment : 6 48
+Category : 4 Segment : 7 48
+Category : 4 Segment : 10 48
+Category : 4 Segment : 15 48
+Category : 4 Segment : 18 48
+Category : 4 Segment : 19 48
+Category : 4 Segment : 24 48
+Category : 4 Segment : 27 48
+Category : 4 Segment : 29 48
+Category : 4 Segment : 36 48
+Category : 4 Segment : 37 48
+Category : 4 Segment : 38 48
+Category : 4 Segment : 39 48
+Category : 4 Segment : 47 48
+Category : 4 Segment : 48 48
+Category : 4 Segment : 50 48
+Category : 4 Segment : 51 48
+Category : 4 Segment : 56 48
+Category : 4 Segment : 61 48
+Category : 4 Segment : 62 48
+Category : 4 Segment : 63 48
+Category : 4 Segment : 64 48
+Category : 4 Segment : 67 48
+Category : 4 Segment : 68 48
+Category : 4 Segment : 69 48
+Category : 4 Segment : 70 48
+Category : 4 Segment : 71 48
+Category : 4 Segment : 72 48
+Category : 4 Segment : 74 48
+Category : 4 Segment : 75 48
+Category : 4 Segment : 101 22
+Bad Channels Corrected: 212
+
+
+Averaging : Averaging
+Time Stamp :
+Start Time: Wed, October, 18, 2017, 12:52:42 PM
+End Time: Wed, October, 18, 2017, 12:52:49 PM
+Time To Completion 00:00:06.864
+
+Settings: 
+Tool Version: 5.4
+Handle source files separately
+Subjects are not averaged together.
+
+Results:
+Subjects processed
+p3je-19-ep
+     1: 'Visual Common' has 1 segments.
+     2: 'Visual Rare' has 1 segments.
+     3: 'Audio Common' has 1 segments.
+     4: 'Audio Rare' has 1 segments.
+
+
+Montage Operations Tool : Average Reference
+Time Stamp :
+Start Time: Wed, October, 18, 2017, 12:52:49 PM
+End Time: Wed, October, 18, 2017, 12:52:49 PM
+Time To Completion 00:00:00.127
+
+Settings: 
+Tool Version: 5.4
+Original Layout: HydroCel GSN 128 1.0
+New Layout: Average Reference
+Average Reference
+Excluding Bad Channels
+
+
+Baseline Correction : Baseline Correction 200
+Time Stamp :
+Start Time: Wed, October, 18, 2017, 12:52:49 PM
+End Time: Wed, October, 18, 2017, 12:52:49 PM
+Time To Completion 00:00:00.086
+
+Settings: 
+Tool Version: 5.4
+Select baseline from: Portion of Segment
+Select baseline with respect to: Segment Time = 0
+Baseline begins 200 milliseconds before the sample and 200 milliseconds long
+
