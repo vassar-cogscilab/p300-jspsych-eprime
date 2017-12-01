@@ -7,9 +7,7 @@
     <script src="jspsych/plugins/jspsych-survey-text.js"></script>
     <script src="jspsych/plugins/jspsych-single-stim.js"></script>
     <script src="jspsych/plugins/jspsych-single-audio.js"></script>
-    <script src="jspsych/plugins/jspsych-call-function.js"></script>
     <link href="jspsych/css/jspsych.css" rel="stylesheet" type="text/css"></link>
-    <style id="mouse-style"></style>
 	</head>
 	<body></body>
   <script>
@@ -24,22 +22,6 @@
 
     var timeline = [];
 
-    var hide_mouse = {
-      type: 'call-function',
-      func: function(){
-        document.querySelector('#mouse-style').innerHTML = '* { cursor: none;}';
-      }
-    }
-
-    var show_mouse = {
-      type: 'call-function',
-      func: function(){
-        document.querySelector('#mouse-style').innerHTML = '';
-      }
-    }
-
-    timeline.push(hide_mouse);
-
     var welcome = {
       type: "text",
       text: "<p>Welcome to the experiment! Please press any key to continue.</p>",
@@ -53,8 +35,8 @@
 
         var instructions = {
           type: "text",
-          text: "<p>There will be both high pitched and low pitched tones played through the logitech speakers. " +
-            " For this part of the experiment, count the number of high pitched tones you hear. Remember to keep your eyes focused on the black plus sign in the center of the screen.</p>" +
+          text: "<p>There will be both high frequency and low frequency tones played through your headset. " +
+            " For this part of the experiment, count the number of high frequency tones you hear.</p>" +
             "<p>The test will begin immediately after you press any key.</p>",
           timing_post_trial: 2000
         };
@@ -85,7 +67,6 @@
 
         timeline.push(test_procedure);
 
-        timeline.push(show_mouse);
 
         var survey_trial = {
           type: 'survey-text',
@@ -97,16 +78,14 @@
 
         timeline.push(survey_trial);
 
-        timeline.push(hide_mouse);
-
         var debrief_block = {
           type: "text",
           text: function() {
-            var which_block = jsPsych.data.get().last(2).values()[0].block;
+            var which_block = jsPsych.data.get().last(1).values()[0].block;
             var common_trials = jsPsych.data.get().filter({oddball_type: 'common', block: which_block}).count();
             var rare_trials = jsPsych.data.get().filter({oddball_type: 'rare', block: which_block}).count();
 
-            return "<p>There were "+rare_trials+" high pitched tones.</p><p>Press any key to complete this part of the experiment and continue to the next.</p>";
+            return "<p>There were "+rare_trials+" high frequency tones.</p><p>Press any key to complete this part of the experiment and continue to the next.</p>";
 
           }
         }
@@ -120,7 +99,7 @@
         var instructions = {
           type: "text",
           text: "<p>In this section, either a red or blue circle with a black plus sign in the center will appear" +
-            " on the screen.</p><p>Your task is to count how many of the circles are the color red. Remember to keep your eyes focused on the black plus sign in the center of the screen.</p>" +
+            " on the screen.</p><p>Your task is to count how many of the circles are the color red.</p>" +
             "<p>Press any key to continue and immediately start the test.</p>" +
             "<div style='float: left;'><img src='img/Blue.jpg'></img></div>" +
             "<div style='float: right;'><img src='img/Red.jpg'></img></div>",
@@ -157,7 +136,6 @@
 
         timeline.push(test_procedure);
 
-        timeline.push(show_mouse);
 
         var survey_trial = {
           type: 'survey-text',
@@ -169,12 +147,10 @@
 
         timeline.push(survey_trial);
 
-        timeline.push(hide_mouse);
-
         var debrief_block = {
           type: "text",
           text: function() {
-            var which_block = jsPsych.data.get().last(2).values()[0].block;
+            var which_block = jsPsych.data.get().last(1).values()[0].block;
             var common_trials = jsPsych.data.get().filter({oddball_type: 'common', block: which_block}).count();
             var rare_trials = jsPsych.data.get().filter({oddball_type: 'rare', block: which_block}).count();
 
@@ -187,7 +163,7 @@
     }
     var instruction_change = {
       type: "text",
-      text: "<p>Please remain seated and alert the experimenter you have finished the experiment. The experimenter will be in shortly thereafer. Thank you!</p>",
+      text: "<p>Please remain seated, the experimenter will be in shortly.</p>",
       timing_post_trial: 2000
     }
 
