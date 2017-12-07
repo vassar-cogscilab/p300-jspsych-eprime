@@ -1,0 +1,28 @@
+---
+title: "Data Set Creation"
+author: "Prashit Parikh"
+date: "November 30, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+all.data = read.csv("data/eeg/generated/eeg-subset.csv")
+subject.table <- expand.grid(subject=(1:30),software=c('jspsych', 'eprime'), electrode=1:128)
+read.table("data/eeg/generated/eeg-subset.csv")
+
+#Useful for Direction
+subject.table <- expand.grid(subject=(1:30),software=c('jspsych', 'eprime'), electrode=1:128)
+subject.table$voltage <- rnorm(2560, 0, 1)
+subject.table$code = sample(1:7680)
+subject.table$code <- mapply(function(sw, el){
+  code <- subset(subject.table, software==sw & electrode==el)$code
+  return(code)
+}, subject.table$software, subject.table$electrode)
+
+subject.table$software <- NULL
+subject.table$electrode <- NULL
+```

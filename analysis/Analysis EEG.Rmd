@@ -1,0 +1,24 @@
+---
+title: "Analysis EEG"
+author: "Prashit Parikh"
+date: "December 1, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(readr)
+
+all.data <- read_csv(file = "data/eeg/generated/eeg-subset.csv")
+
+
+
+
+
+
+
+
+```

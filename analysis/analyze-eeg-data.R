@@ -1,3 +1,4 @@
+```{r}
 library(ggplot2)
 library(dplyr)
 
@@ -74,6 +75,7 @@ difference.data.sftw.audio <- all.data %>%
 snr.audio.sftw <- difference.data.sftw.audio %>% group_by(subject, electrode, software) %>% do(snr = snr.function(.))
 snr.audio.sftw$snr <- as.numeric(snr.audio.sftw$snr)
 snr.audio.sftw$electrode <- factor(snr.audio.sftw$electrode)
+
 difference.data.sftw.visual <- all.data %>% 
   filter(modality == 'visual', electrode %in% visual.electrodes) %>% 
   group_by(subject, electrode, time, software) %>% 
@@ -161,7 +163,7 @@ difference.data.audio.sftw <- all.data %>%
   summarize(amp.diff = mean(amp.diff))
 ggplot(difference.data.audio.sftw, aes(x=time,y=amp.diff, color=software)) +
   geom_line(size=1.2) + 
-  facet_wrap(~electrode) +
+  facet_wrap(~electrode) + 
   theme_bw()
 
 # SNR
@@ -178,3 +180,4 @@ ggplot(snr, aes(x=modality, y=snr, colour=software))+
 snr.subject <- snr %>% group_by(subject, electrode, modality) %>% mutate(snr.diff = lag(snr) - snr) %>% filter(!is.na(snr.diff))
 snr.diff <- snr.subject %>% group_by(electrode, modality) %>% summarize(mean.p300.power = mean(p300.power), mean.snr.diff = mean(snr.diff))
 ggplot(snr.diff, aes(x=mean.p300.power, y=mean.snr.diff, color=modality))+geom_point()
+```

@@ -1,0 +1,86 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+library(readr)
+all.data <- read_csv('data/eeg/generated/eeg-coded.csv')
+all.data$frequency <- factor(all.data$frequency)
+all.data$code <- factor(all.data$code)
+all.data$subject <- factor(all.data$subject)
+all.data$modality <- factor(all.data$modality)
+```
+
+```{r}
+library(ggplot2)
+library(dplyr)
+ggplot(all.data %>% filter(modality=='visual', time > 0, time < 500), aes(x=time, y=amplitude, group=interaction(code, frequency), color=frequency))+
+  stat_summary(fun.y=mean, geom='line', alpha=0.5)
+```
+
+```{r}
+difference.data <- all.data %>%
+  group_by(subject, code, modality, time) %>%
+  mutate(voltage.diff = amplitude - lag(amplitude)) %>%
+  filter(!is.na(voltage.diff))
+library(readr)
+write_csv(difference.data, 'data/eeg/generated/eeg_difference_waves.csv')
+
+mean.difference.by.code <- difference.data %>%
+  group_by(code,modality,time) %>%
+  summarise(voltage.diff = mean(voltage.diff))
+
+ggplot(mean.difference.by.code, aes(x=time, y=voltage.diff, group=interaction(code, modality), color=modality))+
+  geom_line(alpha=0.5)+
+  facet_wrap(~modality)+
+  geom_vline(xintercept =c(225,350, 300,450))
+```
+```{r}
+p300.window.auditory <- 225:350
+p300.window.visual <- 300:450
+snr.function <- function(x){
+  snr <- 0
+  if(x$modality[1] == 'audio'){
+    signal.window <- p300.window.auditory
+  } else {
+    signal.window <- p300.window.visual
+  }
+  noise.window <- -200:800
+  noise.window <- noise.window[!noise.window %in% signal.window]
+  signal <- (x %>% filter(time %in% signal.window) %>% summarize(m = mean(voltage.diff^2)))$m[1]
+  noise <- (x %>% filter(time %in% noise.window) %>% summarize(m = mean(voltage.diff^2)))$m[1]
+  return(sqrt(signal/noise))
+}
+snr.modality <- mean.difference.by.code %>% group_by(code, modality) %>% do(snr = snr.function(.))
+snr.modality$snr <- as.numeric(snr.modality$snr)
+library(tidyr)
+snr.modality.spread <- snr.modality %>% spread(modality, snr)
+ggplot(snr.modality.spread, aes(x=audio, y=visual, label=code))+ 
+  geom_point(size=2) + 
+  geom_text(nudge_y = 0.1)+
+  geom_hline(yintercept = 0)+
+  geom_hline(yintercept = 3, linetype=2, color='red')+
+  geom_vline(xintercept = 0)+
+  geom_vline(xintercept = 1.75, linetype=2, color='blue')+
+  labs(x="Audio SNR", y="Visual SNR")+
+  theme_bw()
+
+```
+
+
+
+
+```{r}
+visual.codes <- as.character((snr.modality %>% filter(modality=='visual') %>% group_by(modality) %>% top_n(n=12, w=snr))$code)
+audio.codes <- as.character((snr.modality %>% filter(modality=='audio') %>% group_by(modality) %>% top_n(n=12, w=snr))$code)
+
+code.table <- read_csv('data/eeg/generated/eeg-code-table.csv')
+
+visual.electrodes <- unique((code.table %>% filter(code%in%visual.codes))$el)
+audio.electrodes <- unique((code.table %>% filter(code%in%audio.codes))$el)
+
+# visual = 55, 62, 72, 77, 78, 79, 80, 86, 87, 93, 104
+# audio = 31, 37, 42, 54, 78, 80, 87, 106
+```
