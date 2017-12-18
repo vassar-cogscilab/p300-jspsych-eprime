@@ -1,10 +1,15 @@
 ---
-title: "R Notebook"
-output: html_notebook
+title: "EEG jspsych-E-Prime Analysis"
+author: "Josh de Leeuw, Prashit Parikh"
+date: "December 18, 2017"
+output: html_document
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 
-```{r}
+```{r, results='hide'}
 library(readr)
 all.data <- read_csv('data/eeg/generated/eeg-coded.csv')
 all.data$frequency <- factor(all.data$frequency)
@@ -13,14 +18,22 @@ all.data$subject <- factor(all.data$subject)
 all.data$modality <- factor(all.data$modality)
 ```
 
-```{r}
+
+Figure 1 (pictured below) was created in order to determine precisely where the p300 wave occurred in the data set examined. R packages ggplot2 and dplyr were utilized in order to filter only the visual data for each participant. Waves for each visual observation between common annd rare stimuli were then observed. Depending on where the beginning and end of the p300 window occurred, a time window was established for analysis in the section proceeding.
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
 library(ggplot2)
 library(dplyr)
 ggplot(all.data %>% filter(modality=='visual', time > 0, time < 500), aes(x=time, y=amplitude, group=interaction(code, frequency), color=frequency))+
   stat_summary(fun.y=mean, geom='line', alpha=0.5)
 ```
 
-```{r}
+
+The P300 component of our data set was then isolated by calculating the difference wave for rare - common stimuli for each code value (unique subject/electrode combination). The difference waves for both visual and auditory data are shown in the figure below. Based on this visualization, we determined that the audio P300 occurred earlier (225-350ms) than the visual P300 (300-450ms). We used this information to set the window of interest for each modality in the remainder of our analysis.
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
 difference.data <- all.data %>%
   group_by(subject, code, modality, time) %>%
   mutate(voltage.diff = amplitude - lag(amplitude)) %>%
@@ -39,7 +52,11 @@ ggplot(mean.difference.by.code, aes(x=time, y=voltage.diff, group=interaction(co
 
 ```
 
-```{r}
+
+We calculated the SNR for each electrode in the region of interest for both audio and visual P300s. Based on the visualization below, we set a threshold for audio focal electrodes at SNR ≥ 1.75, and visual focal electrodes at SNR ≥ 3. This allowed us to isolate the electrodes that best measured the P300.
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
 p300.window.auditory <- 225:350
 p300.window.visual <- 300:450
 snr.function <- function(x){
@@ -72,9 +89,10 @@ ggplot(snr.modality.spread, aes(x=audio, y=visual, label=code))+
 ```
 
 
+Electrode isolation and selection resulted in the consideration of 11 visual codes and 8 audio codes for cross-software comparison analysis.
 
 
-```{r}
+```{r, results='hide'}
 visual.codes <- as.character((snr.modality %>% filter(modality=='visual') %>% group_by(modality) %>% top_n(n=12, w=snr))$code)
 audio.codes <- as.character((snr.modality %>% filter(modality=='audio') %>% group_by(modality) %>% top_n(n=12, w=snr))$code)
 
@@ -87,7 +105,11 @@ audio.electrodes <- unique((code.table %>% filter(code%in%audio.codes))$el)
 # audio = 31, 37, 42, 54, 78, 80, 87, 106
 ```
 
-```{r}
+
+Finally, we calculated the difference in SNR between software packages for each electrode/subject code value chosen above. The distributions below show that SNR differences tend to be centered near 0. 
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
 all.data <- read_csv('data/eeg/generated/eeg-subset.csv')
 
 difference.data.sftw.audio <- all.data %>% 
@@ -127,7 +149,10 @@ ggplot(snr.audio.sftw.diff, aes(x=electrode, y=snr.diff))+
   ylim(-4.5,4.5)+
   labs(x="Electrode", y="Difference in Signal/Noise Ratio\njsPsych - E-Prime\n")+
   theme_bw()
+```
 
+After identifying the electrodes/subject code values most sensitive to the auditory and visual P300s, we examined whether there were any differences in the signal-to-noise ratio of the P300 as a function of which software package was running the experiment. Below are the difference waves for auditory and visual P300s, divided by software. Once again, the relationship between software proves to be very similar.
+```{r, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
 # Show P300 waves for different software
 difference.data.sftw.audio.agg <- difference.data.sftw.audio %>%
   group_by(electrode, time, software) %>%
