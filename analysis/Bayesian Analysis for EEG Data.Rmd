@@ -1,0 +1,39 @@
+---
+title: "Bayesian Analysis for EEG Data"
+author: "Josh de Leeuw, Prashit Parikh"
+date: "January 2, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#Making sure the system is prepared for analysis
+Sys.getenv('PATH')
+system('g++ -v')
+system('where make') #All functionalities seem to be working
+```
+
+```{r}
+#RStan Installation
+install.packages("rstan", repos = "https://cloud.r-project.org/", dependencies=TRUE)
+#Make sure that the packages work properly
+fx <- inline::cxxfunction( signature(x = "integer", y = "numeric" ) , '
+	return ScalarReal( INTEGER(x)[0] * REAL(y)[0] ) ;
+' )
+fx( 2L, 5 ) # The answer is 10 which means that RStan is working within R
+```
+
+```{r}
+#Bayesian Analysis of Data using the brms package
+#Load the brms package
+library(brms)
+#Make sure the data set is read into R
+all.data <- read_csv('data/eeg/generated/eeg-subset.csv')
+#Fit the Model
+fit <- brm(modality ~ software + (1|subject) + (1|electrode), 
+           data = all.data, family = poisson())
+```
+
