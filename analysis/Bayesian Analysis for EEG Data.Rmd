@@ -30,10 +30,22 @@ fx( 2L, 5 ) # The answer is 10 which means that RStan is working within R
 #Bayesian Analysis of Data using the brms package
 #Load the brms package
 library(brms)
+
 #Make sure the data set is read into R
-all.data <- read_csv('data/eeg/generated/eeg-subset.csv')
-#Fit the Model
-fit <- brm(modality ~ software + (1|subject) + (1|electrode), 
-           data = all.data, family = poisson())
+all.audio <- snr.audio.sftw
+#Fit the Audio Model
+fit.audio <- brm(snr ~ software + (1|subject) + (1|electrode), 
+           data = all.audio, family = gaussian)
+#Summary of C++ Model built using RStan
+summary(fit.audio)
+
+#Make sure the data set is read into R
+all.visual <- snr.visual.sftw
+#Fit the Audio Model
+fit.visual <- brm(snr ~ software + (1|subject) + (1|electrode), 
+           data = all.visual, family = gaussian)
+#Summary of C++ Model built using RStan
+summary(fit.visual)
 ```
 
+This is how far I got, I didn't really know what the numbers meant intuitively so I'm working on figuring that out by reading help files and googling. 
