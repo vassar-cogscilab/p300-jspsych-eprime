@@ -140,7 +140,6 @@ fx( 2L, 5 ) # The answer is 10 which means that RStan is working within R
 #Bayesian Analysis of Data using the brms package
 #Load the brms package
 library(brms)
-
 #Make sure the data set is read into R
 all.audio = read.csv(file = "data/eeg/generated/snr_audio.csv")
 all.visual = read.csv(file = "data/eeg/generated/snr_visual.csv")

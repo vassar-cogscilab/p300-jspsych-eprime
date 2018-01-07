@@ -186,7 +186,7 @@ install.packages(&quot;rstan&quot;, repos = &quot;https://cloud.r-project.org/&q
 <pre><code>## package 'rstan' successfully unpacked and MD5 sums checked
 ## 
 ## The downloaded binary packages are in
-##  C:\Users\Prashit Parikh\AppData\Local\Temp\RtmpKgjviF\downloaded_packages</code></pre>
+##  C:\Users\Prashit Parikh\AppData\Local\Temp\RtmpETsk0X\downloaded_packages</code></pre>
 <pre class="r"><code>#Make sure that the packages work properly
 fx &lt;- inline::cxxfunction( signature(x = &quot;integer&quot;, y = &quot;numeric&quot; ) , '
     return ScalarReal( INTEGER(x)[0] * REAL(y)[0] ) ;
@@ -233,9 +233,9 @@ fit.audio &lt;- brm(snr ~ software + (1|subject) + (1|electrode),
 ## Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Iteration: 2000 / 2000 [100%]  (Sampling)
 ## 
-##  Elapsed Time: 1.354 seconds (Warm-up)
-##                0.838 seconds (Sampling)
-##                2.192 seconds (Total)
+##  Elapsed Time: 1.799 seconds (Warm-up)
+##                1.155 seconds (Sampling)
+##                2.954 seconds (Total)
 ## 
 ## 
 ## SAMPLING FOR MODEL 'gaussian brms-model' NOW (CHAIN 2).
@@ -258,9 +258,9 @@ fit.audio &lt;- brm(snr ~ software + (1|subject) + (1|electrode),
 ## Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Iteration: 2000 / 2000 [100%]  (Sampling)
 ## 
-##  Elapsed Time: 1.12 seconds (Warm-up)
-##                0.747 seconds (Sampling)
-##                1.867 seconds (Total)
+##  Elapsed Time: 1.441 seconds (Warm-up)
+##                0.682 seconds (Sampling)
+##                2.123 seconds (Total)
 ## 
 ## 
 ## SAMPLING FOR MODEL 'gaussian brms-model' NOW (CHAIN 3).
@@ -283,9 +283,9 @@ fit.audio &lt;- brm(snr ~ software + (1|subject) + (1|electrode),
 ## Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Iteration: 2000 / 2000 [100%]  (Sampling)
 ## 
-##  Elapsed Time: 1.377 seconds (Warm-up)
-##                1.353 seconds (Sampling)
-##                2.73 seconds (Total)
+##  Elapsed Time: 1.483 seconds (Warm-up)
+##                1.126 seconds (Sampling)
+##                2.609 seconds (Total)
 ## 
 ## 
 ## SAMPLING FOR MODEL 'gaussian brms-model' NOW (CHAIN 4).
@@ -308,11 +308,16 @@ fit.audio &lt;- brm(snr ~ software + (1|subject) + (1|electrode),
 ## Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Iteration: 2000 / 2000 [100%]  (Sampling)
 ## 
-##  Elapsed Time: 1.266 seconds (Warm-up)
-##                1.013 seconds (Sampling)
-##                2.279 seconds (Total)</code></pre>
+##  Elapsed Time: 1.712 seconds (Warm-up)
+##                1.084 seconds (Sampling)
+##                2.796 seconds (Total)</code></pre>
+<pre><code>## Warning: There were 1 divergent transitions after warmup. Increasing adapt_delta above 0.8 may help. See
+## http://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup</code></pre>
+<pre><code>## Warning: Examine the pairs() plot to diagnose sampling problems</code></pre>
 <pre class="r"><code>#Summary of C++ Model built using RStan
 summary(fit.audio)</code></pre>
+<pre><code>## Warning: There were 1 divergent transitions after warmup. Increasing adapt_delta above 0.8 may help.
+## See http://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup</code></pre>
 <pre><code>##  Family: gaussian 
 ##   Links: mu = identity; sigma = identity 
 ## Formula: snr ~ software + (1 | subject) + (1 | electrode) 
@@ -324,20 +329,20 @@ summary(fit.audio)</code></pre>
 ## Group-Level Effects: 
 ## ~electrode (Number of levels: 8) 
 ##               Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
-## sd(Intercept)     0.11      0.06     0.01     0.26       1183 1.00
+## sd(Intercept)     0.11      0.06     0.02     0.26       1543 1.00
 ## 
 ## ~subject (Number of levels: 28) 
 ##               Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
-## sd(Intercept)     0.56      0.09     0.41     0.76        651 1.01
+## sd(Intercept)     0.56      0.09     0.42     0.76        746 1.00
 ## 
 ## Population-Level Effects: 
 ##            Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
-## Intercept      1.49      0.13     1.25     1.75        474 1.00
+## Intercept      1.49      0.13     1.24     1.74        495 1.01
 ## softwarejs    -0.03      0.06    -0.15     0.09       4000 1.00
 ## 
 ## Family Specific Parameters: 
 ##       Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
-## sigma     0.64      0.02     0.60     0.69       2895 1.00
+## sigma     0.64      0.02     0.60     0.69       4000 1.00
 ## 
 ## Samples were drawn using sampling(NUTS). For each parameter, Eff.Sample 
 ## is a crude measure of effective sample size, and Rhat is the potential 
@@ -370,9 +375,9 @@ fit.visual &lt;- brm(snr ~ software + (1|subject) + (1|electrode),
 ## Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Iteration: 2000 / 2000 [100%]  (Sampling)
 ## 
-##  Elapsed Time: 1.374 seconds (Warm-up)
-##                1.279 seconds (Sampling)
-##                2.653 seconds (Total)
+##  Elapsed Time: 2.664 seconds (Warm-up)
+##                1.738 seconds (Sampling)
+##                4.402 seconds (Total)
 ## 
 ## 
 ## SAMPLING FOR MODEL 'gaussian brms-model' NOW (CHAIN 2).
@@ -395,9 +400,9 @@ fit.visual &lt;- brm(snr ~ software + (1|subject) + (1|electrode),
 ## Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Iteration: 2000 / 2000 [100%]  (Sampling)
 ## 
-##  Elapsed Time: 1.436 seconds (Warm-up)
-##                0.799 seconds (Sampling)
-##                2.235 seconds (Total)
+##  Elapsed Time: 2.464 seconds (Warm-up)
+##                1.722 seconds (Sampling)
+##                4.186 seconds (Total)
 ## 
 ## 
 ## SAMPLING FOR MODEL 'gaussian brms-model' NOW (CHAIN 3).
@@ -420,9 +425,9 @@ fit.visual &lt;- brm(snr ~ software + (1|subject) + (1|electrode),
 ## Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Iteration: 2000 / 2000 [100%]  (Sampling)
 ## 
-##  Elapsed Time: 1.481 seconds (Warm-up)
-##                0.887 seconds (Sampling)
-##                2.368 seconds (Total)
+##  Elapsed Time: 2.718 seconds (Warm-up)
+##                1.953 seconds (Sampling)
+##                4.671 seconds (Total)
 ## 
 ## 
 ## SAMPLING FOR MODEL 'gaussian brms-model' NOW (CHAIN 4).
@@ -445,9 +450,9 @@ fit.visual &lt;- brm(snr ~ software + (1|subject) + (1|electrode),
 ## Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Iteration: 2000 / 2000 [100%]  (Sampling)
 ## 
-##  Elapsed Time: 1.398 seconds (Warm-up)
-##                0.802 seconds (Sampling)
-##                2.2 seconds (Total)</code></pre>
+##  Elapsed Time: 2.675 seconds (Warm-up)
+##                1.947 seconds (Sampling)
+##                4.622 seconds (Total)</code></pre>
 <pre class="r"><code>#Summary of C++ Model built using RStan
 summary(fit.visual)</code></pre>
 <pre><code>##  Family: gaussian 
@@ -461,20 +466,20 @@ summary(fit.visual)</code></pre>
 ## Group-Level Effects: 
 ## ~electrode (Number of levels: 11) 
 ##               Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
-## sd(Intercept)     0.12      0.06     0.01     0.25       1187 1.00
+## sd(Intercept)     0.12      0.06     0.01     0.24       1392 1.00
 ## 
 ## ~subject (Number of levels: 28) 
 ##               Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
-## sd(Intercept)     0.68      0.10     0.51     0.90        638 1.01
+## sd(Intercept)     0.67      0.10     0.50     0.89        521 1.00
 ## 
 ## Population-Level Effects: 
 ##            Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
-## Intercept      1.88      0.14     1.60     2.16        390 1.01
-## softwarejs     0.07      0.06    -0.05     0.19       4000 1.00
+## Intercept      1.89      0.14     1.62     2.16        532 1.00
+## softwarejs     0.07      0.06    -0.05     0.19       3723 1.00
 ## 
 ## Family Specific Parameters: 
 ##       Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
-## sigma     0.76      0.02     0.72     0.80       3209 1.00
+## sigma     0.76      0.02     0.72     0.81       3219 1.00
 ## 
 ## Samples were drawn using sampling(NUTS). For each parameter, Eff.Sample 
 ## is a crude measure of effective sample size, and Rhat is the potential 
