@@ -123,57 +123,7 @@ $(document).ready(function () {
 </div>
 
 
-<p>Preparatory Code for Self-Contained RMD Analysis</p>
-<pre class="r"><code>library(readr)
-library(dplyr)</code></pre>
-<pre><code>## 
-## Attaching package: 'dplyr'</code></pre>
-<pre><code>## The following objects are masked from 'package:stats':
-## 
-##     filter, lag</code></pre>
-<pre><code>## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union</code></pre>
-<pre class="r"><code>all.data &lt;- read_csv('data/eeg/generated/eeg-coded.csv')</code></pre>
-<pre><code>## Parsed with column specification:
-## cols(
-##   subject = col_integer(),
-##   modality = col_character(),
-##   frequency = col_character(),
-##   time = col_integer(),
-##   amplitude = col_double(),
-##   code = col_integer()
-## )</code></pre>
-<pre class="r"><code>all.data$frequency &lt;- factor(all.data$frequency)
-all.data$code &lt;- factor(all.data$code)
-all.data$subject &lt;- factor(all.data$subject)
-all.data$modality &lt;- factor(all.data$modality)</code></pre>
-<pre class="r"><code>visual.codes &lt;- as.character((snr.modality %&gt;% filter(modality=='visual') %&gt;% group_by(modality) %&gt;% top_n(n=12, w=snr))$code)</code></pre>
-<pre><code>## Warning: Grouping rowwise data frame strips rowwise nature</code></pre>
-<pre class="r"><code>audio.codes &lt;- as.character((snr.modality %&gt;% filter(modality=='audio') %&gt;% group_by(modality) %&gt;% top_n(n=12, w=snr))$code)</code></pre>
-<pre><code>## Warning: Grouping rowwise data frame strips rowwise nature</code></pre>
-<pre class="r"><code>code.table &lt;- read_csv('data/eeg/generated/eeg-code-table.csv')</code></pre>
-<pre><code>## Parsed with column specification:
-## cols(
-##   sw = col_character(),
-##   el = col_integer(),
-##   combined.code = col_character(),
-##   code = col_integer()
-## )</code></pre>
-<pre class="r"><code>visual.electrodes &lt;- unique((code.table %&gt;% filter(code%in%visual.codes))$el)
-audio.electrodes &lt;- unique((code.table %&gt;% filter(code%in%audio.codes))$el)
-
-# visual = 55, 62, 72, 77, 78, 79, 80, 86, 87, 93, 104
-# audio = 31, 37, 42, 54, 78, 80, 87, 106</code></pre>
-<p>===================================================================================================================================================================</p>
 <p>Bayesian Analysis Begins</p>
-<pre class="r"><code>#Write CSV files for the data being used because the file should be self-contained 
-#Load proper packages
-library(readr)
-#Audio
-write_csv(snr.audio.sftw, 'data/eeg/generated/snr_audio.csv')
-#Visual
-write_csv(snr.visual.sftw, 'data/eeg/generated/snr_visual.csv')</code></pre>
 <pre class="r"><code>#Making sure the system is prepared for analysis
 Sys.getenv('PATH')</code></pre>
 <pre><code>## [1] &quot;C:\\Program Files\\R\\R-3.4.2\\bin\\x64;c:\\Rtools\\bin;c:\\Rtools\\mingw_32\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\PharosSystems\\Core;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\PuTTY\\;C:\\Users\\Prashit Parikh\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Prashit Parikh\\AppData\\Local\\atom\\bin;C:\\Users\\Prashit Parikh\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Prashit Parikh\\AppData\\Local\\GitHubDesktop\\bin&quot;</code></pre>
@@ -186,7 +136,7 @@ install.packages(&quot;rstan&quot;, repos = &quot;https://cloud.r-project.org/&q
 <pre><code>## package 'rstan' successfully unpacked and MD5 sums checked
 ## 
 ## The downloaded binary packages are in
-##  C:\Users\Prashit Parikh\AppData\Local\Temp\RtmpETsk0X\downloaded_packages</code></pre>
+##  C:\Users\Prashit Parikh\AppData\Local\Temp\RtmpQbUHGM\downloaded_packages</code></pre>
 <pre class="r"><code>#Make sure that the packages work properly
 fx &lt;- inline::cxxfunction( signature(x = &quot;integer&quot;, y = &quot;numeric&quot; ) , '
     return ScalarReal( INTEGER(x)[0] * REAL(y)[0] ) ;
@@ -204,10 +154,25 @@ library(brms)</code></pre>
 ## can be found by typing help('brms'). A more detailed introduction
 ## to the package is available through vignette('brms_overview').
 ## Run theme_set(theme_default()) to use the default bayesplot theme.</code></pre>
-<pre class="r"><code>#Make sure the data set is read into R
-all.audio = read.csv(file = &quot;data/eeg/generated/snr_audio.csv&quot;)
-all.visual = read.csv(file = &quot;data/eeg/generated/snr_visual.csv&quot;)
-#Fit the Audio Model
+<pre class="r"><code>library(readr)
+#Make sure the data set is read into R
+all.audio = read_csv(file = &quot;data/eeg/generated/snr_audio.csv&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   subject = col_integer(),
+##   electrode = col_integer(),
+##   software = col_character(),
+##   snr = col_double()
+## )</code></pre>
+<pre class="r"><code>all.visual = read_csv(file = &quot;data/eeg/generated/snr_visual.csv&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   subject = col_integer(),
+##   electrode = col_integer(),
+##   software = col_character(),
+##   snr = col_double()
+## )</code></pre>
+<pre class="r"><code>#Fit the Audio Model
 fit.audio &lt;- brm(snr ~ software + (1|subject) + (1|electrode), 
            data = all.audio, family = gaussian)</code></pre>
 <pre><code>## Compiling the C++ model</code></pre>
@@ -233,9 +198,9 @@ fit.audio &lt;- brm(snr ~ software + (1|subject) + (1|electrode),
 ## Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Iteration: 2000 / 2000 [100%]  (Sampling)
 ## 
-##  Elapsed Time: 1.799 seconds (Warm-up)
-##                1.155 seconds (Sampling)
-##                2.954 seconds (Total)
+##  Elapsed Time: 1.128 seconds (Warm-up)
+##                0.661 seconds (Sampling)
+##                1.789 seconds (Total)
 ## 
 ## 
 ## SAMPLING FOR MODEL 'gaussian brms-model' NOW (CHAIN 2).
@@ -258,9 +223,9 @@ fit.audio &lt;- brm(snr ~ software + (1|subject) + (1|electrode),
 ## Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Iteration: 2000 / 2000 [100%]  (Sampling)
 ## 
-##  Elapsed Time: 1.441 seconds (Warm-up)
-##                0.682 seconds (Sampling)
-##                2.123 seconds (Total)
+##  Elapsed Time: 1.118 seconds (Warm-up)
+##                0.802 seconds (Sampling)
+##                1.92 seconds (Total)
 ## 
 ## 
 ## SAMPLING FOR MODEL 'gaussian brms-model' NOW (CHAIN 3).
@@ -283,9 +248,9 @@ fit.audio &lt;- brm(snr ~ software + (1|subject) + (1|electrode),
 ## Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Iteration: 2000 / 2000 [100%]  (Sampling)
 ## 
-##  Elapsed Time: 1.483 seconds (Warm-up)
-##                1.126 seconds (Sampling)
-##                2.609 seconds (Total)
+##  Elapsed Time: 0.988 seconds (Warm-up)
+##                0.653 seconds (Sampling)
+##                1.641 seconds (Total)
 ## 
 ## 
 ## SAMPLING FOR MODEL 'gaussian brms-model' NOW (CHAIN 4).
@@ -308,9 +273,9 @@ fit.audio &lt;- brm(snr ~ software + (1|subject) + (1|electrode),
 ## Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Iteration: 2000 / 2000 [100%]  (Sampling)
 ## 
-##  Elapsed Time: 1.712 seconds (Warm-up)
-##                1.084 seconds (Sampling)
-##                2.796 seconds (Total)</code></pre>
+##  Elapsed Time: 1.073 seconds (Warm-up)
+##                0.759 seconds (Sampling)
+##                1.832 seconds (Total)</code></pre>
 <pre><code>## Warning: There were 1 divergent transitions after warmup. Increasing adapt_delta above 0.8 may help. See
 ## http://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup</code></pre>
 <pre><code>## Warning: Examine the pairs() plot to diagnose sampling problems</code></pre>
@@ -329,16 +294,16 @@ summary(fit.audio)</code></pre>
 ## Group-Level Effects: 
 ## ~electrode (Number of levels: 8) 
 ##               Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
-## sd(Intercept)     0.11      0.06     0.02     0.26       1543 1.00
+## sd(Intercept)     0.11      0.07     0.01     0.26       1089 1.00
 ## 
 ## ~subject (Number of levels: 28) 
 ##               Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
-## sd(Intercept)     0.56      0.09     0.42     0.76        746 1.00
+## sd(Intercept)     0.56      0.09     0.42     0.76        631 1.00
 ## 
 ## Population-Level Effects: 
 ##            Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
-## Intercept      1.49      0.13     1.24     1.74        495 1.01
-## softwarejs    -0.03      0.06    -0.15     0.09       4000 1.00
+## Intercept      1.49      0.12     1.23     1.72        468 1.00
+## softwarejs    -0.03      0.06    -0.16     0.09       4000 1.00
 ## 
 ## Family Specific Parameters: 
 ##       Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
@@ -347,9 +312,7 @@ summary(fit.audio)</code></pre>
 ## Samples were drawn using sampling(NUTS). For each parameter, Eff.Sample 
 ## is a crude measure of effective sample size, and Rhat is the potential 
 ## scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
-<pre class="r"><code>#Make sure the data set is read into R
-all.visual &lt;- snr.visual.sftw
-#Fit the Visual Model
+<pre class="r"><code>#Fit the Visual Model
 fit.visual &lt;- brm(snr ~ software + (1|subject) + (1|electrode), 
            data = all.visual, family = gaussian)</code></pre>
 <pre><code>## Compiling the C++ model
@@ -375,9 +338,9 @@ fit.visual &lt;- brm(snr ~ software + (1|subject) + (1|electrode),
 ## Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Iteration: 2000 / 2000 [100%]  (Sampling)
 ## 
-##  Elapsed Time: 2.664 seconds (Warm-up)
-##                1.738 seconds (Sampling)
-##                4.402 seconds (Total)
+##  Elapsed Time: 1.335 seconds (Warm-up)
+##                1.234 seconds (Sampling)
+##                2.569 seconds (Total)
 ## 
 ## 
 ## SAMPLING FOR MODEL 'gaussian brms-model' NOW (CHAIN 2).
@@ -400,9 +363,9 @@ fit.visual &lt;- brm(snr ~ software + (1|subject) + (1|electrode),
 ## Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Iteration: 2000 / 2000 [100%]  (Sampling)
 ## 
-##  Elapsed Time: 2.464 seconds (Warm-up)
-##                1.722 seconds (Sampling)
-##                4.186 seconds (Total)
+##  Elapsed Time: 1.522 seconds (Warm-up)
+##                0.891 seconds (Sampling)
+##                2.413 seconds (Total)
 ## 
 ## 
 ## SAMPLING FOR MODEL 'gaussian brms-model' NOW (CHAIN 3).
@@ -425,9 +388,9 @@ fit.visual &lt;- brm(snr ~ software + (1|subject) + (1|electrode),
 ## Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Iteration: 2000 / 2000 [100%]  (Sampling)
 ## 
-##  Elapsed Time: 2.718 seconds (Warm-up)
-##                1.953 seconds (Sampling)
-##                4.671 seconds (Total)
+##  Elapsed Time: 1.333 seconds (Warm-up)
+##                1.067 seconds (Sampling)
+##                2.4 seconds (Total)
 ## 
 ## 
 ## SAMPLING FOR MODEL 'gaussian brms-model' NOW (CHAIN 4).
@@ -450,9 +413,9 @@ fit.visual &lt;- brm(snr ~ software + (1|subject) + (1|electrode),
 ## Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Iteration: 2000 / 2000 [100%]  (Sampling)
 ## 
-##  Elapsed Time: 2.675 seconds (Warm-up)
-##                1.947 seconds (Sampling)
-##                4.622 seconds (Total)</code></pre>
+##  Elapsed Time: 1.427 seconds (Warm-up)
+##                1.539 seconds (Sampling)
+##                2.966 seconds (Total)</code></pre>
 <pre class="r"><code>#Summary of C++ Model built using RStan
 summary(fit.visual)</code></pre>
 <pre><code>##  Family: gaussian 
@@ -466,20 +429,20 @@ summary(fit.visual)</code></pre>
 ## Group-Level Effects: 
 ## ~electrode (Number of levels: 11) 
 ##               Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
-## sd(Intercept)     0.12      0.06     0.01     0.24       1392 1.00
+## sd(Intercept)     0.12      0.06     0.02     0.25       1229 1.00
 ## 
 ## ~subject (Number of levels: 28) 
 ##               Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
-## sd(Intercept)     0.67      0.10     0.50     0.89        521 1.00
+## sd(Intercept)     0.68      0.10     0.51     0.90        708 1.00
 ## 
 ## Population-Level Effects: 
 ##            Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
-## Intercept      1.89      0.14     1.62     2.16        532 1.00
-## softwarejs     0.07      0.06    -0.05     0.19       3723 1.00
+## Intercept      1.88      0.14     1.61     2.15        539 1.00
+## softwarejs     0.07      0.06    -0.05     0.19       4000 1.00
 ## 
 ## Family Specific Parameters: 
 ##       Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
-## sigma     0.76      0.02     0.72     0.81       3219 1.00
+## sigma     0.76      0.02     0.72     0.80       3571 1.00
 ## 
 ## Samples were drawn using sampling(NUTS). For each parameter, Eff.Sample 
 ## is a crude measure of effective sample size, and Rhat is the potential 

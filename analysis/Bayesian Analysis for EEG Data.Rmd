@@ -9,115 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Preparatory Code for Self-Contained RMD Analysis
-
-```{r, results='hide'}
-library(readr)
-library(dplyr)
-all.data <- read_csv('data/eeg/generated/eeg-coded.csv')
-all.data$frequency <- factor(all.data$frequency)
-all.data$code <- factor(all.data$code)
-all.data$subject <- factor(all.data$subject)
-all.data$modality <- factor(all.data$modality)
-```
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
-difference.data <- all.data %>%
-  group_by(subject, code, modality, time) %>%
-  mutate(voltage.diff = amplitude - lag(amplitude)) %>%
-  filter(!is.na(voltage.diff))
-library(readr)
-write_csv(difference.data, 'data/eeg/generated/eeg_difference_waves.csv')
-
-mean.difference.by.code <- difference.data %>%
-  group_by(code,modality,time) %>%
-  summarise(voltage.diff = mean(voltage.diff))
-```
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
-p300.window.auditory <- 225:350
-p300.window.visual <- 300:450
-snr.function <- function(x){
-  snr <- 0
-  if(x$modality[1] == 'audio'){
-    signal.window <- p300.window.auditory
-  } else {
-    signal.window <- p300.window.visual
-  }
-  noise.window <- -200:800
-  noise.window <- noise.window[!noise.window %in% signal.window]
-  signal <- (x %>% filter(time %in% signal.window) %>% summarize(m = mean(voltage.diff^2)))$m[1]
-  noise <- (x %>% filter(time %in% noise.window) %>% summarize(m = mean(voltage.diff^2)))$m[1]
-  return(sqrt(signal/noise))
-}
-snr.modality <- mean.difference.by.code %>% group_by(code, modality) %>% do(snr = snr.function(.))
-snr.modality$snr <- as.numeric(snr.modality$snr)
-library(tidyr)
-snr.modality.spread <- snr.modality %>% spread(modality, snr)
-```
-
-```{r, results='hide'}
-visual.codes <- as.character((snr.modality %>% filter(modality=='visual') %>% group_by(modality) %>% top_n(n=12, w=snr))$code)
-audio.codes <- as.character((snr.modality %>% filter(modality=='audio') %>% group_by(modality) %>% top_n(n=12, w=snr))$code)
-
-code.table <- read_csv('data/eeg/generated/eeg-code-table.csv')
-
-visual.electrodes <- unique((code.table %>% filter(code%in%visual.codes))$el)
-audio.electrodes <- unique((code.table %>% filter(code%in%audio.codes))$el)
-
-# visual = 55, 62, 72, 77, 78, 79, 80, 86, 87, 93, 104
-# audio = 31, 37, 42, 54, 78, 80, 87, 106
-```
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
-all.data <- read_csv('data/eeg/generated/eeg-subset.csv')
-
-difference.data.sftw.audio <- all.data %>% 
-  filter(modality == 'audio', electrode %in% audio.electrodes) %>% 
-  group_by(subject, electrode, time, software) %>% 
-  mutate(voltage.diff = amplitude - lag(amplitude)) %>% 
-  filter(!is.na(voltage.diff))
-snr.audio.sftw <- difference.data.sftw.audio %>% group_by(subject, electrode, software) %>% do(snr = snr.function(.))
-snr.audio.sftw$snr <- as.numeric(snr.audio.sftw$snr)
-snr.audio.sftw$electrode <- factor(snr.audio.sftw$electrode)
-
-difference.data.sftw.visual <- all.data %>% 
-  filter(modality == 'visual', electrode %in% visual.electrodes) %>% 
-  group_by(subject, electrode, time, software) %>% 
-  mutate(voltage.diff = amplitude - lag(amplitude)) %>% 
-  filter(!is.na(voltage.diff))
-snr.visual.sftw <- difference.data.sftw.visual %>% group_by(subject, electrode, software) %>% do(snr = snr.function(.))
-snr.visual.sftw$snr <- as.numeric(snr.visual.sftw$snr)
-snr.visual.sftw$electrode <- factor(snr.visual.sftw$electrode)
-
-snr.visual.sftw.diff <- snr.visual.sftw %>% group_by(subject,electrode) %>% mutate(snr.diff = snr - lag(snr)) %>% filter(!is.na(snr.diff))
-snr.audio.sftw.diff <- snr.audio.sftw %>% group_by(subject,electrode) %>% mutate(snr.diff = snr - lag(snr)) %>% filter(!is.na(snr.diff))
-```
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
-# Show P300 waves for different software
-difference.data.sftw.audio.agg <- difference.data.sftw.audio %>%
-  group_by(electrode, time, software) %>%
-  summarize(mean.amp = mean(voltage.diff))
-
-difference.data.sftw.visual.agg <- difference.data.sftw.visual %>%
-  group_by(electrode, time, software) %>%
-  summarize(mean.amp = mean(voltage.diff))
-```
-
-===================================================================================================================================================================
-
 Bayesian Analysis Begins
-
-```{r}
-#Write CSV files for the data being used because the file should be self-contained 
-#Load proper packages
-library(readr)
-#Audio
-write_csv(snr.audio.sftw, 'data/eeg/generated/snr_audio.csv')
-#Visual
-write_csv(snr.visual.sftw, 'data/eeg/generated/snr_visual.csv')
-```
 
 ```{r}
 #Making sure the system is prepared for analysis
@@ -140,17 +32,18 @@ fx( 2L, 5 ) # The answer is 10 which means that RStan is working within R
 #Bayesian Analysis of Data using the brms package
 #Load the brms package
 library(brms)
+library(readr)
+
 #Make sure the data set is read into R
-all.audio = read.csv(file = "data/eeg/generated/snr_audio.csv")
-all.visual = read.csv(file = "data/eeg/generated/snr_visual.csv")
+all.audio = read_csv(file = "data/eeg/generated/snr_audio.csv")
+all.visual = read_csv(file = "data/eeg/generated/snr_visual.csv")
+
 #Fit the Audio Model
 fit.audio <- brm(snr ~ software + (1|subject) + (1|electrode), 
            data = all.audio, family = gaussian)
 #Summary of C++ Model built using RStan
 summary(fit.audio)
 
-#Make sure the data set is read into R
-all.visual <- snr.visual.sftw
 #Fit the Visual Model
 fit.visual <- brm(snr ~ software + (1|subject) + (1|electrode), 
            data = all.visual, family = gaussian)

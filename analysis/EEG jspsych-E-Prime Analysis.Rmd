@@ -180,3 +180,13 @@ ggplot(difference.data.sftw.visual.agg, aes(x=time, y=mean.amp, color=software))
   labs(x="Time (ms)", y="Difference in voltage (mV; rare - common)")+
   theme_bw()
 ```
+
+```{r}
+#Write CSV files for the data being used because the file should be self-contained for Bayesian Analysis
+#Load proper packages
+library(readr)
+#Audio
+write_csv(snr.audio.sftw, 'data/eeg/generated/snr_audio.csv')
+#Visual
+write_csv(snr.visual.sftw, 'data/eeg/generated/snr_visual.csv')
+```
