@@ -1,5 +1,6 @@
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
+/analysis/.Rproj.user
+/analysis/.Rhistory
+/analysis/.RData
+/analysis/.Ruserdata
 /analysis/data/eeg/generated/*
+.Rproj.user

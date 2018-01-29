@@ -11,7 +11,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, results='hide'}
 library(readr)
-all.data <- read_csv('data/eeg/generated/eeg-coded.csv')
+library(httr)
+library(magrittr)
+# retrieve eeg-coded.csv from OSF
+all.data <- httr::GET("https://osf.io/ctq3m/?action=download", progress()) %>% content(as='parsed')
 all.data$frequency <- factor(all.data$frequency)
 all.data$code <- factor(all.data$code)
 all.data$subject <- factor(all.data$subject)
@@ -34,12 +37,15 @@ The P300 component of our data set was then isolated by calculating the differen
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
-difference.data <- all.data %>%
-  group_by(subject, code, modality, time) %>%
-  mutate(voltage.diff = amplitude - lag(amplitude)) %>%
-  filter(!is.na(voltage.diff))
-library(readr)
-write_csv(difference.data, 'data/eeg/generated/eeg_difference_waves.csv')
+# the code below generates the difference waves, but is time consuming to run,
+# so we load the resulting file from OSF instead.
+# difference.data <- all.data %>%
+#   group_by(subject, code, modality, time) %>%
+#   mutate(voltage.diff = amplitude - lag(amplitude)) %>%
+#   filter(!is.na(voltage.diff))
+# write_csv(difference.data, 'data/eeg/generated/eeg_difference_waves.csv')
+
+difference.data <- httr::GET("https://osf.io/e2t7j/?action=download", progress()) %>% content(as='parsed')
 
 mean.difference.by.code <- difference.data %>%
   group_by(code,modality,time) %>%
@@ -80,9 +86,7 @@ ggplot(snr.modality.spread, aes(x=audio, y=visual, label=code))+
   geom_point(size=2) + 
   geom_text(nudge_y = 0.1)+
   geom_hline(yintercept = 0)+
-  geom_hline(yintercept = 3, linetype=2, color='red')+
   geom_vline(xintercept = 0)+
-  geom_vline(xintercept = 1.75, linetype=2, color='blue')+
   labs(x="Audio SNR", y="Visual SNR")+
   theme_bw()
 
@@ -96,7 +100,7 @@ Electrode isolation and selection resulted in the consideration of 11 visual cod
 visual.codes <- as.character((snr.modality %>% filter(modality=='visual') %>% group_by(modality) %>% top_n(n=12, w=snr))$code)
 audio.codes <- as.character((snr.modality %>% filter(modality=='audio') %>% group_by(modality) %>% top_n(n=12, w=snr))$code)
 
-code.table <- read_csv('data/eeg/generated/eeg-code-table.csv')
+code.table <- httr::GET("https://osf.io/kyzs2/?action=download", progress()) %>% content(as='parsed')
 
 visual.electrodes <- unique((code.table %>% filter(code%in%visual.codes))$el)
 audio.electrodes <- unique((code.table %>% filter(code%in%audio.codes))$el)
@@ -110,7 +114,8 @@ Finally, we calculated the difference in SNR between software packages for each 
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
-all.data <- read_csv('data/eeg/generated/eeg-subset.csv')
+# we need to load back the uncoded data now that we have selected electrodes
+all.data <- httr::GET("https://osf.io/v4sfk/?action=download", progress()) %>% content(as='parsed')
 
 difference.data.sftw.audio <- all.data %>% 
   filter(modality == 'audio', electrode %in% audio.electrodes) %>% 
@@ -121,6 +126,8 @@ snr.audio.sftw <- difference.data.sftw.audio %>% group_by(subject, electrode, so
 snr.audio.sftw$snr <- as.numeric(snr.audio.sftw$snr)
 snr.audio.sftw$electrode <- factor(snr.audio.sftw$electrode)
 
+write_csv(snr.audio.sftw, 'data/eeg/generated/snr_audio.csv')
+
 difference.data.sftw.visual <- all.data %>% 
   filter(modality == 'visual', electrode %in% visual.electrodes) %>% 
   group_by(subject, electrode, time, software) %>% 
@@ -130,9 +137,16 @@ snr.visual.sftw <- difference.data.sftw.visual %>% group_by(subject, electrode, 
 snr.visual.sftw$snr <- as.numeric(snr.visual.sftw$snr)
 snr.visual.sftw$electrode <- factor(snr.visual.sftw$electrode)
 
+write_csv(snr.visual.sftw, 'data/eeg/generated/snr_visual.csv')
+
+ggplot(snr.audio.sftw, aes(x=electrode, color=software, y=snr, group=interaction(subject,electrode)))+
+  geom_point()+
+  geom_line()
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
 snr.visual.sftw.diff <- snr.visual.sftw %>% group_by(subject,electrode) %>% mutate(snr.diff = snr - lag(snr)) %>% filter(!is.na(snr.diff))
 snr.audio.sftw.diff <- snr.audio.sftw %>% group_by(subject,electrode) %>% mutate(snr.diff = snr - lag(snr)) %>% filter(!is.na(snr.diff))
-
 
 ggplot(snr.visual.sftw.diff, aes(x=electrode, y=snr.diff))+
   geom_hline(yintercept = 0)+
@@ -179,14 +193,4 @@ ggplot(difference.data.sftw.visual.agg, aes(x=time, y=mean.amp, color=software))
   scale_color_brewer(palette="Set1", labels=c('E-Prime', 'jsPsych'), name="Software")+
   labs(x="Time (ms)", y="Difference in voltage (mV; rare - common)")+
   theme_bw()
-```
-
-```{r}
-#Write CSV files for the data being used because the file should be self-contained for Bayesian Analysis
-#Load proper packages
-library(readr)
-#Audio
-write_csv(snr.audio.sftw, 'data/eeg/generated/snr_audio.csv')
-#Visual
-write_csv(snr.visual.sftw, 'data/eeg/generated/snr_visual.csv')
 ```

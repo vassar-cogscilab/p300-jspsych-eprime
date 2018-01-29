@@ -9,44 +9,35 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Bayesian Analysis Begins
-
-```{r}
-#Making sure the system is prepared for analysis
-Sys.getenv('PATH')
-system('g++ -v')
-system('where make') #All functionalities seem to be working
-```
-
-```{r}
-#RStan Installation
-install.packages("rstan", repos = "https://cloud.r-project.org/", dependencies=TRUE)
-#Make sure that the packages work properly
-fx <- inline::cxxfunction( signature(x = "integer", y = "numeric" ) , '
-	return ScalarReal( INTEGER(x)[0] * REAL(y)[0] ) ;
-' )
-fx( 2L, 5 ) # The answer is 10 which means that RStan is working within R
-```
 
 ```{r}
 #Bayesian Analysis of Data using the brms package
 #Load the brms package
 library(brms)
 library(readr)
+library(httr)
+library(magrittr)
 
 #Make sure the data set is read into R
-all.audio = read_csv(file = "data/eeg/generated/snr_audio.csv")
-all.visual = read_csv(file = "data/eeg/generated/snr_visual.csv")
+all.audio <- httr::GET("https://osf.io/8wbdc/?action=download", progress()) %>% content(as='parsed')
+all.visual <- httr::GET("https://osf.io/bkvf3/?action=download", progress()) %>% content(as='parsed')
 
 #Fit the Audio Model
 fit.audio <- brm(snr ~ software + (1|subject) + (1|electrode), 
-           data = all.audio, family = gaussian)
-#Summary of C++ Model built using RStan
+           data = all.audio, family = gaussian,
+           prior = set_prior("normal(0,5)", class="b", coef="softwarejs"))
 summary(fit.audio)
+
+plot(fit.audio)
+plot(marginal_effects(fit.audio), points=T)
 
 #Fit the Visual Model
 fit.visual <- brm(snr ~ software + (1|subject) + (1|electrode), 
-           data = all.visual, family = gaussian)
-#Summary of C++ Model built using RStan
+           data = all.visual, family = gaussian,
+           prior = set_prior("normal(0,5)", class="b", coef="softwarejs"))
 summary(fit.visual)
+
+plot(fit.visual)
+plot(marginal_effects(fit.visual), points=T)
+
 ```
